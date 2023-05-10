@@ -1,0 +1,34 @@
+:root {
+  --main-red: #ED6A5A;
+  --main-black: #292F36;
+  --main-white: #F9F7F5;
+  --frame-width: 3vw;
+}
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-white);
+  color: var(--main-black);
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+.frame {
+  width: 100%;
+  height: 100%;
+  padding: var(--frame-width);
+}
+.frameTopCorner {
+  position: absolute;
+  top: var(--frame-width);
+  left: var(--frame-width);
+}
+.frameBottomCorner {
+  position: absolute;
+  right: var(--frame-width);
+  bottom: var(--frame-width);
+}

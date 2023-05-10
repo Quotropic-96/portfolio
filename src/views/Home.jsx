@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import Frame from "../components/Frame";
+
 const Home = () => {
   return (
-    <div className="home">
+    <div className="frame home">
+      <Frame />
       <h1>QuoDev</h1>
       <ul>
         <li><Link to={'/projects'}>Projects</Link></li>

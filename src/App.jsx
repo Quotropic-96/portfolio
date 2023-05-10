@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import './reset.css';
 import './App.css';
 import Home from './views/Home';
 import Projects from './views/Projects';
@@ -7,7 +8,7 @@ import AboutUs from './views/AboutUs';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />

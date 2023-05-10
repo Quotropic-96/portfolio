@@ -1,4 +1,4 @@
-import profile from '../assets/profile.png';
+import profile from '../assets/images/profile.png';
 import NavBar from '../components/NavBar';
 
 const AboutUs = () => {
