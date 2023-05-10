@@ -8,7 +8,7 @@ import "./projects.css"
 
 const Projects = () => {
   const [showInfo, setShowInfo] = useState(false);
-
+  
   const handleShow = (title) => {
     setShowInfo(title);
   }

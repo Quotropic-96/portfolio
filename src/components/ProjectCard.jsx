@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./projectCard.css";
 import PropTypes from "prop-types";
 import leftArrow from '../assets/icons/arrow_left.png';
@@ -17,7 +17,7 @@ const ProjectCard = ({ info, showInfo, handleShow }) => {
     <div className="project_card_container">
       <div className="title_arrow_container">
         <h2>{title}</h2>
-        <img className={!close ? "left_arrow" : "down_arrow"} src={!close ? leftArrow : downArrow} alt="left arrow" onClick={handleClick} />
+        <img className={!showInfo || !close ? "left_arrow" : "down_arrow"} src={!showInfo || !close ? leftArrow : downArrow} alt="left arrow" onClick={handleClick} />
       </div>
       <h3>{subtitle}</h3>
       {showInfo && close &&
