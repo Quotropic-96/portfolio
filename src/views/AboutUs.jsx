@@ -1,8 +1,10 @@
 import profile from '../assets/profile.png';
+import NavBar from '../components/NavBar';
 
 const AboutUs = () => {
   return (
     <div className="about_us">
+      <NavBar />
       <h1>About Us</h1>
       <p>
         We are a team of two dedicated full-stack developers with a unique blend

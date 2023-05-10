@@ -1,6 +1,9 @@
+import NavBar from "../components/NavBar";
+
 const Contact = () => {
   return (
     <div className="contact">
+      <NavBar />
       <h1>Contact</h1>
       <p>
         Tell us about your project, arrange a meeting with us and let&apos;s start
