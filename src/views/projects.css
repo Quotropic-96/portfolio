@@ -1,0 +1,19 @@
+@font-face {
+  font-family: porlane;
+  src: url("../assets/fonts/Porlane.ttf");
+}
+
+div.projects h1 {
+  font-family: porlane;
+  font-size: 100px;
+}
+
+div.projects_mobile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.projects_cards_container {
+
+}
