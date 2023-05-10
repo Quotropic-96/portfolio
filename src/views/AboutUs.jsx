@@ -11,7 +11,7 @@ const AboutUs = () => {
         bring our passion for innovation and problem-solving to every project.
         Driven by our passion for coding and excellence, we pride ourselves on
         delivering engaging, visually striking, and functional web experiences
-        that resonate with users and elevate our clients' brand presence. Build
+        that resonate with users and elevate our clients&apos; brand presence. Build
         the future with us!
       </p>
       <img src={profile} alt="Profile Gerard & Pau" />
