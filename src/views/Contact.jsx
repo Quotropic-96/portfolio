@@ -1,4 +1,7 @@
 import NavBar from "../components/NavBar";
+import linkedIn from "../assets/images/linkedin_logo.png";
+import email from "../assets/images/email.png";
+import malt from "../assets/images/malt_logo.png";
 
 const Contact = () => {
   return (
@@ -11,7 +14,9 @@ const Contact = () => {
       </p>
       <div>
         <p>You can also contact us through:</p>
-        {/* Social Links  */}
+        <img src={malt} alt="malt-icon" />
+        <img src={email} alt="email-icon" />
+        <img src={linkedIn} alt="linkedin-icon" />
       </div>
       <form>
         <input type="text" placeholder="Name"/>
