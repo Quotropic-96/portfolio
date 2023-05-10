@@ -1,0 +1,41 @@
+.about_us{
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/blobs/main-blob.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: calc(35% - 50vw) center;
+  padding: 5%;
+  display: flex;
+  gap: 20%;
+}
+
+div.photo_caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 3%;
+  left: 2.6%;
+}
+
+div.title_p_about_us {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+div.title_p_about_us p {
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+b {
+  font-weight: 600;
+}
