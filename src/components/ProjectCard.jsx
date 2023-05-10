@@ -1,7 +1,6 @@
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 const ProjectCard = ({ info }) => {
- // eslint-disable-next-line react/prop-types
   const { title, subtitle, about, show } = info;
   return (
     <div className="project_card_container">
@@ -10,13 +9,14 @@ const ProjectCard = ({ info }) => {
       <p>{about}</p>
       <p>{show}</p>
       <div className="projects_cards_container">
-
-      </div>
-      <div className="demo_container">
-        
       </div>
     </div>
   );
 }
 
+ProjectCard.propTypes = {
+  info: PropTypes.object.isRequired
+}
+
 export default ProjectCard;
+
