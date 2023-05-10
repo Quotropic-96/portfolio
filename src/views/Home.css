@@ -1,6 +1,18 @@
-.homeBlob {
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  z-index: -1;
+.home {
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/blobs/home-blob.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: calc(35% - 50vw) center;
+  padding: 5%;
+  display: flex;
+  gap: 20%;
+}
+
+.home p {
+  max-width: 50%;
+  align-self: center;
+  font-size: 3rem;
+  font-weight: 900;
 }
