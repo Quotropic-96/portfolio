@@ -1,3 +1,12 @@
+.projects {
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/blobs/main-blob.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: bottom 10px;
+}
+
 div.main_view_container {
   padding: 1rem 2rem 0 2rem;
 }

@@ -4,7 +4,8 @@ import { projectsData } from "../data/projectsData.js";
 import mobile from "../assets/images/mockup.png";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
-import "./projects.css"
+import "./projects.css";
+//import Blob from "../components/Blob";
 
 const Projects = () => {
   const [showInfo, setShowInfo] = useState(null);
@@ -26,6 +27,7 @@ const Projects = () => {
     <div className="projects frame">
       <Frame />
       <NavBar />
+      {/* <Blob /> */}
       <div className="main_view_container">
         <div className="projects_mobile_container">
           <div className="title_projects_container">

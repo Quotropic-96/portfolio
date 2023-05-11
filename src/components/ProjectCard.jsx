@@ -25,7 +25,9 @@ const ProjectCard = ({ info, showInfo, handleShow, handleClose, handleScrollColo
       {showInfo &&
         <div className="about_show_div">
           <p>{about}</p>
-          <p>{show}</p>
+
+          <p className={color === "#015CA0" ? "show_p white" : "show_p"} style={{ backgroundColor: `${color}`}} >{show}</p>
+    
         </div>
       }
       <div className="projects_cards_container">
