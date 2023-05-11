@@ -41,6 +41,7 @@
 
 .homeMenu li a {
   font-size: 2.5rem;
+  font-variant-caps: all-petite-caps;
   font-weight: 200;
   position: relative;
   transition: color 0.3s ease-in-out;
