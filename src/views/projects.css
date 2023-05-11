@@ -13,12 +13,55 @@ div.title_projects_container {
   width: 40%;
 }
 
-div.projects_cards_container {
+div.projects_cards_container_wrapper {
   max-height: 550px;
   overflow-y: auto;
+  scrollbar-color: "#AB882E";
+}
+
+div.projects_cards_container {
+  padding-right: 20px;
 }
 
 div.demo_container {
   padding-right: 6rem;
+}
+
+div.projects_cards_container_wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+
+.original::-webkit-scrollbar-thumb {
+  background-color: var(--main-red); 
+  border-radius: 20px;
+}
+
+.xproof::-webkit-scrollbar-thumb {
+  background-color: #F7CF5C; 
+  border-radius: 20px;
+}
+
+.soundTribe::-webkit-scrollbar-thumb {
+  background-color: #7FB685;
+  border-radius: 20px;
+}
+
+.inkedIn::-webkit-scrollbar-thumb {
+  background-color: #AB882E;
+  border-radius: 20px;
+}
+
+.consoleFly::-webkit-scrollbar-thumb {
+  background-color: #ED7236;
+  border-radius: 20px;
+}
+
+.mondriansDream::-webkit-scrollbar-thumb {
+  background-color: #015CA0;
+  border-radius: 20px;
+}
+
+div.projects_cards_container_wrapper::-webkit-scrollbar-track {
+  background-color: #eee;
 }
 
