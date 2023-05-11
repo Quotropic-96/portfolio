@@ -9,7 +9,7 @@ import "./projects.css"
 const Projects = () => {
   const [showInfo, setShowInfo] = useState(null);
   const [scrollColor, setScrollColor] = useState(null);
-  console.log(scrollColor)
+ 
   const handleShow = (title) => {
     setShowInfo(title);
   }
