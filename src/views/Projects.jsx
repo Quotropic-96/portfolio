@@ -7,10 +7,14 @@ import Frame from "../components/Frame";
 import "./projects.css"
 
 const Projects = () => {
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(null);
   
   const handleShow = (title) => {
     setShowInfo(title);
+  }
+
+  const handleClose = ( ) => {
+    setShowInfo(null)
   }
 
   return (
@@ -24,7 +28,7 @@ const Projects = () => {
             <div className="projects_cards_container">
               {projectsData.map(project => {
                 return (
-                  <ProjectCard key={project.title} info={project} showInfo={showInfo === project.title} handleShow={handleShow} />
+                  <ProjectCard key={project.title} info={project} showInfo={showInfo === project.title} handleShow={handleShow} handleClose={handleClose} />
                 )
               })}
             </div>
