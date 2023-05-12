@@ -11,6 +11,16 @@
   gap: 20%;
 }
 
+.color-change {
+  mix-blend-mode: difference;
+  transition: color 0.3s ease-in-out;
+  /* Transición suave para evitar cambios bruscos */
+}
+
+div.div_color {
+  width: 30px;
+}
+
 .home p {
   max-width: 50%;
   align-self: center;
