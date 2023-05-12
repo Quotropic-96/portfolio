@@ -2,6 +2,9 @@
   --mobile-width: 40vh;
   --mobile-head: calc(13.85 * var(--mobile-width) /100);
   --mobile-frame: calc(5.9 * var(--mobile-width) /100);
+  --pc-width: 37vw;
+  --pc-head: calc(3 * var(--pc-width)/100);
+  --pc-frame: calc(var(--pc-width)/100);
 }
 
 .projects {
@@ -32,7 +35,7 @@ div.projects_cards_container {
   padding-right: 20px;
 }
 
-div.demo_container {
+div.demo_container_mobile {
   position: relative;
   top: calc(50% - var(--mobile-width));
   margin-right: calc(30% - var(--mobile-width)/2);
@@ -40,13 +43,26 @@ div.demo_container {
   height: calc(2 * var(--mobile-width));
 }
 
-.demo_container .mobile_frame {
+.demo_contanier_pc {
+  position: relative;
+  top: 0;
+  width: var(--pc-width);
+  height: calc(0.54 * var(--pc-width));
+}
+
+.demo_container_mobile .mobile_frame {
   position: absolute;
   width: var(--mobile-width);
   height: calc(1.99 * var(--mobile-width));
 }
 
-.demo_container .iframe_mobile {
+.demo_contanier_pc .pc_frame {
+  position: absolute;
+  width: var(--pc-width);
+  height: calc(var(--pc-width) * 0.64);
+}
+
+.demo_container_mobile .iframe_mobile {
   position: absolute;
   top: var(--mobile-head);
   left: var(--mobile-frame);
@@ -55,7 +71,17 @@ div.demo_container {
   border-radius: 10px 10px 40px 40px;
 }
 
-.demo_container .message {
+.demo_contanier_pc .iframe_pc {
+  transform: scale(0.33);
+  transform-origin: top left;
+  position: relative;
+  top: var(--pc-head);
+  left: var(--pc-frame);
+  width: calc(3 * (var(--pc-width) - var(--pc-frame)));
+  height: calc(3 * 0.62 * var(--pc-width) - var(--pc-head) - var(--pc-frame));
+}
+
+.message {
   width: var(--mobile-width);
   height: calc(1.99 * var(--mobile-width));
   display: flex;
@@ -63,7 +89,7 @@ div.demo_container {
   justify-content: center;
 }
 
-.demo_container .message h2 {
+.message h2 {
   padding: 0 20%;
   text-align: center;
   font-variant-caps: all-petite-caps;
@@ -71,7 +97,7 @@ div.demo_container {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar {

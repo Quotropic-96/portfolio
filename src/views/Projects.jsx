@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { projectsData } from "../data/projectsData.js";
 import mobile from "../assets/images/mobile_mockup.png";
-import pc from "../assets/images/pc_mockup.png";
+import pc from "../assets/images/pc_mockup.svg";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
 import "./projects.css";
@@ -32,6 +32,7 @@ const Projects = () => {
       setSelectedProject(filteredProject);
       setIsMobile(filteredProject.platform === 'mobile');
     } else {
+      setSelectedProject(null);
       setIsMobile(true);
     }
   }, [showInfo]);
@@ -75,25 +76,33 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="demo_container">
+        <div className={isMobile ? "demo_container_mobile" : "demo_contanier_pc"}>
           {isMobile ?
-            <img className="mobile_frame" src={mobile} alt="mobile" />
+            <>
+              <img className="mobile_frame" src={mobile} alt="mobile" />
+              {selectedProject && 
+                <iframe
+                  className={selectedProject ? "iframe_mobile" : "hidden iframe_mobile"}
+                  src={selectedProject ? selectedProject.link : ""}
+                ></iframe>
+              }
+            </>
             :
-            <img className="mobile_frame" src={pc} alt="pc" />
+            <>
+              <img className="pc_frame" src={pc} alt="pc" />
+              {selectedProject && 
+              <iframe
+                className={selectedProject ? "iframe_pc" : "hidden iframe_pc"}
+                src={selectedProject ? selectedProject.link : ""}
+              ></iframe>
+            }
+            </>
           }
-          <div className={selectedProject ? " hidden message" : "message"}>
+          <div className={selectedProject ? "hidden message" : "message"}>
             <h2>
               {"< "}Select a project to be shown here{" />"}
             </h2>
           </div>
-          {selectedProject && selectedProject.platform === "mobile" && (
-            <iframe
-              className={selectedProject ? "iframe_mobile" : "hidden iframe_mobile"}
-              src={selectedProject ? selectedProject.link : ""}
-              width={350}
-              height={700}
-            ></iframe>
-          )}
         </div>
       </div>
     </div>
