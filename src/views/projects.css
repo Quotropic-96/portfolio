@@ -1,3 +1,9 @@
+:root {
+  --mobile-width: 25rem;
+  --mobile-head: calc(14 * var(--mobile-width) /100);
+  --mobile-frame: calc(5.9 * var(--mobile-width) /100);
+}
+
 .projects {
   height: 100%;
   width: 100%;
@@ -5,13 +11,7 @@
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position: bottom 10px;
-}
-
-div.main_view_container {
-  padding: 1rem 2rem 0 2rem;
-}
-
-.projects_mobile_container {
+  padding: var(--frame-padding);
   display: flex;
   justify-content: space-between;
 }
@@ -33,7 +33,27 @@ div.projects_cards_container {
 }
 
 div.demo_container {
-  padding-right: 6rem;
+  position: relative;
+  top: calc(-1 * var(--frame-padding));
+  width: var(--mobile-width);
+  height: calc(2 * var(--mobile-width));
+}
+
+.demo_container .mobile_frame {
+  position: absolute;
+  top: 0;
+  width: var(--mobile-width);
+  height: calc(2 * var(--mobile-width));
+  /* z-index: 10; */
+}
+
+.demo_container .iframe {
+  position: absolute;
+  top: var(--mobile-head);
+  left: var(--mobile-frame);
+  width: calc(var(--mobile-width) - 2 * var(--mobile-frame));
+  height: calc(2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame));
+  border-radius: 5px 5px 35px 35px;
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar {

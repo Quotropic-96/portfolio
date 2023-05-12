@@ -24,34 +24,33 @@ const Projects = () => {
   }
 
   return (
-    <div className="projects frame">
+    <div className="frame">
       <Frame />
       <NavBar />
       {/* <Blob /> */}
-      <div className="main_view_container">
-        <div className="projects_mobile_container">
-          <div className="title_projects_container">
-            <h1>PROJECTS</h1>
-            <div className={scrollColor === "#F7CF5C"
-              ? "projects_cards_container_wrapper xproof"
-              : scrollColor === "#7FB685" ? "projects_cards_container_wrapper soundTribe"
-                : scrollColor === "#AB882E" ? "projects_cards_container_wrapper inkedIn"
-                  : scrollColor === "#ED7236" ? "projects_cards_container_wrapper consoleFly"
-                    : scrollColor === "#015CA0" ? "projects_cards_container_wrapper mondriansDream"
-                      : "projects_cards_container_wrapper original"
-            }>
-              <div className="projects_cards_container">
-                {projectsData.map(project => {
-                  return (
-                    <ProjectCard key={project.title} info={project} showInfo={showInfo === project.title} handleShow={handleShow} handleClose={handleClose} handleScrollColor={handleScrollColor} />
-                  )
-                })}
-              </div>
+      <div className="projects">
+        <div className="title_projects_container">
+          <h1>PROJECTS</h1>
+          <div className={scrollColor === "#F7CF5C"
+            ? "projects_cards_container_wrapper xproof"
+            : scrollColor === "#7FB685" ? "projects_cards_container_wrapper soundTribe"
+              : scrollColor === "#AB882E" ? "projects_cards_container_wrapper inkedIn"
+                : scrollColor === "#ED7236" ? "projects_cards_container_wrapper consoleFly"
+                  : scrollColor === "#015CA0" ? "projects_cards_container_wrapper mondriansDream"
+                    : "projects_cards_container_wrapper original"
+          }>
+            <div className="projects_cards_container">
+              {projectsData.map(project => {
+                return (
+                  <ProjectCard key={project.title} info={project} showInfo={showInfo === project.title} handleShow={handleShow} handleClose={handleClose} handleScrollColor={handleScrollColor} />
+                )
+              })}
             </div>
           </div>
-          <div className="demo_container">
-            <img style={{ width: "350px" }} src={mobile} alt="mobile" />
-          </div>
+        </div>
+        <div className="demo_container">
+          <img className="mobile_frame" src={mobile} alt="mobile" />
+          <iframe className="iframe" src="https://soundtribe.fly.dev/home" width={350} height={700}></iframe>
         </div>
       </div>
     </div>
