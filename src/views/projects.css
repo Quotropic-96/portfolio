@@ -1,5 +1,5 @@
 :root {
-  --mobile-width: 25rem;
+  --mobile-width: 40vh;
   --mobile-head: calc(14 * var(--mobile-width) /100);
   --mobile-frame: calc(5.9 * var(--mobile-width) /100);
 }
