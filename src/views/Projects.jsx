@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { projectsData } from "../data/projectsData.js";
 import mobile from "../assets/images/mockup.png";
@@ -10,6 +10,7 @@ import "./projects.css";
 const Projects = () => {
   const [showInfo, setShowInfo] = useState(null);
   const [scrollColor, setScrollColor] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
  
   const handleShow = (title) => {
     setShowInfo(title);
@@ -22,6 +23,10 @@ const Projects = () => {
   const handleScrollColor = (color) => {
     setScrollColor(color);
   }
+
+  useEffect(() => {
+    setSelectedProject(projectsData.filter((elem) => elem.title === showInfo)[0]);
+  }, [showInfo]);
 
   return (
     <div className="frame">
@@ -50,7 +55,10 @@ const Projects = () => {
         </div>
         <div className="demo_container">
           <img className="mobile_frame" src={mobile} alt="mobile" />
-          <iframe className="iframe" src="https://soundtribe.fly.dev/home" width={350} height={700}></iframe>
+          <div className={selectedProject ? ' hidden message' : 'message'}>
+            <h2>{'< '}Select a project to be shown here{' />'}</h2>
+          </div>
+          <iframe className={selectedProject ? 'iframe' : 'hidden iframe'} src={selectedProject ? selectedProject.link : ''} width={350} height={700}></iframe>
         </div>
       </div>
     </div>
