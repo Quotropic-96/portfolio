@@ -35,6 +35,7 @@ div.projects_cards_container {
 div.demo_container {
   position: relative;
   top: calc(50% - var(--mobile-width));
+  margin-right: calc(30% - var(--mobile-width)/2);
   width: var(--mobile-width);
   height: calc(2 * var(--mobile-width));
 }

@@ -10,6 +10,7 @@
   --frame-width: 3vw;
   --frame-padding: 4vw;
   --nav-padding: 0.2rem;
+  --link-size: 1.2rem;
 }
 
 /* General Styles */
@@ -37,9 +38,11 @@ h2{
 h3 {
   font-weight: 500;
 }
-a{
+a {
   text-decoration: none;
-  color: var(--main-black)
+  font-variant-caps: all-petite-caps;
+  color: var(--main-black);
+  font-size: var(--link-size);
 }
 .frame {
   width: 100%;
@@ -60,10 +63,11 @@ a{
 /* Navbar */
 
 nav.navbar {
-  position: relative;
+  position: absolute;
   height: 1rem;
-  top: calc(-1rem - var(--nav-padding));
-  right: 0;
+  top: calc(var(--frame-width) - var(--link-size
+  ) - var(--nav-padding));
+  right: calc(var(--frame-padding) + var(--frame-width));
 }
 
 nav.navbar ul {
