@@ -1,7 +1,6 @@
-
-
 const Blob = () => {
   return (
+    // eslint-disable-next-line react/no-unknown-property
     <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
       <rect x="0" y="0" width="900" height="600" fill="#F9F7F5"></rect>
       <g transform="translate(444.1730295894361 322.66340252234914)">
