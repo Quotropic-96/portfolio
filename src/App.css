@@ -8,7 +8,8 @@
   --main-black: #292F36;
   --main-white: #F9F7F5;
   --frame-width: 3vw;
-  --frame-padding: 4vw
+  --frame-padding: 4vw;
+  --nav-padding: 0.2rem;
 }
 
 /* General Styles */
@@ -59,9 +60,10 @@ a{
 /* Navbar */
 
 nav.navbar {
-  position: absolute;
-  right: 4%;
-  top: 3%
+  position: relative;
+  height: 1rem;
+  top: calc(-1rem - var(--nav-padding));
+  right: 0;
 }
 
 nav.navbar ul {

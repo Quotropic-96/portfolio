@@ -34,14 +34,13 @@ div.projects_cards_container {
 
 div.demo_container {
   position: relative;
-  top: calc(-1 * var(--frame-padding));
+  top: calc(50% - var(--mobile-width));
   width: var(--mobile-width);
   height: calc(2 * var(--mobile-width));
 }
 
 .demo_container .mobile_frame {
   position: absolute;
-  top: 0;
   width: var(--mobile-width);
   height: calc(2 * var(--mobile-width));
   /* z-index: 10; */
