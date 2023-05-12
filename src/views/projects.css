@@ -1,6 +1,6 @@
 :root {
   --mobile-width: 40vh;
-  --mobile-head: calc(14 * var(--mobile-width) /100);
+  --mobile-head: calc(13.85 * var(--mobile-width) /100);
   --mobile-frame: calc(5.9 * var(--mobile-width) /100);
 }
 
@@ -43,7 +43,7 @@ div.demo_container {
 .demo_container .mobile_frame {
   position: absolute;
   width: var(--mobile-width);
-  height: calc(2 * var(--mobile-width));
+  height: calc(1.99 * var(--mobile-width));
   /* z-index: 10; */
 }
 
@@ -53,7 +53,7 @@ div.demo_container {
   left: var(--mobile-frame);
   width: calc(var(--mobile-width) - 2 * var(--mobile-frame));
   height: calc(2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame));
-  border-radius: 5px 5px 35px 35px;
+  border-radius: 10px 10px 40px 40px;
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar {
