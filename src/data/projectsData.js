@@ -5,7 +5,8 @@ export const projectsData = [
     about: "A user-friendly React PWA that captures math equation photos, expertly detects errors, pinpoints mistake locations, and offers targeted feedback, empowering users to learn and enhance problem-solving skills efficiently.",
     show: "DEMO", 
     color: "#F7CF5C",
-    link: "https://xproof-prototype.netlify.app/"
+    link: "https://xproof-prototype.netlify.app/",
+    platform: "mobile",
   },
   {
     title: "SoundTribe",
@@ -13,7 +14,8 @@ export const projectsData = [
     about: "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
     show: "TRY IT",
     color: "#7FB685",
-    link: "https://soundtribe.fly.dev/home"
+    link: "https://soundtribe.fly.dev/home",
+    platform: "mobile",
   },
   {
     title: "Inke-In",
@@ -21,7 +23,8 @@ export const projectsData = [
     about: "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
     show: "TRY IT",
     color: "#AB882E",
-    link: "https://quotropic-96.github.io/console.fly/"
+    link: "https://quotropic-96.github.io/console.fly/",
+    platform: "mobile",
   },
   {
     title: "Console.fly",
@@ -30,6 +33,7 @@ export const projectsData = [
     show: "TRY IT",
     color: "#ED7236",
     link: "https://quotropic-96.github.io/console.fly/",
+    platform: "pc",
   },
   {
     title: "Mondrian's Dream",
@@ -37,6 +41,7 @@ export const projectsData = [
     about: "This game was created with the objective of bringing the world of art closer to children, and what better way to do SO than through their favorite language? PLAY! Mondrian's Dream is conceived as a first step to help the little ones have a first contact with one of the mythical works of the Dutch artist, Piet Mondrian. Through play, children will not only learn about Piet Mondrian's art but will develop their memory and concentration skills as well.",
     show: "TRY IT",
     color: "#015CA0",
-    link: "https://paubertolinros.github.io/mondrians-dream/"
+    link: "https://paubertolinros.github.io/mondrians-dream/",
+    platform: "pc",
   }
 ];

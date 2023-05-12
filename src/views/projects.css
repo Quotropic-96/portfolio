@@ -46,7 +46,7 @@ div.demo_container {
   height: calc(1.99 * var(--mobile-width));
 }
 
-.demo_container .iframe {
+.demo_container .iframe_mobile {
   position: absolute;
   top: var(--mobile-head);
   left: var(--mobile-frame);
