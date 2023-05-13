@@ -23,7 +23,7 @@ export const projectsData = [
     about: "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
     show: "TRY IT",
     color: "#AB882E",
-    link: "https://quotropic-96.github.io/console.fly/",
+    link: "https://inkedin.fly.dev",
     platform: "mobile",
   },
   {
