@@ -24,12 +24,14 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(false);
  
   useEffect(() => {
+    console.log('here');
+    setIsLoading(true);
     const selectedProject = projectsData.find((elem) => elem.title === showInfo);
     if (selectedProject) {
-      setIsLoading(true);
       setProjectState({selectedProject, isMobile: selectedProject.platform === 'mobile'});
     } else {
       setProjectState({selectedProject: null, isMobile: true});
+      setIsLoading(false);
     }
   }, [showInfo]);
 
@@ -39,7 +41,7 @@ const Projects = () => {
       <NavBar />
       <div className="projects">
         <div className="title_projects_container">
-          <motion.h1 animate={animations.title}>PROJECTS</motion.h1>
+          <motion.h1 style={{zIndex: -1}} variants={animations.title} initial='hiddenLeft' animate='animate'>PROJECTS</motion.h1>
           <div className={`projects_cards_container_wrapper ${colorMap[scrollColor] || "original"}`}>
             <div className="projects_cards_container">
               {projectsData.map((project) => (
