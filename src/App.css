@@ -66,8 +66,7 @@ a {
 nav.navbar {
   position: absolute;
   height: 1rem;
-  top: calc(var(--frame-width) - var(--link-size
-  ) - var(--nav-padding));
+  top: calc(var(--frame-width) - var(--link-size) - var(--nav-padding));
   right: calc(var(--frame-padding) + var(--frame-width));
 }
 

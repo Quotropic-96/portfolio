@@ -2,6 +2,7 @@ import profile from '../assets/images/profile.png';
 import NavBar from '../components/NavBar';
 import './aboutUs.css';
 import Frame from '../components/Frame';
+import blob from '../assets/blobs/main-blob.svg';
 
 
 const AboutUs = () => {
@@ -9,9 +10,10 @@ const AboutUs = () => {
     <div className="frame">
       <Frame />
       <NavBar />
-      <div className="main_view_container about_us">
+      <div className="about_us">
         <div className='photo_caption'>
-          <img style={{ width: "500px" }} src={profile} alt="Profile Gerard & Pau" />
+          <img className='background_blob' src={blob} alt="Background blob" />
+          <img src={profile} alt="Profile Gerard & Pau" />
           <figcaption>Paula Bertolin & Gerard Solanes</figcaption>
         </div>
         <div className="title_p_about_us">
@@ -23,7 +25,7 @@ const AboutUs = () => {
             bring our passion for innovation and problem-solving to every project.<br></br><br></br>
             Driven by our passion for coding and excellence, we pride ourselves on
             delivering engaging, visually striking, and functional web experiences
-            that resonate with users and elevate our clients&apos; brand presence. Build
+            that resonate with users and elevate our clients&apos; brand presence. <br></br><br></br>Build
             the future with us!
           </p>
         </div>
