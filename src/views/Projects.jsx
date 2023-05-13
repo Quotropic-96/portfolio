@@ -6,6 +6,8 @@ import pc from "../assets/images/pc_mockup.svg";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
 import "./projects.css";
+import animations from './projectsAnimations';
+import { motion } from "framer-motion";
 
 const colorMap = {
   "#F7CF5C": "xproof",
@@ -37,7 +39,7 @@ const Projects = () => {
       <NavBar />
       <div className="projects">
         <div className="title_projects_container">
-          <h1>PROJECTS</h1>
+          <motion.h1 animate={animations.title}>PROJECTS</motion.h1>
           <div className={`projects_cards_container_wrapper ${colorMap[scrollColor] || "original"}`}>
             <div className="projects_cards_container">
               {projectsData.map((project) => (
