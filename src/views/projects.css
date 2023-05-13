@@ -73,7 +73,7 @@ div.demo_container_mobile {
   left: var(--mobile-frame);
   width: calc(10 / 9 * (var(--mobile-width) - 2 * var(--mobile-frame)));
   height: calc(10 / 9 * (2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame)));
-  border-radius: 10px 10px 50px 50px;
+  border-radius: 10px 10px 40px 40px;
 }
 
 .demo_contanier_pc .iframe_pc {
