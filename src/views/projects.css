@@ -1,7 +1,7 @@
 :root {
   --mobile-width: 40vh;
   --mobile-head: calc(13.85 * var(--mobile-width) /100);
-  --mobile-frame: calc(5.9 * var(--mobile-width) /100);
+  --mobile-frame: calc(5.7 * var(--mobile-width) /100);
   --pc-width: 37vw;
   --pc-head: calc(3.5 * var(--pc-width)/100);
   --pc-frame: calc(var(--pc-width)/100);
@@ -73,7 +73,7 @@ div.demo_container_mobile {
   left: var(--mobile-frame);
   width: calc(10 / 9 * (var(--mobile-width) - 2 * var(--mobile-frame)));
   height: calc(10 / 9 * (2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame)));
-  border-radius: 10px 10px 40px 40px;
+  border-radius: 10px 10px 50px 50px;
 }
 
 .demo_contanier_pc .iframe_pc {
