@@ -66,11 +66,13 @@ div.demo_container_mobile {
 }
 
 .demo_container_mobile .iframe_mobile {
+  transform: scale(0.9);
+  transform-origin: top left;
   position: absolute;
   top: var(--mobile-head);
   left: var(--mobile-frame);
-  width: calc(var(--mobile-width) - 2 * var(--mobile-frame));
-  height: calc(2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame));
+  width: calc(10 / 9 * (var(--mobile-width) - 2 * var(--mobile-frame)));
+  height: calc(10 / 9 * (2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame)));
   border-radius: 10px 10px 40px 40px;
 }
 

@@ -13,6 +13,7 @@ const Projects = () => {
   const [scrollColor, setScrollColor] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isMobile, setIsMobile] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
  
   const handleShow = (title) => {
     setShowInfo(title);
@@ -29,6 +30,7 @@ const Projects = () => {
   useEffect(() => {
     const filteredProject = projectsData.filter((elem) => elem.title === showInfo)[0];
     if (filteredProject) {
+      setIsLoading(true);
       setSelectedProject(filteredProject);
       setIsMobile(filteredProject.platform === 'mobile');
     } else {
@@ -84,6 +86,7 @@ const Projects = () => {
                 <iframe
                   className={selectedProject ? "iframe_mobile" : "hidden iframe_mobile"}
                   src={selectedProject ? selectedProject.link : ""}
+                  onLoad={() => setIsLoading(false)}
                 ></iframe>
               }
             </>
@@ -91,16 +94,17 @@ const Projects = () => {
             <>
               <img className="pc_frame" src={pc} alt="pc" />
               {selectedProject && 
-              <iframe
-                className={selectedProject ? "iframe_pc" : "hidden iframe_pc"}
-                src={selectedProject ? selectedProject.link : ""}
-              ></iframe>
-            }
+                <iframe
+                  className={selectedProject ? "iframe_pc" : "hidden iframe_pc"}
+                  src={selectedProject ? selectedProject.link : ""}
+                  onLoad={() => setIsLoading(false)}
+                ></iframe>
+              }
             </>
           }
-          <div className={selectedProject ? "hidden message" : "message"}>
+          <div className="message">
             <h2>
-              {"< "}Select a project to be shown here{" />"}
+              {isLoading ? '< Loading />' : '< select a project to be shown here />'}
             </h2>
           </div>
         </div>
