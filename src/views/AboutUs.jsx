@@ -11,7 +11,7 @@ const AboutUs = () => {
       <NavBar />
       <div className="about_us">
         <div className='photo_caption'>
-          <img className='background_blob' src={blob} alt="Background blob" />
+          <Blob cssStyle='background_blob' background='#F9F7F5' fill='#ED6A5A'></Blob>
           <img src={profile} alt="Profile Gerard & Pau" />
           <figcaption>Paula Bertolin & Gerard Solanes</figcaption>
         </div>

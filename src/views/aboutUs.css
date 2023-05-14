@@ -5,19 +5,23 @@
   height: 100%;
   width: 100%;
   padding: var(--frame-padding);
+  position: relative;
+}
+
+.photo_caption .background_blob {
+  transform: scale(2);
+  transform-origin: center;
+  z-index: -1;
+  position: absolute;
+  bottom: calc(-10%);
+  left: -10rem;
 }
 
 .photo_caption img {
   position: absolute;
-  bottom: var(--frame-width);
-  left: var(--frame-width);
-  width: 40%;
-}
-
-.photo_caption .background_blob {
-  transform: scale(2.5);
-  transform-origin: center;
-  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 45%;
 }
 
 .photo_caption figcaption {
@@ -26,8 +30,8 @@
   font-variant-caps: all-petite-caps;
   font-size: 1.3rem;
   position: absolute;
-  bottom: var(--frame-width);
-  left: calc(var(--frame-width) - 0.1rem);
+  bottom: 0;
+  left: -1rem;
 }
 
 div.title_p_about_us {
