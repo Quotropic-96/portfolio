@@ -12,10 +12,6 @@
 .projects {
   height: 100%;
   width: 100%;
-  background-image: url('../assets/blobs/main-blob.svg');
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-  background-position: bottom 10px;
   padding: var(--frame-padding);
   display: flex;
   justify-content: space-between;
@@ -35,6 +31,15 @@ div.projects_cards_container_wrapper {
 
 div.projects_cards_container {
   padding-right: 20px;
+}
+
+.background_blob {
+  transform: scale(3);
+  transform-origin: center;
+  position: absolute;
+  bottom: var(--frame-width);
+  right: var(--frame-width);
+  z-index: -1;
 }
 
 div.demo_container_mobile {

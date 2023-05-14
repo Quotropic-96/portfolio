@@ -6,8 +6,7 @@ import pc from "../assets/images/pc_mockup.svg";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
 import "./projects.css";
-import animations from './projectsAnimations';
-import { motion } from "framer-motion";
+import Blob from "../components/Blob";
 
 const colorMap = {
   "#F7CF5C": "xproof",
@@ -20,17 +19,25 @@ const colorMap = {
 const Projects = () => {
   const [showInfo, setShowInfo] = useState(null);
   const [scrollColor, setScrollColor] = useState(null);
-  const [projectState, setProjectState] = useState({selectedProject: null, isMobile: true});
+  const [projectState, setProjectState] = useState({
+    selectedProject: null,
+    isMobile: true,
+  });
   const [isLoading, setIsLoading] = useState(false);
- 
+
   useEffect(() => {
-    console.log('here');
+    console.log("here");
     setIsLoading(true);
-    const selectedProject = projectsData.find((elem) => elem.title === showInfo);
+    const selectedProject = projectsData.find(
+      (elem) => elem.title === showInfo
+    );
     if (selectedProject) {
-      setProjectState({selectedProject, isMobile: selectedProject.platform === 'mobile'});
+      setProjectState({
+        selectedProject,
+        isMobile: selectedProject.platform === "mobile",
+      });
     } else {
-      setProjectState({selectedProject: null, isMobile: true});
+      setProjectState({ selectedProject: null, isMobile: true });
       setIsLoading(false);
     }
   }, [showInfo]);
@@ -41,55 +48,86 @@ const Projects = () => {
       <NavBar />
       <div className="projects">
         <div className="title_projects_container">
-          <motion.h1 style={{zIndex: -1}} variants={animations.title} initial='hiddenLeft' animate='animate'>PROJECTS</motion.h1>
-          <div className={`projects_cards_container_wrapper ${colorMap[scrollColor] || "original"}`}>
+          <h1>
+            PROJECTS
+          </h1>
+          <div
+            className={`projects_cards_container_wrapper ${
+              colorMap[scrollColor] || "original"
+            }`}
+          >
             <div className="projects_cards_container">
               {projectsData.map((project) => (
-                  <ProjectCard
-                    key={project.title}
-                    info={project}
-                    showInfo={showInfo === project.title}
-                    handleShow={setShowInfo}
-                    handleClose={() => setShowInfo(null)}
-                    handleScrollColor={setScrollColor}
-                  />
+                <ProjectCard
+                  key={project.title}
+                  info={project}
+                  showInfo={showInfo === project.title}
+                  handleShow={setShowInfo}
+                  handleClose={() => setShowInfo(null)}
+                  handleScrollColor={setScrollColor}
+                />
               ))}
             </div>
           </div>
         </div>
-        <div className={projectState.isMobile ? "demo_container_mobile" : "demo_contanier_pc"}>
-          {projectState.isMobile ?
+        <div
+          className={
+            projectState.isMobile
+              ? "demo_container_mobile"
+              : "demo_contanier_pc"
+          }
+        >
+          {projectState.isMobile ? (
             <>
               <img className="mobile_frame" src={mobile} alt="mobile" />
-              {projectState.selectedProject && 
+              {projectState.selectedProject && (
                 <iframe
-                  className={projectState.selectedProject ? "iframe_mobile" : "hidden iframe_mobile"}
-                  src={projectState.selectedProject ? projectState.selectedProject.link : ""}
+                  className={
+                    projectState.selectedProject
+                      ? "iframe_mobile"
+                      : "hidden iframe_mobile"
+                  }
+                  src={
+                    projectState.selectedProject
+                      ? projectState.selectedProject.link
+                      : ""
+                  }
                   onLoad={() => setIsLoading(false)}
                 ></iframe>
-              }
+              )}
             </>
-            :
+          ) : (
             <>
               <img className="pc_frame" src={pc} alt="pc" />
-              {projectState.selectedProject && 
+              {projectState.selectedProject && (
                 <iframe
-                  className={projectState.selectedProject ? "iframe_pc" : "hidden iframe_pc"}
-                  src={projectState.selectedProject ? projectState.selectedProject.link : ""}
+                  className={
+                    projectState.selectedProject
+                      ? "iframe_pc"
+                      : "hidden iframe_pc"
+                  }
+                  src={
+                    projectState.selectedProject
+                      ? projectState.selectedProject.link
+                      : ""
+                  }
                   onLoad={() => setIsLoading(false)}
                 ></iframe>
-              }
+              )}
             </>
-          }
+          )}
           <div className="message">
             <h2>
-              {isLoading ? '< Loading />' : '< select a project to be shown here />'}
+              {isLoading
+                ? "< Loading />"
+                : "< select a project to be shown here />"}
             </h2>
           </div>
         </div>
+        <Blob cssStyle='background_blob' background='#F9F7F5' fill={scrollColor || '#ED6A5A'}></Blob>
       </div>
     </div>
   );
- }
+};
 
 export default Projects;
