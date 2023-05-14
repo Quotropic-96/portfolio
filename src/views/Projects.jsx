@@ -26,7 +26,6 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log("here");
     setIsLoading(true);
     const selectedProject = projectsData.find(
       (elem) => elem.title === showInfo
@@ -117,6 +116,7 @@ const Projects = () => {
             </>
           )}
           <div className="message">
+          {projectState.isMobile && <div className="mobile_background"></div>}
             <h2>
               {isLoading
                 ? "< Loading />"

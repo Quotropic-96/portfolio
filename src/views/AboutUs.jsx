@@ -2,8 +2,7 @@ import profile from '../assets/images/profile.png';
 import NavBar from '../components/NavBar';
 import './aboutUs.css';
 import Frame from '../components/Frame';
-import blob from '../assets/blobs/main-blob.svg';
-
+import Blob from "../components/Blob";
 
 const AboutUs = () => {
   return (

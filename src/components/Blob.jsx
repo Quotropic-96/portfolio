@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 const Blob = ({ cssStyle, background, fill }) => {
   return (
+    
     <svg
       id="visual"
       className={cssStyle}
@@ -9,8 +10,7 @@ const Blob = ({ cssStyle, background, fill }) => {
       width="900"
       height="600"
       xmlns="http://www.w3.org/2000/svg"
-      // eslint-disable-next-line react/no-unknown-property
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
     >
       <rect x="0" y="0" width="900" height="600" fill={background}></rect>

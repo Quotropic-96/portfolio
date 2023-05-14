@@ -15,6 +15,8 @@
   padding: var(--frame-padding);
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  position: relative;
 }
 
 div.title_projects_container {
@@ -34,12 +36,12 @@ div.projects_cards_container {
 }
 
 .background_blob {
-  transform: scale(3);
+  transform: scale(2);
   transform-origin: center;
   position: absolute;
   bottom: var(--frame-width);
-  right: var(--frame-width);
-  z-index: -1;
+  right: 0;
+  z-index: -10;
 }
 
 div.demo_container_mobile {
@@ -95,8 +97,20 @@ div.demo_container_mobile {
   width: var(--mobile-width);
   height: calc(1.99 * var(--mobile-width));
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.message .mobile_background {
+  position: absolute;
+  top: calc(0.8*var(--mobile-frame));
+  height: calc(0.95 * (2*var(--mobile-width)));
+  width: calc(0.9 * var(--mobile-width));
+  background-color: var(--main-white);
+  border-radius: 10px;
+  z-index: -1;
 }
 
 .message h2 {
@@ -104,6 +118,7 @@ div.demo_container_mobile {
   text-align: center;
   font-variant-caps: all-petite-caps;
   font-weight: 400;
+  z-index: -1;
 }
 
 .hidden {
