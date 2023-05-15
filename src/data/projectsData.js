@@ -27,7 +27,7 @@ export const projectsData = [
     platform: "mobile",
   },
   {
-    title: "Console.fly",
+    title: "Console.fly( )",
     subtitle: "VIDEO GAME",
     about: "A Javascript-based game with canvas, HTML, and CSS, featuring immersive animations, parallax effects, and an original soundtrack, keeping players engaged with a competitive scoreboard system for endless entertainment. Graphic content from Firewatch and pixel.io",
     show: "TRY IT",
