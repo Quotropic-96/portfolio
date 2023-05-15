@@ -6,6 +6,7 @@ import Projects from './views/Projects';
 import Contact from './views/Contact';
 import AboutUs from './views/AboutUs';
 import TestColor from './views/TestColor';
+import ProjectsTest from './views/simTests';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/test" element={<TestColor /> } />
+        <Route path="/testSim" element={<ProjectsTest /> } />
       </Routes>
     </div>
   )

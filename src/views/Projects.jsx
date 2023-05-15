@@ -70,7 +70,29 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div
+        <div className="simulator_container">
+          {projectState.isMobile && 
+            <div className="mobile_frame_container">
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="mobile_frame"></iframe>
+              <div className="mobile_notch"></div>
+              <div className="mobile_power_button"></div>
+              <div className="mobile_volume_up_button"></div>
+              <div className="mobile_volume_down_button"></div>
+            </div>}
+          {!projectState.isMobile && 
+            <div style={styles.container}>
+              <div style={styles.frameContainer}>
+                <div style={styles.header}>
+                  <div style={styles.dot} />
+                  <div style={styles.dot} />
+                  <div style={styles.dot} />
+                </div>
+                <iframe src='https://quotropic-96.github.io/console.fly/' style={styles.frame}></iframe>
+              </div>
+            </div>
+          }
+        </div>
+        {/* <div
           className={
             projectState.isMobile
               ? "demo_container_mobile"
@@ -124,7 +146,7 @@ const Projects = () => {
                 : "< select a project to be shown here />"}
             </h2>
           </div>
-        </div>
+        </div> */}
         <Blob cssStyle='background_blob' background='#F9F7F5' fill={scrollColor || '#ED6A5A'}></Blob>
       </div>
     </div>

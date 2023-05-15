@@ -1,12 +1,17 @@
 :root {
-  --mobile-width: 40vh;
-  --mobile-head: calc(13.85 * var(--mobile-width) /100);
-  --mobile-frame: calc(5.7 * var(--mobile-width) /100);
-  --pc-width: 37vw;
-  --pc-head: calc(3.5 * var(--pc-width)/100);
-  --pc-frame: calc(var(--pc-width)/100);
-  --pc-x-off: calc(2 * var(--pc-width)/100);
-  --pc-y-off: calc(6.5 * var(--pc-width)/100);
+  --mobile-height: 80vh;
+  --mobile-width: calc(var(--mobile-height) / 2.05);
+  --mobile-frame-thick: calc(var(--mobile-height) * 1.5 / 100);
+  --mobile-notch-width:calc(var(--mobile-height) * 1.5 / 16);
+  --mobile-notch-height: calc(var(--mobile-height) * 0.5 / 16);
+  --mobile-button-width: calc(var(--mobile-height) * 0.3 / 16);
+  --mobile-power-height: calc(var(--mobile-height) * 2.5 / 16);
+  --mobile-volume-height: calc(var(--mobile-height) * 1.5 / 16);
+  --pc-heigth: 80vh;
+  --pc-width: calc(var(--pc-heigth) * 16 / 9);
+  --pc-frame-thick: calc(var(--pc-heigth) * 1.5 /100);
+  --pc-header-height: calc(var(--pc-heigth) * 0.5 / 16);
+  --pc-dot-size: calc(var(--pc-heigth) * 0.25 / 16);
 }
 
 .projects {
@@ -44,6 +49,72 @@ div.projects_cards_container {
   z-index: -10;
 }
 
+div.simulator_container {
+  width: 60%;
+  height: var(--mobile-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.mobile_frame_container {
+  position: relative;
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+}
+
+.mobile_frame {
+  position: relative;
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  background-color: var(--main-white);
+  border-radius: 60px;
+  border: var(--mobile-frame-thick) solid var(--main-black);
+}
+
+div.mobile_notch {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--mobile-notch-width);
+  height: var(--mobile-notch-height);
+  background-color: var(--main-black);
+  border-radius: 20px;
+  z-index: 10;
+  opacity: 80%;
+}
+
+div.mobile_power_button {
+  position: absolute;
+  top: 30%;
+  right: -5px;
+  width: var(--mobile-button-width);
+  height: var(--mobile-power-height);
+  background-color: var(--main-black);
+  border-radius: 10px;
+}
+
+div.mobile_volume_up_button {
+  position: absolute;
+  top: 20%;
+  left: -5px;
+  width: var(--mobile-button-width);
+  height: var(--mobile-volume-height);
+  background-color: var(--main-black);
+  border-radius: 10px;
+}
+
+div.mobile_volume_down_button {
+  position: absolute;
+  top: 30%;
+  left: -5px;
+  width: var(--mobile-button-width);
+  height: var(--mobile-volume-height);
+  background-color: var(--main-black);
+  border-radius: 10px;
+}
+/* 
 div.demo_container_mobile {
   position: relative;
   top: calc(50% - var(--mobile-width));
@@ -124,7 +195,7 @@ div.demo_container_mobile {
 
 .hidden {
   display: none !important;
-}
+} */
 
 div.projects_cards_container_wrapper::-webkit-scrollbar {
   width: 10px;
