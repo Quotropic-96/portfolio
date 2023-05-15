@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { projectsData } from "../data/projectsData.js";
-import mobile from "../assets/images/mobile_mockup.png";
-import pc from "../assets/images/pc_mockup.svg";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
 import "./projects.css";
