@@ -20,6 +20,7 @@ const Blob = ({ cssStyle, background, fill }) => {
           fill={fill}
         ></path>
       </g>
+     
     </svg>
   );
 };
