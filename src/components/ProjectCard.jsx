@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import leftArrow from '../assets/icons/arrow_left.png';
 import downArrow from '../assets/icons/arrow_down.png'
 
-const ProjectCard = ({ info, showInfo, handleShow, handleClose, handleScrollColor }) => {
-  const { title, subtitle, about, show, color } = info;
+const ProjectCard = ({ project, showInfo, handleShow, handleClose, handleScrollColor }) => {
+  const { title, subtitle, about, show, color } = project;
 
   const handleClick = (color) => {
     if (showInfo) {
@@ -37,11 +37,11 @@ const ProjectCard = ({ info, showInfo, handleShow, handleClose, handleScrollColo
 }
 
 ProjectCard.propTypes = {
-  info: PropTypes.object.isRequired,
+  project: PropTypes.object.isRequired,
   showInfo: PropTypes.bool.isRequired,
   handleShow: PropTypes.func.isRequired,
   handleClose: PropTypes.func.isRequired,
-  handleScrollColor: PropTypes.func.isRequired
+  handleScrollColor: PropTypes.func.isRequired,
 }
 
 export default ProjectCard;

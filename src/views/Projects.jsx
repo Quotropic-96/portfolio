@@ -27,6 +27,7 @@ const Projects = () => {
 
   useEffect(() => {
     setIsLoading(true);
+    console.log(isLoading);
     const selectedProject = projectsData.find(
       (elem) => elem.title === showInfo
     );
@@ -39,6 +40,7 @@ const Projects = () => {
       setProjectState({ selectedProject: null, isMobile: true });
       setIsLoading(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showInfo]);
 
   return (
@@ -59,70 +61,52 @@ const Projects = () => {
               {projectsData.map((project) => (
                 <ProjectCard
                   key={project.title}
-                  info={project}
+                  project={project}
                   showInfo={showInfo === project.title}
                   handleShow={setShowInfo}
                   handleClose={() => setShowInfo(null)}
                   handleScrollColor={setScrollColor}
+                  handleLoading={setIsLoading}
                 />
               ))}
             </div>
           </div>
         </div>
-        <div
-          className={
-            projectState.isMobile
-              ? "demo_container_mobile"
-              : "demo_contanier_pc"
+        <div className="simulator_container">
+          {projectState.isMobile &&
+            <div className="mobile_frame_container">
+              {!projectState.selectedProject && 
+                <div className="mobile_loading">
+                  <p className="simulator_message">{'< select a project to be shown here />'}</p>
+                </div>
+              }
+              {isLoading && 
+                <div className="mobile_loading">
+                  <p className="simulator_message">{'< loading />'}</p>
+                </div>
+              }
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="mobile_frame" onLoad={() => setIsLoading(false)}></iframe>
+              <div className="mobile_notch"></div>
+              <div className="mobile_power_button"></div>
+              <div className="mobile_volume_up_button"></div>
+              <div className="mobile_volume_down_button"></div>
+            </div>
           }
-        >
-          {projectState.isMobile ? (
-            <>
-              <img className="mobile_frame" src={mobile} alt="mobile" />
-              {projectState.selectedProject && (
-                <iframe
-                  className={
-                    projectState.selectedProject
-                      ? "iframe_mobile"
-                      : "hidden iframe_mobile"
-                  }
-                  src={
-                    projectState.selectedProject
-                      ? projectState.selectedProject.link
-                      : ""
-                  }
-                  onLoad={() => setIsLoading(false)}
-                ></iframe>
-              )}
-            </>
-          ) : (
-            <>
-              <img className="pc_frame" src={pc} alt="pc" />
-              {projectState.selectedProject && (
-                <iframe
-                  className={
-                    projectState.selectedProject
-                      ? "iframe_pc"
-                      : "hidden iframe_pc"
-                  }
-                  src={
-                    projectState.selectedProject
-                      ? projectState.selectedProject.link
-                      : ""
-                  }
-                  onLoad={() => setIsLoading(false)}
-                ></iframe>
-              )}
-            </>
-          )}
-          <div className="message">
-          {projectState.isMobile && <div className="mobile_background"></div>}
-            <h2>
-              {isLoading
-                ? "< Loading />"
-                : "< select a project to be shown here />"}
-            </h2>
-          </div>
+          {!projectState.isMobile && 
+            <div className="pc_frame_container">
+              <div className="pc_header">
+                <div className="pc_dot" />
+                <div className="pc_dot" />
+                <div className="pc_dot" />
+              </div>
+              {isLoading && 
+                <div className="pc_loading">
+                  <p className="simulator_message">{'< loading />'}</p>
+                </div>
+              }
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="pc_frame" onLoad={() => setIsLoading(false)}></iframe>
+            </div>
+          }
         </div>
         <Blob cssStyle='background_blob' background='#F9F7F5' fill={scrollColor || '#ED6A5A'}></Blob>
       </div>

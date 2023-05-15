@@ -1,18 +1,24 @@
 :root {
-  --mobile-width: 40vh;
-  --mobile-head: calc(13.85 * var(--mobile-width) /100);
-  --mobile-frame: calc(5.7 * var(--mobile-width) /100);
-  --pc-width: 37vw;
-  --pc-head: calc(3.5 * var(--pc-width)/100);
-  --pc-frame: calc(var(--pc-width)/100);
-  --pc-x-off: calc(2 * var(--pc-width)/100);
-  --pc-y-off: calc(6.5 * var(--pc-width)/100);
+  --mobile-height: 80vh;
+  --mobile-width: calc(var(--mobile-height) / 2.05);
+  --mobile-frame-thick: calc(var(--mobile-height) * 1.5 / 100);
+  --mobile-notch-width:calc(var(--mobile-height) * 1.5 / 16);
+  --mobile-notch-height: calc(var(--mobile-height) * 0.5 / 16);
+  --mobile-button-width: calc(var(--mobile-height) * 0.3 / 16);
+  --mobile-power-height: calc(var(--mobile-height) * 2.5 / 16);
+  --mobile-volume-height: calc(var(--mobile-height) * 1.5 / 16);
+  --pc-height: 45vh;
+  --pc-width: calc(var(--pc-height) * 14 / 9);
+  --pc-frame-thick: calc(var(--pc-height) * 1.5 /100);
+  --pc-header-height: calc(var(--pc-height) * 0.75 / 16);
+  --pc-dot-size: calc(var(--pc-height) * 0.3 / 16);
 }
 
 .projects {
   height: 100%;
   width: 100%;
   padding: var(--frame-padding);
+  padding-right: 0;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -44,85 +50,139 @@ div.projects_cards_container {
   z-index: -10;
 }
 
-div.demo_container_mobile {
-  position: relative;
-  top: calc(50% - var(--mobile-width));
-  margin-right: calc(30% - var(--mobile-width)/2);
-  width: var(--mobile-width);
-  height: calc(2 * var(--mobile-width));
-}
-
-.demo_contanier_pc {
-  position: relative;
-  top: calc(50% - 0.64 * var(--pc-width)/2);
-  margin-right: calc(30% - var(--pc-width)/2);
-  width: var(--pc-width);
-  height: calc(0.64 * var(--pc-width));
-}
-
-.demo_container_mobile .mobile_frame {
-  position: absolute;
-  width: var(--mobile-width);
-  height: calc(1.99 * var(--mobile-width));
-}
-
-.demo_contanier_pc .pc_frame {
-  position: absolute;
-  width: var(--pc-width);
-  height: calc(var(--pc-width) * 0.64);
-}
-
-.demo_container_mobile .iframe_mobile {
-  transform: scale(0.9);
-  transform-origin: top left;
-  position: absolute;
-  top: var(--mobile-head);
-  left: var(--mobile-frame);
-  width: calc(10 / 9 * (var(--mobile-width) - 2 * var(--mobile-frame)));
-  height: calc(10 / 9 * (2 * var(--mobile-width) - var(--mobile-head) - var(--mobile-frame)));
-  border-radius: 10px 10px 40px 40px;
-}
-
-.demo_contanier_pc .iframe_pc {
-  transform: scale(0.5);
-  transform-origin: top left;
-  position: relative;
-  top: var(--pc-head);
-  left: var(--pc-frame);
-  width: calc(2 * (var(--pc-width) - var(--pc-frame)) - var(--pc-x-off));
-  height: calc(2 * (0.64 * var(--pc-width) - var(--pc-frame)) - var(--pc-y-off));
-}
-
-.message {
-  width: var(--mobile-width);
-  height: calc(1.99 * var(--mobile-width));
+div.simulator_container {
+  width: 60%;
+  height: var(--mobile-height);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
-.message .mobile_background {
+.simulator_message {
+  font-size: 2rem;
+  font-variant-caps: all-petite-caps;
+  margin: 0 10%;
+  text-align: center;
+}
+
+div.mobile_frame_container {
+  position: relative;
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+}
+
+div.mobile_loading {
   position: absolute;
-  top: calc(0.8*var(--mobile-frame));
-  height: calc(0.95 * (2*var(--mobile-width)));
-  width: calc(0.9 * var(--mobile-width));
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  background-color: var(--main-white);
+  border-radius: 60px;
+  border: var(--mobile-frame-thick) solid var(--main-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mobile_frame {
+  position: relative;
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  background-color: var(--main-white);
+  border-radius: 60px;
+  border: var(--mobile-frame-thick) solid var(--main-black);
+}
+
+div.mobile_notch {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--mobile-notch-width);
+  height: var(--mobile-notch-height);
+  background-color: var(--main-black);
+  border-radius: 20px;
+  z-index: 10;
+  opacity: 80%;
+}
+
+div.mobile_power_button {
+  position: absolute;
+  top: 30%;
+  right: -5px;
+  width: var(--mobile-button-width);
+  height: var(--mobile-power-height);
+  background-color: var(--main-black);
+  border-radius: 10px;
+}
+
+div.mobile_volume_up_button {
+  position: absolute;
+  top: 20%;
+  left: -5px;
+  width: var(--mobile-button-width);
+  height: var(--mobile-volume-height);
+  background-color: var(--main-black);
+  border-radius: 10px;
+}
+
+div.mobile_volume_down_button {
+  position: absolute;
+  top: 30%;
+  left: -5px;
+  width: var(--mobile-button-width);
+  height: var(--mobile-volume-height);
+  background-color: var(--main-black);
+  border-radius: 10px;
+}
+
+div.pc_loading {
+  position: absolute;
+  width: var(--pc-width);
+  height: calc(var(--pc-height) + var(--pc-header-height));
   background-color: var(--main-white);
   border-radius: 10px;
-  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
-.message h2 {
-  padding: 0 20%;
-  text-align: center;
-  font-variant-caps: all-petite-caps;
-  font-weight: 400;
-  z-index: -1;
+div.pc_frame_container{
+  position: relative;
+  width: var(--pc-width);
+  height: calc(var(--pc-height) + var(--pc-header-height));
+  background-color: var(--main-black);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.hidden {
-  display: none !important;
+.pc_frame {
+  transform: scale(0.5);
+  transform-origin: top left;
+  width: calc(2 * 100%);
+  height: calc(2 * var(--pc-height));
+  border-radius: 10px;
+  border-top: none;
+  border: 5px solid var(--main-black);
+  border-top: none;
+}
+
+div.pc_header {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 100%;
+  height: var(--pc-header-height);
+  background-color: var(--main-black);
+}
+
+div.pc_dot {
+  width: var(--pc-dot-size);
+  height: var(--pc-dot-size);
+  background-color: var(--main-white);
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar {
