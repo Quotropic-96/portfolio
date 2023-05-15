@@ -6,7 +6,6 @@ import Frame from "../components/Frame";
 import "./projects.css";
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
-// import Blob from "../components/Blob";
 
 const colorMap = {
   "#F7CF5C": "xproof",
@@ -110,7 +109,6 @@ const Projects = () => {
         <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
           <Blob color={scrollColor || '#ED6A5A'}/>
         </Canvas>
-        {/* <Blob cssStyle='background_blob' background='#F9F7F5' fill={scrollColor || '#ED6A5A'}></Blob> */}
       </div>
     </div>
   );

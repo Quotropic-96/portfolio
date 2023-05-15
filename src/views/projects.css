@@ -41,13 +41,6 @@ div.projects_cards_container {
   padding-right: 20px;
 }
 
-/* .background_blob {
-  position: absolute;
-  bottom: var(--frame-width);
-  right: 0;
-  bottom: 0;
-} */
-
 div.simulator_container {
   width: 60%;
   height: var(--mobile-height);
@@ -107,7 +100,7 @@ div.mobile_notch {
 
 div.mobile_power_button {
   position: absolute;
-  top: 30%;
+  top: 22%;
   right: -5px;
   width: var(--mobile-button-width);
   height: var(--mobile-power-height);
