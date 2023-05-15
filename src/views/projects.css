@@ -41,14 +41,12 @@ div.projects_cards_container {
   padding-right: 20px;
 }
 
-.background_blob {
-  transform: scale(2);
-  transform-origin: center;
+/* .background_blob {
   position: absolute;
   bottom: var(--frame-width);
   right: 0;
-  z-index: -10;
-}
+  bottom: 0;
+} */
 
 div.simulator_container {
   width: 60%;
@@ -81,7 +79,7 @@ div.mobile_loading {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 15;
 }
 
 .mobile_frame {
@@ -91,6 +89,7 @@ div.mobile_loading {
   background-color: var(--main-white);
   border-radius: 60px;
   border: var(--mobile-frame-thick) solid var(--main-black);
+  z-index: 10;
 }
 
 div.mobile_notch {
@@ -114,6 +113,7 @@ div.mobile_power_button {
   height: var(--mobile-power-height);
   background-color: var(--main-black);
   border-radius: 10px;
+  z-index: 10;
 }
 
 div.mobile_volume_up_button {
@@ -124,6 +124,7 @@ div.mobile_volume_up_button {
   height: var(--mobile-volume-height);
   background-color: var(--main-black);
   border-radius: 10px;
+  z-index: 10;
 }
 
 div.mobile_volume_down_button {
@@ -155,6 +156,7 @@ div.pc_frame_container{
   background-color: var(--main-black);
   border-radius: 10px;
   overflow: hidden;
+  z-index: 10;
 }
 
 .pc_frame {
@@ -166,6 +168,7 @@ div.pc_frame_container{
   border-top: none;
   border: 5px solid var(--main-black);
   border-top: none;
+  z-index: 10;
 }
 
 div.pc_header {
@@ -175,6 +178,7 @@ div.pc_header {
   width: 100%;
   height: var(--pc-header-height);
   background-color: var(--main-black);
+  z-index: 10;
 }
 
 div.pc_dot {
@@ -183,6 +187,7 @@ div.pc_dot {
   background-color: var(--main-white);
   border-radius: 50%;
   margin-right: 5px;
+  z-index: 10;
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar {
