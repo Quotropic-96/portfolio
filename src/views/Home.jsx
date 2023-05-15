@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import './Home.css';
 import Frame from "../components/Frame";
-//import Blob from "../components/Blob";
+// import Blob from "../components/Blob";
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -25,40 +25,15 @@ const Home = () => {
     </Link>
   );
 
-  //TESTING
-
-  useEffect(() => {
-    const element = document.getElementById('background-element');
-    const computedStyles = window.getComputedStyle(element);
-    const backgroundColor = computedStyles.backgroundColor;
-
-    const textColor = isColorLight(backgroundColor) ? 'black' : 'white';
-    console.log(textColor)
-    const textElements = document.getElementsByClassName('color-change');
-
-    Array.from(textElements).forEach(element => {
-      element.style.color = textColor;
-    });
-  }, []);
-
-  function isColorLight(color) {
-    // Convierte el color a RGB
-    const rgb = color.substring(5, color.length-1)
-                      .replace(/ /g, '')
-                      .split(',');
-                      console.log(rgb)
-    const brightness = ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
-    console.log(brightness)
-    // Determina si el color es claro o oscuro
-    return brightness > 128;
-  }
-
   return (
     <div className="frame">
       <Frame />
-      <div className="home" id="background-element" >
-        {/* <Blob /> */}
-        <p className="color-change">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
+      <div className="home" >
+        {/* <Blob cssStyle='background_blob' background='#F9F7F5' fill='#000000' style={{ mixBlendMode: "screen" }} />
+        <Blob cssStyle='background_blob' background='#F9F7F5' fill='#ED6A5A' style={{mixBlendMode:"screen"}}/> */}
+        <div className="blob_text_div"></div>
+        <p className="blob_text_1">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
+        <p className="blob_text_2">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
         <div className="homeContent">
           <h1 className="webTitle">QuoDev</h1>
           <ul className="homeMenu">

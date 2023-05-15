@@ -1,3 +1,13 @@
+:root {
+  --main-red: #ED6A5A;
+  --main-black: #292F36;
+  --main-white: #F9F7F5;
+  --frame-width: 3vw;
+  --frame-padding: 4vw;
+  --nav-padding: 0.2rem;
+  --link-size: 1.2rem;
+}
+
 .home {
   height: 100%;
   width: 100%;
@@ -11,20 +21,27 @@
   gap: 20%;
 }
 
-.color-change {
+p.blob_text_1 {
+  position: absolute;
+  font-size: 3rem;
   mix-blend-mode: difference;
+  color: var(--main-red);
   transition: color 0.3s ease-in-out;
-  /* Transición suave para evitar cambios bruscos */
 }
 
-div.div_color {
-  width: 30px;
+p.blob_text_2 {
+  position: absolute;
+mix-blend-mode: difference;
+  color: var(--main-white);
+  font-size: 3.02rem;
+  transition: color 0.3s ease-in-out;
 }
+
 
 .home p {
   max-width: 50%;
   align-self: center;
-  font-size: 3rem;
+  font-size: 3rem; 
   font-weight: 900;
 }
 

@@ -1,4 +1,4 @@
-
+/* 
 .blob-container {
   position: relative;
   width: 900px;
@@ -12,4 +12,63 @@
   transform: translate(-50%, -50%);
   color: white;
   z-index: 1;
+} */
+
+:root {
+  --main-red: #ed6b5a;
+  --main-black: #292F36;
+  --main-white: #F9F7F5;
+  --frame-width: 3vw;
+  --frame-padding: 4vw;
+  --nav-padding: 0.2rem;
+  --link-size: 1.2rem;
+}
+
+
+/* Some white text on top with blend-mode set to 'difference' */
+/* p {
+  position: absolute;
+  font-size: 100px;
+  mix-blend-mode: difference;
+  color:#ED6A5A
+  
+
+}
+p.p {
+  mix-blend-mode: difference;
+  color: var(--main-white);
+} */
+
+body {
+  margin: 0;
+}
+
+#sf-coming-up {
+-webkit-filter: invert(100%);
+  filter: invert(100%);
+
+  height: 100vh;
+}
+
+.blob {
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  z-index: -1;
+  width: 50%;
+  height: 60%;
+  border-radius: 85% 75% 99% 85% / 25% 45% 99% 35%;
+  background: #1296a5;
+}
+
+.title {
+  position: absolute;
+  top: 27%;
+  left: 5%;
+  color: #1296a5;
+  mix-blend-mode: difference;
+  width: 80%;
+  font-family: "Work Sans";
+  font-size: 3rem;
+  font-weight: 900;
 }
