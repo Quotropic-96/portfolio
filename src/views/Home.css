@@ -31,7 +31,7 @@ p.blob_text_1 {
 
 p.blob_text_2 {
   position: absolute;
-mix-blend-mode: difference;
+  mix-blend-mode: difference;
   color: var(--main-white);
   font-size: 3.02rem;
   transition: color 0.3s ease-in-out;
