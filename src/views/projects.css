@@ -58,10 +58,30 @@ div.simulator_container {
   justify-content: center;
 }
 
+.simulator_message {
+  font-size: 2rem;
+  font-variant-caps: all-petite-caps;
+  margin: 0 10%;
+  text-align: center;
+}
+
 div.mobile_frame_container {
   position: relative;
   width: var(--mobile-width);
   height: var(--mobile-height);
+}
+
+div.mobile_loading {
+  position: absolute;
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  background-color: var(--main-white);
+  border-radius: 60px;
+  border: var(--mobile-frame-thick) solid var(--main-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 .mobile_frame {
@@ -114,6 +134,18 @@ div.mobile_volume_down_button {
   height: var(--mobile-volume-height);
   background-color: var(--main-black);
   border-radius: 10px;
+}
+
+div.pc_loading {
+  position: absolute;
+  width: var(--pc-width);
+  height: calc(var(--pc-height) + var(--pc-header-height));
+  background-color: var(--main-white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 div.pc_frame_container{
