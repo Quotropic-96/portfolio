@@ -59,11 +59,12 @@ const Projects = () => {
               {projectsData.map((project) => (
                 <ProjectCard
                   key={project.title}
-                  info={project}
+                  project={project}
                   showInfo={showInfo === project.title}
                   handleShow={setShowInfo}
                   handleClose={() => setShowInfo(null)}
                   handleScrollColor={setScrollColor}
+                  handleLoading={setIsLoading}
                 />
               ))}
             </div>

@@ -101,6 +101,7 @@ div.demo_container_mobile {
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: -1;
 }
 
 .message .mobile_background {
