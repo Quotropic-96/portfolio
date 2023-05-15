@@ -1,8 +1,15 @@
-/* .color-change {
-  mix-blend-mode: difference;
-  transition: color 0.3s ease-in-out;
+
+.blob-container {
+  position: relative;
+  width: 900px;
+  height: 600px;
+}
+
+.blob-container p {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 30%;
-  color: rgb(41, 47, 54)
-} */
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1;
+}
