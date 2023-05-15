@@ -80,15 +80,13 @@ const Projects = () => {
               <div className="mobile_volume_down_button"></div>
             </div>}
           {!projectState.isMobile && 
-            <div style={styles.container}>
-              <div style={styles.frameContainer}>
-                <div style={styles.header}>
-                  <div style={styles.dot} />
-                  <div style={styles.dot} />
-                  <div style={styles.dot} />
-                </div>
-                <iframe src='https://quotropic-96.github.io/console.fly/' style={styles.frame}></iframe>
+            <div className="pc_frame_container">
+              <div className="pc_header">
+                <div className="pc_dot" />
+                <div className="pc_dot" />
+                <div className="pc_dot" />
               </div>
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="pc_frame"></iframe>
             </div>
           }
         </div>
