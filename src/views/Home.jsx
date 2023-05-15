@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import './Home.css';
 import Frame from "../components/Frame";
+import { motion } from 'framer-motion';
 // import Blob from "../components/Blob";
 
 const Home = () => {
