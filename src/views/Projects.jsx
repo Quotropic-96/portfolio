@@ -87,16 +87,26 @@ const Projects = () => {
           >
           {projectState.isMobile &&
             <div className="mobile_frame_container">
-              {!projectState.selectedProject && 
-                <div className="mobile_loading">
-                  <p className="simulator_message">{'< select a project to be shown here />'}</p>
-                </div>
+              {(!projectState.selectedProject || isLoading) && 
+                <motion.div className="mobile_loading"
+                  key='message'
+                  variants={animations.fade}
+                  initial="hidden"
+                  animate="animate"
+                  exit="exit"
+                >
+                  {!projectState.selectedProject && <p className="simulator_message">{'< select a project to be shown here />'}</p>}
+                  {isLoading && <p className="simulator_message">{'< loading />'}</p>}
+                </motion.div>
               }
-              {isLoading && 
+              {/* {isLoading && 
                 <div className="mobile_loading">
                   <p className="simulator_message">{'< loading />'}</p>
                 </div>
-              }
+              } */}
+              <motion.div>
+                
+              </motion.div>
               <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="mobile_frame" onLoad={() => setIsLoading(false)}></iframe>
               <div className="mobile_notch"></div>
               <div className="mobile_power_button"></div>

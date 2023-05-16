@@ -69,4 +69,27 @@ export default {
       },
     },
   },
+  fade: {
+    hidden: {
+      zIndex: 0,
+      opacity: 0,
+    },
+    animate: {
+      zIndex: 30,
+      opacity: 1,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+        delay: 3,
+      },
+    },
+    exit: {
+      opacity: 0,
+      zIndex: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+      },
+    },
+  },
 };
