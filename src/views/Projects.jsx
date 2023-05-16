@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Frame from "../components/Frame";
 import ProjectCard from "../components/ProjectCard";
 import NavBar from "../components/NavBar";
@@ -25,6 +25,7 @@ const Projects = () => {
     isMobile: true,
   });
   const [isLoading, setIsLoading] = useState(false);
+  const controls = useAnimation();
 
   useEffect(() => {
     setIsLoading(true);
@@ -86,7 +87,7 @@ const Projects = () => {
           exit="exit"
           >
           {projectState.isMobile &&
-            <div className="mobile_frame_container">
+            <div className="mobile_frame">
               {(!projectState.selectedProject || isLoading) && 
                 <motion.div className="mobile_loading"
                   key='message'
@@ -104,10 +105,7 @@ const Projects = () => {
                   <p className="simulator_message">{'< loading />'}</p>
                 </div>
               } */}
-              <motion.div>
-                
-              </motion.div>
-              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="mobile_frame" onLoad={() => setIsLoading(false)}></iframe>
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="mobile_iframe" onLoad={() => setIsLoading(false)}></iframe>
               <div className="mobile_notch"></div>
               <div className="mobile_power_button"></div>
               <div className="mobile_volume_up_button"></div>

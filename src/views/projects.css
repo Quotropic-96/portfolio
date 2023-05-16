@@ -55,25 +55,12 @@ div.simulator_container {
   text-align: center;
 }
 
-div.mobile_frame_container {
+/* div.mobile_frame_container {
   position: relative;
   width: var(--mobile-width);
   height: var(--mobile-height);
   z-index: 10;
-}
-
-div.mobile_loading {
-  position: absolute;
-  width: var(--mobile-width);
-  height: var(--mobile-height);
-  background-color: var(--main-white);
-  border-radius: 60px;
-  border: var(--mobile-frame-thick) solid var(--main-black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 15;
-}
+} */
 
 .mobile_frame {
   position: relative;
@@ -83,6 +70,26 @@ div.mobile_loading {
   border-radius: 60px;
   border: var(--mobile-frame-thick) solid var(--main-black);
   z-index: 10;
+}
+
+div.mobile_loading {
+  position: absolute;
+  width: calc(var(--mobile-width) - 2 * var(--mobile-frame-thick));
+  height: calc(var(--mobile-height) - 2 * var(--mobile-frame-thick));
+  /* background-color: var(--main-white); */
+  border-radius: 60px;
+  /* border: var(--mobile-frame-thick) solid var(--main-black); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+}
+
+.mobile_iframe {
+  position: absolute;
+  width: calc(var(--mobile-width) - 1.9 *var(--mobile-frame-thick));
+  height: calc(var(--mobile-height) - 1.9 *var(--mobile-frame-thick));
+  border-radius: 50px;
 }
 
 div.mobile_notch {
@@ -101,7 +108,7 @@ div.mobile_notch {
 div.mobile_power_button {
   position: absolute;
   top: 22%;
-  right: -5px;
+  right: calc(-1.5 * var(--mobile-frame-thick));
   width: var(--mobile-button-width);
   height: var(--mobile-power-height);
   background-color: var(--main-black);
@@ -112,7 +119,7 @@ div.mobile_power_button {
 div.mobile_volume_up_button {
   position: absolute;
   top: 20%;
-  left: -5px;
+  left: calc(-1.5 * var(--mobile-frame-thick));
   width: var(--mobile-button-width);
   height: var(--mobile-volume-height);
   background-color: var(--main-black);
@@ -123,7 +130,7 @@ div.mobile_volume_up_button {
 div.mobile_volume_down_button {
   position: absolute;
   top: 30%;
-  left: -5px;
+  left: calc(-1.5 * var(--mobile-frame-thick));
   width: var(--mobile-button-width);
   height: var(--mobile-volume-height);
   background-color: var(--main-black);
