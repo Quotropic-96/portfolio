@@ -26,6 +26,7 @@ const Projects = () => {
   });
   const [lastProjectShown, setLastProjectShown] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isFadeOut, setIsFadeOut] = useState(false);
 
   const messageDefaultControls = useAnimation();
   const messageLoadingControls = useAnimation();
@@ -48,15 +49,20 @@ const Projects = () => {
   },[isLoading, messageLoadingControls]);
 
   useEffect(() => {
-    if (projectState.selectedProject && !isLoading) {
-      iframeControls.start(animations.fade.animate);
-    } else if (projectState.selectedProject && projectState.selectedProject.link == lastProjectShown) {
-      setIsLoading(false);
-      iframeControls.start(animations.fade.animate);
-    } else {
-      iframeControls.start(animations.fade.exit);
+    const handleIframAnimation = async () => {
+      if (projectState.selectedProject && !isLoading && !isFadeOut) {
+        await iframeControls.start(animations.fade.animate);
+      } else if (projectState.selectedProject && projectState.selectedProject.link == lastProjectShown) {
+        setIsLoading(false);
+        await iframeControls.start(animations.fade.animate);
+      } else {
+        await iframeControls.start(animations.fade.exit);
+        setLastProjectShown('');
+        setIsFadeOut(false);
+      }
     }
-  },[iframeControls, isLoading, lastProjectShown, projectState.selectedProject]);
+    handleIframAnimation();
+  },[iframeControls, isFadeOut, isLoading, lastProjectShown, projectState.selectedProject]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -64,6 +70,10 @@ const Projects = () => {
       (elem) => elem.title === showInfo
     );
     if (selectedProject) {
+      // if (lastProjectShown) {
+      //   setIsFadeOut(true);
+      //   console.log(isFadeOut)
+      // }
       setProjectState({
         selectedProject,
         isMobile: selectedProject.platform === "mobile",

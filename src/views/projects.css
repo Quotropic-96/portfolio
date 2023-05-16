@@ -91,6 +91,7 @@ div.mobile_loading {
   width: calc(var(--mobile-width) - 1.9 *var(--mobile-frame-thick));
   height: calc(var(--mobile-height) - 1.9 *var(--mobile-frame-thick));
   border-radius: 46px;
+  z-index: 20;
 }
 
 div.mobile_notch {
