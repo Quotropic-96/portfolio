@@ -1,8 +1,11 @@
+import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
 import profile from '../assets/images/profile.png';
 import NavBar from '../components/NavBar';
-import './aboutUs.css';
 import Frame from '../components/Frame';
-import Blob from "../components/Blob";
+import Blob from '../components/animatedBlob/Blob';
+import './aboutUs.css';
+import animations from './aboutUsAnimations';
 
 const AboutUs = () => {
   return (
@@ -11,11 +14,32 @@ const AboutUs = () => {
       <NavBar />
       <div className="about_us">
         <div className='photo_caption'>
-          <Blob cssStyle='background_blob' background='#F9F7F5' fill='#ED6A5A'></Blob>
-          <img src={profile} alt="Profile Gerard & Pau" />
-          <figcaption>Paula Bertolin & Gerard Solanes</figcaption>
+          <motion.div
+            key='blob'
+            variants={animations.blob}
+            initial="hidden"
+            animate="animate"
+            exit="exit"
+            >
+            <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+              <Blob color='#ED6A5A'/>
+            </Canvas>          
+          </motion.div>
+          <motion.img src={profile} alt="Profile Gerard & Pau" 
+            key='photo'
+            variants={animations.photo}
+            initial="hidden"
+            animate="animate"
+            exit="exit"
+          />
         </div>
-        <div className="title_p_about_us">
+        <motion.div className="title_p_about_us"
+          key='body'
+          variants={animations.body}
+          initial="hidden"
+          animate="animate"
+          exit="exit"
+        >
           <h1>ABOUT US</h1>
           <p>
             We are a team of two dedicated full-stack developers with a unique blend
@@ -27,10 +51,27 @@ const AboutUs = () => {
             that resonate with users and elevate our clients&apos; brand presence. <br></br><br></br>Build
             the future with us!
           </p>
-        </div>
+        </motion.div>
       </div>
+      <motion.figcaption className="caption"
+        key='caption'
+        variants={animations.caption}
+        initial="hidden"
+        animate="animate"
+        exit="exit"
+          >
+        Paula Bertolin & Gerard Solanes
+      </motion.figcaption>
     </div>
   );
 };
+
+const blobStyles = {
+  height: '130vh',
+  position: 'absolute',
+  top: '10%',
+  right: '40%',
+  zIndex: '0',
+}
 
 export default AboutUs;
