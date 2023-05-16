@@ -3,7 +3,8 @@ import { useState } from "react";
 import './Home.css';
 import Frame from "../components/Frame";
 import { motion } from 'framer-motion';
-// import Blob from "../components/Blob";
+import Blob from '../components/animatedBlob/Blob';
+import { Canvas } from "@react-three/fiber";
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -27,14 +28,16 @@ const Home = () => {
   );
 
   return (
-    <motion.div className="frame" initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ delay: 1.5, duration:1.5}}>
+    <motion.div className="frame" style={{ overflow: "hidden" }}>
       <Frame />
       <motion.div className="home">
-        {/* <Blob cssStyle='background_blob' background='#F9F7F5' fill='#000000' style={{ mixBlendMode: "screen" }} />
-        <Blob cssStyle='background_blob' background='#F9F7F5' fill='#ED6A5A' style={{mixBlendMode:"screen"}}/> */}
-        <div className="blob_text_div"></div>
-        <p className="blob_text_1">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
-        <p className="blob_text_2">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
+        <div className="blob_div">
+          <p className="blob_text_1">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
+          <p className="blob_text_2">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
+          <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+            <Blob color={'#ED6A5A'} />
+          </Canvas>
+        </div>
         <div className="homeContent">
           <motion.h1 className="webTitle">QuoDev</motion.h1>
           <ul className="homeMenu">
@@ -47,5 +50,13 @@ const Home = () => {
     </motion.div>
   );
  }
+
+const blobStyles = {
+  height: '100vh',
+  position: 'absolute',
+  top: '0',
+  left: '-40%',
+  zIndex: '0',
+}
 
 export default Home;

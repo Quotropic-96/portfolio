@@ -11,32 +11,33 @@
 .home {
   height: 100%;
   width: 100%;
-  background-image: url('../assets/blobs/home-blob.svg');
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-  background-position: calc(35% - 50vw) center;
   padding: var(--frame-padding);
   display: flex;
   justify-content: space-between;
   gap: 20%;
+  overflow: hidden;
+  position: relative;
 }
 
 p.blob_text_1 {
   position: absolute;
+  top: 40%;
   font-size: 3rem;
   mix-blend-mode: difference;
   color: var(--main-red);
   transition: color 0.3s ease-in-out;
+  z-index: 1;
 }
 
 p.blob_text_2 {
   position: absolute;
+  top: 40%;
   mix-blend-mode: difference;
   color: var(--main-white);
-  font-size: 3.02rem;
+  font-size: 3rem;
   transition: color 0.3s ease-in-out;
+  z-index: 1;
 }
-
 
 .home p {
   max-width: 50%;
