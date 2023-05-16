@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import ProjectCard from "../components/ProjectCard";
-import { projectsData } from "../data/projectsData.js";
-import NavBar from "../components/NavBar";
-import Frame from "../components/Frame";
-import "./projects.css";
-import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
+import { motion } from "framer-motion";
+import Frame from "../components/Frame";
+import ProjectCard from "../components/ProjectCard";
+import NavBar from "../components/NavBar";
+import Blob from '../components/animatedBlob/Blob';
+import { projectsData } from "../data/projectsData.js";
+import "./projects.css";
+import animations from './projectsAnimations';
 
 const colorMap = {
   "#F7CF5C": "xproof",
@@ -46,7 +48,11 @@ const Projects = () => {
       <Frame />
       <NavBar />
       <div className="projects">
-        <div className="title_projects_container">
+        <motion.div className="title_projects_container"
+          variants={animations.body}
+          initial="hidden"
+          animate="animate"
+        >
           <h1>
             PROJECTS
           </h1>
@@ -69,8 +75,12 @@ const Projects = () => {
               ))}
             </div>
           </div>
-        </div>
-        <div className="simulator_container">
+        </motion.div>
+        <motion.div className="simulator_container" 
+          variants={animations.simulator}
+          initial="hidden"
+          animate="animate"
+          >
           {projectState.isMobile &&
             <div className="mobile_frame_container">
               {!projectState.selectedProject && 
@@ -105,10 +115,16 @@ const Projects = () => {
               <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="pc_frame" onLoad={() => setIsLoading(false)}></iframe>
             </div>
           }
-        </div>
-        <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
-          <Blob color={scrollColor || '#ED6A5A'}/>
-        </Canvas>
+        </motion.div>
+        <motion.div 
+          variants={animations.blob}
+          initial="hidden"
+          animate="animate"
+          >
+          <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+            <Blob color={scrollColor || '#ED6A5A'}/>
+          </Canvas>
+        </motion.div>
       </div>
     </div>
   );

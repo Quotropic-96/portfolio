@@ -94,7 +94,7 @@ div.mobile_notch {
   height: var(--mobile-notch-height);
   background-color: var(--main-black);
   border-radius: 20px;
-  z-index: 10;
+  z-index: 20;
   opacity: 80%;
 }
 
