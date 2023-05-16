@@ -9,6 +9,7 @@ const ProjectCard = ({ project, showInfo, handleShow, handleClose, handleScrollC
   const handleClick = (color) => {
     if (showInfo) {
       handleClose();
+      handleScrollColor(null);
     } else {
       handleShow(title);
       handleScrollColor(color);
