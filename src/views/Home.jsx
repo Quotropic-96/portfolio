@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import './Home.css';
 import Frame from "../components/Frame";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
 import animations from './homeAnimations';
@@ -10,8 +10,8 @@ import animations from './homeAnimations';
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
 
-  const handleMouseOver = (e) => {
-    setActiveLink(e.target.textContent);
+  const handleMouseOver = (text) => {
+    setActiveLink(text);
   };
 
   const handleMouseOut = () => {
@@ -21,10 +21,19 @@ const Home = () => {
   const renderLink = (to, text) => (
     <Link
       to={to}
-      onMouseOver={handleMouseOver}
+      onMouseOver={() => handleMouseOver(text)}
       onMouseOut={handleMouseOut}
     >
-      {activeLink === text ? `<${text} />` : text}
+      {activeLink === text ? 
+      <>
+        <AnimatePresence>
+          <span>&lt;{text}</span>
+          <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
+        </AnimatePresence>
+      </>
+      :
+      <span>&lt;{text}</span>
+      }
     </Link>
   );
 
