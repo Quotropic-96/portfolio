@@ -6,6 +6,17 @@ export default {
     animate: {
       x: 0,
       transition: {
+        ease: "easeInOut",
+        duration: 1.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+    exit: {
+      x: "-50vw",
+      transition: {
+        ease: "easeInOut",
         duration: 1.5,
         type: "spring",
         stiffness: 200,
@@ -16,14 +27,23 @@ export default {
   simulator: {
     hidden: {
       scale: 0,
-      zIndex: 10,
     },
     animate: {
       scale: 1,
-      zIndex: 15,
       transition: {
+        ease: "easeInOut",
         duration: 1.5,
         type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+    exit: {
+      zIndex: 40,
+      x: "150vw",
+      transition: {
+        ease: "easeInOut",
+        duration: 1.5,
       },
     },
   },
@@ -34,7 +54,15 @@ export default {
     animate: {
       opacity: 1,
       transition: {
-        delay: .5,
+        ease: "easeInOut",
+        duration: 1.5,
+        delay: 1.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: "easeInOut",
         duration: 1.5,
       },
     },

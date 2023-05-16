@@ -42,7 +42,6 @@ div.projects_cards_container {
 }
 
 div.simulator_container {
-  width: 60%;
   height: var(--mobile-height);
   display: flex;
   align-items: center;
@@ -60,6 +59,7 @@ div.mobile_frame_container {
   position: relative;
   width: var(--mobile-width);
   height: var(--mobile-height);
+  z-index: 10;
 }
 
 div.mobile_loading {

@@ -49,9 +49,11 @@ const Projects = () => {
       <NavBar />
       <div className="projects">
         <motion.div className="title_projects_container"
+          key='body'
           variants={animations.body}
           initial="hidden"
           animate="animate"
+          exit="exit"
         >
           <h1>
             PROJECTS
@@ -76,10 +78,12 @@ const Projects = () => {
             </div>
           </div>
         </motion.div>
-        <motion.div className="simulator_container" 
+        <motion.div className="simulator_container"
+          key='simulator'
           variants={animations.simulator}
           initial="hidden"
           animate="animate"
+          exit="exit"
           >
           {projectState.isMobile &&
             <div className="mobile_frame_container">
@@ -116,10 +120,12 @@ const Projects = () => {
             </div>
           }
         </motion.div>
-        <motion.div 
+        <motion.div
+          key='blob'
           variants={animations.blob}
           initial="hidden"
           animate="animate"
+          exit="exit"
           >
           <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
             <Blob color={scrollColor || '#ED6A5A'}/>
