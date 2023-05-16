@@ -24,8 +24,39 @@ const Projects = () => {
     selectedProject: null,
     isMobile: true,
   });
+  const [lastProjectShown, setLastProjectShown] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const controls = useAnimation();
+
+  const messageDefaultControls = useAnimation();
+  const messageLoadingControls = useAnimation();
+  const iframeControls = useAnimation();
+
+  useEffect(() => {
+    if (!projectState.selectedProject) {
+      messageDefaultControls.start(animations.fade.animate);
+    } else {
+      messageDefaultControls.start(animations.fade.exit);
+    }
+  },[isLoading, messageDefaultControls, projectState.selectedProject]);
+
+  useEffect(() => {
+    if (isLoading) {
+      messageLoadingControls.start(animations.fade.animate);
+    } else {
+      messageLoadingControls.start(animations.fade.exit)
+    }
+  },[isLoading, messageLoadingControls]);
+
+  useEffect(() => {
+    if (projectState.selectedProject && !isLoading) {
+      iframeControls.start(animations.fade.animate);
+    } else if (projectState.selectedProject && projectState.selectedProject.link == lastProjectShown) {
+      setIsLoading(false);
+      iframeControls.start(animations.fade.animate);
+    } else {
+      iframeControls.start(animations.fade.exit);
+    }
+  },[iframeControls, isLoading, lastProjectShown, projectState.selectedProject]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -38,6 +69,9 @@ const Projects = () => {
         isMobile: selectedProject.platform === "mobile",
       });
     } else {
+      if (projectState.selectedProject) {
+        setLastProjectShown(projectState.selectedProject.link);
+      }
       setProjectState({ selectedProject: null, isMobile: true });
       setIsLoading(false);
     }
@@ -73,7 +107,6 @@ const Projects = () => {
                   handleShow={setShowInfo}
                   handleClose={() => setShowInfo(null)}
                   handleScrollColor={setScrollColor}
-                  handleLoading={setIsLoading}
                 />
               ))}
             </div>
@@ -88,7 +121,7 @@ const Projects = () => {
           >
           {projectState.isMobile &&
             <div className="mobile_frame">
-              {(!projectState.selectedProject || isLoading) && 
+              {/* {(!projectState.selectedProject || isLoading) && 
                 <motion.div className="mobile_loading"
                   key='message'
                   variants={animations.fade}
@@ -99,13 +132,21 @@ const Projects = () => {
                   {!projectState.selectedProject && <p className="simulator_message">{'< select a project to be shown here />'}</p>}
                   {isLoading && <p className="simulator_message">{'< loading />'}</p>}
                 </motion.div>
-              }
+              } */}
               {/* {isLoading && 
                 <div className="mobile_loading">
                   <p className="simulator_message">{'< loading />'}</p>
                 </div>
               } */}
-              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="mobile_iframe" onLoad={() => setIsLoading(false)}></iframe>
+              <motion.div className="mobile_loading" animate={messageDefaultControls}>
+                <p className="simulator_message">{'< select a project to be shown here />'}</p>
+              </motion.div>
+              <motion.div className="mobile_loading" animate={messageLoadingControls}>
+                <p className="simulator_message">{'< loading />'}</p>
+              </motion.div>
+              <motion.div animate={iframeControls}>
+                <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="mobile_iframe" onLoad={() => setIsLoading(false)}></iframe>
+              </motion.div>
               <div className="mobile_notch"></div>
               <div className="mobile_power_button"></div>
               <div className="mobile_volume_up_button"></div>

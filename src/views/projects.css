@@ -83,13 +83,14 @@ div.mobile_loading {
   align-items: center;
   justify-content: center;
   z-index: 15;
+  opacity: 0;
 }
 
 .mobile_iframe {
   position: absolute;
   width: calc(var(--mobile-width) - 1.9 *var(--mobile-frame-thick));
   height: calc(var(--mobile-height) - 1.9 *var(--mobile-frame-thick));
-  border-radius: 50px;
+  border-radius: 46px;
 }
 
 div.mobile_notch {
