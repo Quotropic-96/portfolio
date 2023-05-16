@@ -50,7 +50,8 @@ div.icons img {
   border-radius: 10px;
   border: 1px solid var(--main-black);
   padding: 1rem;
-  background-color: var(--main-white);
+  background-color: rgba(249, 247, 245, 0.5);
+  backdrop-filter: blur(5px);
   font-family: 'Work Sans', sans-serif;
 }
 
