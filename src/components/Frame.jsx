@@ -4,8 +4,8 @@ import cornerTop from '../assets/icons/corner-top-2px.svg';
 const Frame = () => {
   return (
   <div>
-    <img src={cornerTop} className='frameTopCorner' alt="Top frame corner" />
-    <img src={cornerBottom} className='frameBottomCorner' alt="Bottom frame corner" />
+      <img src={cornerTop} className='frameTopCorner' alt="Top frame corner" />
+      <img src={cornerBottom} className='frameBottomCorner' alt="Bottom frame corner" />
   </div>
   )
 }
