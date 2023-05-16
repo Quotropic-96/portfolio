@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar';
 import Frame from '../components/Frame';
 import Blob from '../components/animatedBlob/Blob';
 import './aboutUs.css';
-import animations from './aboutUsAnimations';
+import animations from '../animations/aboutUsAnimations';
 
 const AboutUs = () => {
   return (

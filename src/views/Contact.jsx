@@ -7,7 +7,7 @@ import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
 import Blob from '../components/animatedBlob/Blob';
 import './contact.css';
-import animations from './contactAnimations';
+import animations from '../animations/contactAnimations';
 
 const Contact = () => {
   return (

@@ -5,7 +5,7 @@ import Frame from "../components/Frame";
 import { motion, AnimatePresence } from 'framer-motion';
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
-import animations from './homeAnimations';
+import animations from '../animations/homeAnimations';
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);

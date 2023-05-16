@@ -7,7 +7,7 @@ import NavBar from "../components/NavBar";
 import Blob from '../components/animatedBlob/Blob';
 import { projectsData } from "../data/projectsData.js";
 import "./projects.css";
-import animations from './projectsAnimations';
+import animations from '../animations/projectsAnimations';
 
 const colorMap = {
   "#F7CF5C": "xproof",
