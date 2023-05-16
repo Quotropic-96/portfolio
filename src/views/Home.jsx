@@ -5,6 +5,7 @@ import Frame from "../components/Frame";
 import { motion } from 'framer-motion';
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
+import animations from './homeAnimations';
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -28,26 +29,56 @@ const Home = () => {
   );
 
   return (
-    <motion.div className="frame" style={{ overflow: "hidden" }}>
+    <div className="frame" style={{ overflow: "hidden" }}>
       <Frame />
-      <motion.div className="home">
+      <div className="home">
         <div className="blob_div">
-          <p className="blob_text_1">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
-          <p className="blob_text_2">We are the full-stack developers who deliver impactful web solutions that resonate in the digital world</p>
-          <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
-            <Blob color={'#ED6A5A'} />
-          </Canvas>
+          <motion.p className="blob_text_1"
+            key={'text1'}
+            variants={animations.text}
+            initial="hidden"
+            animate="animate"
+            exit="exit"
+          >
+            We are the full-stack developers who deliver impactful web solutions that resonate in the digital world
+          </motion.p>
+          <motion.p className="blob_text_2"
+            key={'text2'}
+            variants={animations.text}
+            initial="hidden"
+            animate="animate"
+            exit="exit"
+          >
+            We are the full-stack developers who deliver impactful web solutions that resonate in the digital world
+          </motion.p>
+          <motion.div
+            key='blob'
+            variants={animations.blob}
+            initial="hidden"
+            animate="animate"
+            exit="exit"
+            >
+            <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+              <Blob color='#ED6A5A'/>
+            </Canvas>          
+          </motion.div>         
         </div>
-        <div className="homeContent">
-          <motion.h1 className="webTitle">QuoDev</motion.h1>
-          <ul className="homeMenu">
+        <motion.div className="home_content"
+          key='body'
+          variants={animations.body}
+          initial="hidden"
+          animate="animate"
+          exit="exit"
+        >
+          <h1 className="web_title">QuoDev</h1>
+          <ul className="home_menu">
             <li>{renderLink('/projects', 'Projects')}</li>
             <li>{renderLink('/about-us', 'About Us')}</li>
             <li>{renderLink('/contact', 'Contact')}</li>
           </ul>
-        </div>
-      </motion.div>
-    </motion.div>
+        </motion.div>
+      </div>
+    </div>
   );
  }
 
