@@ -40,7 +40,7 @@ const Projects = () => {
     } else {
       messageDefaultControls.start(animations.fade.exit);
     }
-  },[isLoading, messageDefaultControls, projectState.selectedProject]);
+  },[messageDefaultControls, projectState.selectedProject]);
 
   useEffect(() => {
     if (isLoading) {
@@ -63,7 +63,6 @@ const Projects = () => {
           await pcFrameControls.start(animations.fade.exit);
         }
       }
-      console.log('Edn fade out')
       setIsSwitching(false);
       setProjectState({
         selectedProject : project,
@@ -73,7 +72,6 @@ const Projects = () => {
     }
 
     const handleIframAnimation = async () => {
-      console.log('handleIframAnimation')
       if (isSwitching) {
         handleSwitch();
       } else if (!isSwitching && projectState.selectedProject && !isLoading) {
@@ -173,10 +171,10 @@ const Projects = () => {
             <div className="mobile_volume_up_button"></div>
             <div className="mobile_volume_down_button"></div>
           </motion.div>
-            <motion.div 
-              className={`pc_frame ${projectState.isMobile ? 'hidden' : 'visible'}`} 
-              animate={pcFrameControls}
-            >
+          <motion.div 
+            className={`pc_frame ${projectState.isMobile ? 'hidden' : 'visible'}`} 
+            animate={pcFrameControls}
+          >
             <div className="pc_header">
               <div className="pc_dot" />
               <div className="pc_dot" />
