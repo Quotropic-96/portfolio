@@ -76,9 +76,7 @@ div.mobile_loading {
   position: absolute;
   width: calc(var(--mobile-width) - 2 * var(--mobile-frame-thick));
   height: calc(var(--mobile-height) - 2 * var(--mobile-frame-thick));
-  /* background-color: var(--main-white); */
   border-radius: 60px;
-  /* border: var(--mobile-frame-thick) solid var(--main-black); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,10 +146,11 @@ div.pc_loading {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 5;
+  opacity: 0;
 }
 
-div.pc_frame_container{
+div.pc_frame{
   position: relative;
   width: var(--pc-width);
   height: calc(var(--pc-height) + var(--pc-header-height));
@@ -161,10 +160,10 @@ div.pc_frame_container{
   z-index: 10;
 }
 
-.pc_frame {
+.pc_iframe {
   transform: scale(0.5);
   transform-origin: top left;
-  width: calc(2 * 100%);
+  width: calc(2 * var(--pc-width));
   height: calc(2 * var(--pc-height));
   border-radius: 10px;
   border-top: none;

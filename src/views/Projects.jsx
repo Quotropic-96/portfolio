@@ -63,7 +63,7 @@ const Projects = () => {
     const handleIframAnimation = async () => {
       if (isSwitching) {
         handleSwitch();
-      } else if (projectState.selectedProject && !isLoading) {
+      } else if (!isSwitching && projectState.selectedProject && !isLoading) {
         await iframeControls.start(animations.fade.animate);
       } else {
         await iframeControls.start(animations.fade.exit);
@@ -72,7 +72,8 @@ const Projects = () => {
     }
 
     handleIframAnimation();
-  },[iframeControls, isLoading, isSwitching, lastProjectShown, projectState.selectedProject, selectedTitle]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[iframeControls, isLoading, isSwitching, projectState.selectedProject]);
 
   useEffect(() => {
     if (selectedTitle) {
@@ -92,7 +93,8 @@ const Projects = () => {
       }      
       setProjectState({ selectedProject: null, isMobile: true });
     }
-  },[projectState.selectedProject, selectedTitle]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[selectedTitle]);
 
   return (
     <div className="frame">
@@ -137,23 +139,6 @@ const Projects = () => {
           >
           {projectState.isMobile &&
             <div className="mobile_frame">
-              {/* {(!projectState.selectedProject || isLoading) && 
-                <motion.div className="mobile_loading"
-                  key='message'
-                  variants={animations.fade}
-                  initial="hidden"
-                  animate="animate"
-                  exit="exit"
-                >
-                  {!projectState.selectedProject && <p className="simulator_message">{'< select a project to be shown here />'}</p>}
-                  {isLoading && <p className="simulator_message">{'< loading />'}</p>}
-                </motion.div>
-              } */}
-              {/* {isLoading && 
-                <div className="mobile_loading">
-                  <p className="simulator_message">{'< loading />'}</p>
-                </div>
-              } */}
               <motion.div className="mobile_loading" animate={messageDefaultControls}>
                 <p className="simulator_message">{'< select a project to be shown here />'}</p>
               </motion.div>
@@ -170,18 +155,18 @@ const Projects = () => {
             </div>
           }
           {!projectState.isMobile && 
-            <div className="pc_frame_container">
+            <div className="pc_frame">
               <div className="pc_header">
                 <div className="pc_dot" />
                 <div className="pc_dot" />
                 <div className="pc_dot" />
               </div>
-              {isLoading && 
-                <div className="pc_loading">
-                  <p className="simulator_message">{'< loading />'}</p>
-                </div>
-              }
-              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : ''} className="pc_frame" onLoad={() => setIsLoading(false)}></iframe>
+              <motion.div className="pc_loading" animate={messageLoadingControls}>
+                <p className="simulator_message">{'< loading />'}</p>
+              </motion.div>
+              <motion.div animate={iframeControls}>
+                <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="pc_iframe" onLoad={() => setIsLoading(false)}></iframe>
+              </motion.div>
             </div>
           }
         </motion.div>
