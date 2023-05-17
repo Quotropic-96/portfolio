@@ -31,6 +31,8 @@ const Projects = () => {
   const messageDefaultControls = useAnimation();
   const messageLoadingControls = useAnimation();
   const iframeControls = useAnimation();
+  const pcFrameControls = useAnimation();
+  const mobileFrameControls = useAnimation();
 
   useEffect(() => {
     if (!projectState.selectedProject) {
@@ -51,7 +53,17 @@ const Projects = () => {
   useEffect(() => {
     const handleSwitch = async () => {
       const project = projectsData.find((elem) => elem.title === selectedTitle);
+
       await iframeControls.start(animations.fade.exit);
+
+      if (project.platform != projectState.selectedProject.platform) {
+        if (projectState.selectedProject.platform === 'mobile') {
+          await mobileFrameControls.start(animations.fade.exit);
+        } else {
+          await pcFrameControls.start(animations.fade.exit);
+        }
+      }
+      console.log('Edn fade out')
       setIsSwitching(false);
       setProjectState({
         selectedProject : project,
@@ -61,9 +73,15 @@ const Projects = () => {
     }
 
     const handleIframAnimation = async () => {
+      console.log('handleIframAnimation')
       if (isSwitching) {
         handleSwitch();
       } else if (!isSwitching && projectState.selectedProject && !isLoading) {
+        if (projectState.isMobile) {
+          await mobileFrameControls.start(animations.fade.animate);
+        } else {
+          await pcFrameControls.start(animations.fade.animate)
+        }
         await iframeControls.start(animations.fade.animate);
       } else {
         await iframeControls.start(animations.fade.exit);
@@ -137,38 +155,40 @@ const Projects = () => {
           animate="animate"
           exit="exit"
           >
-          {projectState.isMobile &&
-            <div className="mobile_frame">
-              <motion.div className="mobile_loading" animate={messageDefaultControls}>
-                <p className="simulator_message">{'< select a project to be shown here />'}</p>
-              </motion.div>
-              <motion.div className="mobile_loading" animate={messageLoadingControls}>
-                <p className="simulator_message">{'< loading />'}</p>
-              </motion.div>
-              <motion.div animate={iframeControls}>
-                <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="mobile_iframe" onLoad={() => setIsLoading(false)}></iframe>
-              </motion.div>
-              <div className="mobile_notch"></div>
-              <div className="mobile_power_button"></div>
-              <div className="mobile_volume_up_button"></div>
-              <div className="mobile_volume_down_button"></div>
+          <motion.div 
+            className={`mobile_frame ${projectState.isMobile ? 'visible' : 'hidden'}`} 
+            animate={mobileFrameControls}
+          >
+            <motion.div className="mobile_loading" animate={messageDefaultControls}>
+              <p className="simulator_message">{'< select a project to be shown here />'}</p>
+            </motion.div>
+            <motion.div className="mobile_loading" animate={messageLoadingControls}>
+              <p className="simulator_message">{'< loading />'}</p>
+            </motion.div>
+            <motion.div animate={iframeControls}>
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="mobile_iframe" onLoad={() => setIsLoading(false)}></iframe>
+            </motion.div>
+            <div className="mobile_notch"></div>
+            <div className="mobile_power_button"></div>
+            <div className="mobile_volume_up_button"></div>
+            <div className="mobile_volume_down_button"></div>
+          </motion.div>
+            <motion.div 
+              className={`pc_frame ${projectState.isMobile ? 'hidden' : 'visible'}`} 
+              animate={pcFrameControls}
+            >
+            <div className="pc_header">
+              <div className="pc_dot" />
+              <div className="pc_dot" />
+              <div className="pc_dot" />
             </div>
-          }
-          {!projectState.isMobile && 
-            <div className="pc_frame">
-              <div className="pc_header">
-                <div className="pc_dot" />
-                <div className="pc_dot" />
-                <div className="pc_dot" />
-              </div>
-              <motion.div className="pc_loading" animate={messageLoadingControls}>
-                <p className="simulator_message">{'< loading />'}</p>
-              </motion.div>
-              <motion.div animate={iframeControls}>
-                <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="pc_iframe" onLoad={() => setIsLoading(false)}></iframe>
-              </motion.div>
-            </div>
-          }
+            <motion.div className="pc_loading" animate={messageLoadingControls}>
+              <p className="simulator_message">{'< loading />'}</p>
+            </motion.div>
+            <motion.div animate={iframeControls}>
+              <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="pc_iframe" onLoad={() => setIsLoading(false)}></iframe>
+            </motion.div>
+          </motion.div>
         </motion.div>
         <motion.div
           key='blob'
