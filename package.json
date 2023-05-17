@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@react-three/fiber": "^8.13.0",
     "@types/three": "^0.152.0",
     "framer-motion": "^10.12.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.11.1",
     "three": "^0.152.2"
   },
