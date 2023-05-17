@@ -32,7 +32,7 @@ const Blob = ({ color }) => {
     const uniforms = {
       u_time: { value: 0 },
       u_intensity: { value: 0.3 },
-      u_color: { value: new Color(rgbColor.current.r / 255, rgbColor.current.g / 255, rgbColor.current.b / 255) }
+      u_color: { value: new Color(rgbColor.current.r, rgbColor.current.g, rgbColor.current.b) }
     };
 
     mesh.current.material = new ShaderMaterial({
