@@ -77,15 +77,15 @@ export default {
       opacity: 1,
       transition: {
         ease: "easeInOut",
-        duration: 1,
-        delay: 1.5,
+        duration: .5,
+        delay: .5,
       },
     },
     exit: {
       opacity: 0,
       transition: {
         ease: "easeInOut",
-        duration: 1,
+        duration: .5,
       },
     },
   },

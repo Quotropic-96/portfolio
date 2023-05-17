@@ -18,7 +18,7 @@ const colorMap = {
 };
 
 const Projects = () => {
-  const [showInfo, setShowInfo] = useState(null);
+  const [selectedTitle, setSelectedTitle] = useState(null);
   const [scrollColor, setScrollColor] = useState(null);
   const [projectState, setProjectState] = useState({
     selectedProject: null,
@@ -26,7 +26,7 @@ const Projects = () => {
   });
   const [lastProjectShown, setLastProjectShown] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isFadeOut, setIsFadeOut] = useState(false);
+  const [isSwitching, setIsSwitching] = useState(false);
 
   const messageDefaultControls = useAnimation();
   const messageLoadingControls = useAnimation();
@@ -49,44 +49,50 @@ const Projects = () => {
   },[isLoading, messageLoadingControls]);
 
   useEffect(() => {
+    const handleSwitch = async () => {
+      const project = projectsData.find((elem) => elem.title === selectedTitle);
+      await iframeControls.start(animations.fade.exit);
+      setIsSwitching(false);
+      setProjectState({
+        selectedProject : project,
+        isMobile: project.platform === "mobile",
+      });
+      setLastProjectShown('');
+    }
+
     const handleIframAnimation = async () => {
-      if (projectState.selectedProject && !isLoading && !isFadeOut) {
-        await iframeControls.start(animations.fade.animate);
-      } else if (projectState.selectedProject && projectState.selectedProject.link == lastProjectShown) {
-        setIsLoading(false);
+      if (isSwitching) {
+        handleSwitch();
+      } else if (projectState.selectedProject && !isLoading) {
         await iframeControls.start(animations.fade.animate);
       } else {
         await iframeControls.start(animations.fade.exit);
         setLastProjectShown('');
-        setIsFadeOut(false);
       }
     }
+
     handleIframAnimation();
-  },[iframeControls, isFadeOut, isLoading, lastProjectShown, projectState.selectedProject]);
+  },[iframeControls, isLoading, isSwitching, lastProjectShown, projectState.selectedProject, selectedTitle]);
 
   useEffect(() => {
-    setIsLoading(true);
-    const selectedProject = projectsData.find(
-      (elem) => elem.title === showInfo
-    );
-    if (selectedProject) {
-      // if (lastProjectShown) {
-      //   setIsFadeOut(true);
-      //   console.log(isFadeOut)
-      // }
-      setProjectState({
-        selectedProject,
-        isMobile: selectedProject.platform === "mobile",
-      });
+    if (selectedTitle) {
+      if (projectState.selectedProject) {
+        setIsSwitching(true) 
+      } else {
+        setIsLoading(true);
+        const project = projectsData.find((elem) => elem.title === selectedTitle);
+        setProjectState({
+          selectedProject : project,
+          isMobile: project.platform === "mobile",
+        });
+      }
     } else {
       if (projectState.selectedProject) {
         setLastProjectShown(projectState.selectedProject.link);
-      }
+      }      
       setProjectState({ selectedProject: null, isMobile: true });
-      setIsLoading(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showInfo]);
+  },[projectState.selectedProject, selectedTitle]);
 
   return (
     <div className="frame">
@@ -113,9 +119,9 @@ const Projects = () => {
                 <ProjectCard
                   key={project.title}
                   project={project}
-                  showInfo={showInfo === project.title}
-                  handleShow={setShowInfo}
-                  handleClose={() => setShowInfo(null)}
+                  selectedTitle={selectedTitle === project.title}
+                  handleSelectTitle={setSelectedTitle}
+                  handleClose={() => setSelectedTitle(null)}
                   handleScrollColor={setScrollColor}
                 />
               ))}
