@@ -20,20 +20,22 @@ const Contact = () => {
     message: ''
   });
   const [status, setStatus] = useState("");
-  const [error, setError] = useState(null);
+  const [nameError, setNameError] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+  const [messageError, setMessageError] = useState(null);
   const [isValid, setIsValid] = useState({ name: true, email: true, message: true });
-
-  // const form = useRef();
 
   useEffect(() => {
     if (isValid.name === false) {
-      setError("Name just allows letters.");
+      setNameError("Name just allows letters.");
     } else if (isValid.message === false) {
-      setError("The message can contain up to 1600 characters.");
+      setMessageError("The message can contain up to 1600 characters.");
     } else if (isValid.email === false) {
-      setError("Invalid email format.");
+      setEmailError("Invalid email format.");
     } else {
-      setError(null);
+      setNameError(null);
+      setMessageError(null);
+      setEmailError(null);
     }
   }, [isValid]);
 
@@ -91,35 +93,6 @@ const Contact = () => {
         console.log('FAILED', error);
       })
   }
-   
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   emailjs
-  //     .sendForm(
-  //       "service_p480rce",
-  //       "template_dfi8l95",
-  //       form.current,
-  //       "4iGMCZ24PZXokCkrN"
-  //     )
-  //     .then(() => {
-  //       setConfirmationMessage(true);
-  //       setTimeout(() => {
-  //         setConfirmationMessage(false);
-  //       }, 3000)
-  //       e.target.reset();
-  //     }, (err) => {
-  //       console.log('FAILED', err);
-  //     });
-  // };
-
-  // const { register, trigger, formState: { errors } } = useForm();
-
-  // const onSubmit = async (e) => {
-  //   const isValid = await trigger();
-  //   if (!isValid) {
-  //     e.preventDefault();
-  //   }
-  // }
 
   return (
     <div className="frame">
@@ -165,63 +138,14 @@ const Contact = () => {
           animate="animate"
           exit="exit"
         >
-          {/* <form
-            target="_blank"
-            onSubmit={onSubmit}
-            action="https://formsubmit.co/ffb05a1c6c8278126a1ff8db4252828b"
-            method="POST"
-          > 
-            <input
-              type="text"
-              placeholder="NAME" 
-              {...register("name", {
-                required: true,
-                maxLength: 50,
-              })}
-            />
-            {errors.name && (
-              <p>
-                {errors.name.type === 'required' && "Name is required."}
-                {errors.name.type === 'maxLength' && "Max length is 100 character."}
-              </p>
-            )}
-            <input
-              type="text"
-              placeholder="EMAIL" 
-              {...register("email", {
-                required: true,
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              })}
-            />
-            {errors.email && (
-            <p>
-                {errors.email.type === 'required' && "Email is required."}
-                {errors.email.type === 'pattern' && "Invalid email address."}
-            </p>
-            )}
-            <textarea
-              type="text"
-              placeholder="MESSAGE"
-              rows="8"
-              {...register("message", {
-                required: true,
-                maxLength: 1600,
-              })}
-            />
-            {errors.message && (
-              <p>
-                {errors.message.type === 'required' && "Message is required."}
-                {errors.message.maxLength === "maxLength" && "Max length is 1600 chracter."}
-              </p>
-            )}
-            <button type="submit">SEND</button>
-          </form> */}
           <form onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="NAME" value={contactInfo.name} onChange={handleChange} required />
+            {nameError && <p>{nameError}</p>}
             <input type="email" name="email" placeholder="EMAIL" value={contactInfo.email} onChange={handleChange} required />
+            {emailError && <p>{emailError}</p>}
             <textarea name="message" placeholder="MESSAGE" rows="8" value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
+            {messageError && <p>{messageError}</p>}
             <button type="submit">SEND</button>
-            {error && <p>{error}</p>}
             {status && <p>Your message has been sent successfully. Thank you!</p>}
           </form>
         </motion.div>
