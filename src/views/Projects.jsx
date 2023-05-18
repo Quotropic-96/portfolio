@@ -92,16 +92,29 @@ const Projects = () => {
   },[iframeControls, isLoading, isSwitching, projectState.selectedProject]);
 
   useEffect(() => {
+    const handleFirstPc = async (project) => {
+      await mobileFrameControls.start(animations.fade.exit);
+      setIsLoading(true);
+      setProjectState({
+        selectedProject: project,
+        isMobile: project.platform === "mobile",
+      });
+    };
+
     if (selectedTitle) {
       if (projectState.selectedProject) {
-        setIsSwitching(true) 
+        setIsSwitching(true);
       } else {
-        setIsLoading(true);
         const project = projectsData.find((elem) => elem.title === selectedTitle);
-        setProjectState({
-          selectedProject : project,
-          isMobile: project.platform === "mobile",
-        });
+        if (project.platform === 'pc') {
+          handleFirstPc(project);
+        } else {
+          setIsLoading(true);
+          setProjectState({
+            selectedProject : project,
+            isMobile: project.platform === "mobile",
+          });
+        }
       }
     } else {
       if (projectState.selectedProject) {
@@ -111,6 +124,10 @@ const Projects = () => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[selectedTitle]);
+
+  useEffect(() => {
+    mobileFrameControls.start(animations.fade.animate);
+  },[]);
 
   return (
     <div className="frame">
@@ -156,6 +173,7 @@ const Projects = () => {
           <motion.div 
             className={`mobile_frame ${projectState.isMobile ? 'visible' : 'hidden'}`} 
             animate={mobileFrameControls}
+            initial= {{ opacity: 0 }}
           >
             <motion.div className="mobile_loading" animate={messageDefaultControls}>
               <p className="simulator_message">{'< select a project to be shown here />'}</p>
@@ -174,6 +192,7 @@ const Projects = () => {
           <motion.div 
             className={`pc_frame ${projectState.isMobile ? 'hidden' : 'visible'}`} 
             animate={pcFrameControls}
+            initial={{ opacity: 0 }}
           >
             <div className="pc_header">
               <div className="pc_dot" />
