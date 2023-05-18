@@ -103,6 +103,7 @@ const Projects = () => {
 
     if (selectedTitle) {
       if (projectState.selectedProject) {
+        setIsLoading(true);
         setIsSwitching(true);
       } else {
         const project = projectsData.find((elem) => elem.title === selectedTitle);
@@ -199,9 +200,9 @@ const Projects = () => {
               <div className="pc_dot" />
               <div className="pc_dot" />
             </div>
-            <motion.div className="pc_loading" animate={messageLoadingControls}>
+            {/* <motion.div className="pc_loading" animate={messageLoadingControls}>
               <p className="simulator_message">{'< loading />'}</p>
-            </motion.div>
+            </motion.div> */}
             <motion.div animate={iframeControls}>
               <iframe src={projectState.selectedProject ? projectState.selectedProject.link : lastProjectShown} className="pc_iframe" onLoad={() => setIsLoading(false)}></iframe>
             </motion.div>
