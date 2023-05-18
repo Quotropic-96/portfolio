@@ -128,6 +128,7 @@ const Projects = () => {
 
   useEffect(() => {
     mobileFrameControls.start(animations.fade.animate);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   return (
