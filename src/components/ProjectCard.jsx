@@ -1,13 +1,12 @@
 import "./projectCard.css";
 import PropTypes from "prop-types";
 import leftArrow from '../assets/icons/arrow_left.png';
-// import downArrow from '../assets/icons/arrow_down.png';
 import { motion, useAnimation } from "framer-motion";
 import animations from '../animations/projectCardsAnimations';
 import { useEffect } from "react";
 
 const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, handleScrollColor }) => {
-  const { title, subtitle, about, show, color } = project;
+  const { title, subtitle, about, color } = project;
   const cardControls = useAnimation();
   const arrowControls = useAnimation();
 
