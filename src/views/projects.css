@@ -33,15 +33,13 @@ div.title_projects_container {
 
 div.projects_cards_container_wrapper {
   max-height: var(--mobile-height);
-  overflow-y: auto;
+  overflow-y: scroll;
   scrollbar-color: "#AB882E";
-  direction: rtl;
 }
 
 div.projects_cards_container {
   padding-right: 20px;
   direction: ltr;
-  padding-left: 10px;
 }
 
 div.simulator_container {
@@ -230,7 +228,7 @@ div.projects_cards_container_wrapper::-webkit-scrollbar {
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar-track {
-  background-color: #eee;
+  background-color: var(--main-white);
 }
 
 @media (max-width: 1550px) {
