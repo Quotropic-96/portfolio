@@ -1,17 +1,17 @@
 export default {
   card: {
     hidden: {
-      opacity: 0,
+      maxHeight: "6rem",
     },
     animate: {
-      opacity: 1,
+      maxHeight: "30rem",
       transition: {
         ease: "easeInOut",
         duration: .5,
       },
     },
     exit: {
-      opacity: 0,
+      maxHeight: "6rem",
       transition: {
         ease: "easeInOut",
         duration: .5,

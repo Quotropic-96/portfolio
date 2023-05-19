@@ -1,16 +1,28 @@
 div.project_card_container {
   border-top: 1px solid var(--main-black);
-  /* border-bottom: 1px solid var(--main-black); */
-  padding: 0.8rem 0;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
+  max-height: 6rem;
+  overflow: hidden;
+}
+
+div.card_header {
+  height: 4rem;
+  max-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 div.title_arrow_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 1rem;
 }
 
 img.left_arrow {
@@ -31,6 +43,7 @@ div.about_show_div {
   padding: 0.5rem;
   width: 5rem;
   text-align: center;
+  border-radius: 5px;
 }
 
 .white {
