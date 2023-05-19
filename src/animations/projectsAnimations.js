@@ -70,22 +70,42 @@ export default {
     },
   },
   fade: {
-    hidden: {
-      opacity: 0,
-    },
     animate: {
       opacity: 1,
       transition: {
         ease: "easeInOut",
-        duration: .5,
-        delay: .5,
+        duration: 0.5,
+        delay: 0.5,
       },
     },
     exit: {
       opacity: 0,
       transition: {
         ease: "easeInOut",
-        duration: .5,
+        duration: 0.5,
+      },
+    },
+  },
+  popUp: {
+    animate: {
+      scale: 1,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.5,
+        delay: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+    exit: {
+      scale: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
       },
     },
   },

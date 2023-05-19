@@ -5,8 +5,9 @@ import { motion, useAnimation } from "framer-motion";
 import animations from '../animations/projectCardsAnimations';
 import { useEffect } from "react";
 
-const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, handleScrollColor }) => {
+const ProjectCard = ({ project, selectedTitle, handleProjectState, handleScrollColor }) => {
   const { title, subtitle, about, color } = project;
+
   const cardControls = useAnimation();
   const arrowControls = useAnimation();
 
@@ -14,21 +15,21 @@ const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, h
     if (selectedTitle) {
       cardControls.start(animations.card.animate);
       arrowControls.start(animations.arrow.animate);
-    }else {
+    } else {
       cardControls.start(animations.card.exit);
       arrowControls.start(animations.arrow.exit);
     }
   },[arrowControls, cardControls, selectedTitle]);
   
   const handleClick = (color) => {
+    handleProjectState(project);
     if (selectedTitle) {
-      handleClose();
       handleScrollColor(null);
     } else {
-      handleSelectTitle(title);
       handleScrollColor(color);
     }
-  };
+  }
+
 
   return (
     <motion.div className="project_card_container"
@@ -65,8 +66,7 @@ const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, h
 ProjectCard.propTypes = {
   project: PropTypes.object.isRequired,
   selectedTitle: PropTypes.bool.isRequired,
-  handleSelectTitle: PropTypes.func.isRequired,
-  handleClose: PropTypes.func.isRequired,
+  handleProjectState: PropTypes.func.isRequired,
   handleScrollColor: PropTypes.func.isRequired,
 }
 

@@ -32,14 +32,13 @@ div.title_projects_container {
 }
 
 div.projects_cards_container_wrapper {
-  max-height: var(--mobile-height);
-  overflow-y: scroll;
+  max-height: 550px;
+  overflow-y: auto;
   scrollbar-color: "#AB882E";
 }
 
 div.projects_cards_container {
   padding-right: 20px;
-  direction: ltr;
 }
 
 div.simulator_container {
@@ -75,7 +74,6 @@ div.mobile_loading {
   align-items: center;
   justify-content: center;
   z-index: 15;
-  opacity: 0;
 }
 
 .mobile_iframe {
@@ -131,27 +129,27 @@ div.mobile_volume_down_button {
   border-radius: 10px;
 }
 
-div.pc_loading {
-  position: absolute;
+div.pc_frame{
+  position: relative;
   width: var(--pc-width);
   height: calc(var(--pc-height) + var(--pc-header-height));
+  background-color: var(--main-white);
+  border: 5px solid var(--main-black);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+div.pc_loading {
+  position: absolute;
+  width: calc(var(--pc-width));
+  height: calc(var(--pc-height));
   background-color: var(--main-white);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5;
-  opacity: 0;
-}
-
-div.pc_frame{
-  position: relative;
-  width: var(--pc-width);
-  height: calc(var(--pc-height) + var(--pc-header-height));
-  background-color: var(--main-black);
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 10;
+  z-index: 15;
 }
 
 .pc_iframe {
@@ -159,11 +157,9 @@ div.pc_frame{
   transform-origin: top left;
   width: calc(2 * var(--pc-width));
   height: calc(2 * var(--pc-height));
-  border-radius: 10px;
   border-top: none;
-  border: 5px solid var(--main-black);
   border-top: none;
-  z-index: 10;
+  z-index: 20;
 }
 
 div.pc_header {
@@ -228,7 +224,7 @@ div.projects_cards_container_wrapper::-webkit-scrollbar {
 }
 
 div.projects_cards_container_wrapper::-webkit-scrollbar-track {
-  background-color: var(--main-white);
+  background-color: #eee;
 }
 
 @media (max-width: 1550px) {
@@ -237,5 +233,4 @@ div.projects_cards_container_wrapper::-webkit-scrollbar-track {
     width: calc(5/2 * (var(--pc-width) - var(--pc-frame) - var(--pc-x-off) / 2));
     height: calc(5/2 * (0.64 * var(--pc-width) - var(--pc-frame) - var(--pc-y-off) / 2));
   }
-
 }
