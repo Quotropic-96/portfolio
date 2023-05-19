@@ -1,22 +1,25 @@
 import "./projectCard.css";
 import PropTypes from "prop-types";
 import leftArrow from '../assets/icons/arrow_left.png';
-import downArrow from '../assets/icons/arrow_down.png';
+// import downArrow from '../assets/icons/arrow_down.png';
 import { motion, useAnimation } from "framer-motion";
 import animations from '../animations/projectCardsAnimations';
 import { useEffect } from "react";
 
 const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, handleScrollColor }) => {
   const { title, subtitle, about, show, color } = project;
-  const animateControls = useAnimation();
+  const cardControls = useAnimation();
+  const arrowControls = useAnimation();
 
   useEffect(() => {
     if (selectedTitle) {
-      animateControls.start(animations.card.animate);
+      cardControls.start(animations.card.animate);
+      arrowControls.start(animations.arrow.animate);
     }else {
-      animateControls.start(animations.card.exit);
+      cardControls.start(animations.card.exit);
+      arrowControls.start(animations.arrow.exit);
     }
-  },[animateControls, selectedTitle]);
+  },[arrowControls, cardControls, selectedTitle]);
   
   const handleClick = (color) => {
     if (selectedTitle) {
@@ -31,15 +34,16 @@ const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, h
   return (
     <motion.div className="project_card_container"
       key={title}
-      animate={animateControls}
+      animate={cardControls}
     >
       <div className="card_header" onClick={() => handleClick(color)}>
         <div className="title_arrow_container">
           <h2>{title}</h2>
-          <img
-            className={!selectedTitle ? "left_arrow" : "down_arrow"}
-            src={!selectedTitle ? leftArrow : downArrow}
-            alt="left arrow"
+          <motion.img
+            className="left_arrow"
+            src={leftArrow}
+            alt="Arrow"
+            animate={arrowControls}
           />
         </div>
         <h3 style={{ color: selectedTitle && `${color}` }}>{subtitle}</h3>
@@ -47,12 +51,12 @@ const ProjectCard = ({ project, selectedTitle, handleSelectTitle, handleClose, h
       <div className="about_show_div">
         <p>{about}</p>
 
-        <p
+        {/* <p
           className={color === "#015CA0" ? "show_p white" : "show_p"}
           style={{ backgroundColor: `${color}` }}
         >
           {show}
-        </p>
+        </p> */}
       </div>
       <div className="projects_cards_container"></div>
     </motion.div>
