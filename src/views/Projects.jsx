@@ -54,21 +54,30 @@ const Projects = () => {
     const handleSwitch = async () => {
       const project = projectsData.find((elem) => elem.title === selectedTitle);
 
-      await iframeControls.start(animations.fade.exit);
-
-      if (project.platform != projectState.selectedProject.platform) {
-        if (projectState.selectedProject.platform === 'mobile') {
-          await mobileFrameControls.start(animations.fade.exit);
-        } else {
-          await pcFrameControls.start(animations.fade.exit);
+      if (project) {
+        await iframeControls.start(animations.fade.exit);
+  
+        if (project.platform != projectState.selectedProject.platform) {
+          if (projectState.selectedProject.platform === 'mobile') {
+            await mobileFrameControls.start(animations.fade.exit);
+          } else {
+            await pcFrameControls.start(animations.fade.exit);
+          }
         }
+        setIsSwitching(false);
+        setProjectState({
+          selectedProject : project,
+          isMobile: project.platform === "mobile",
+        });
+        setLastProjectShown('');
+      } else {
+        await iframeControls.start(animations.fade.exit);
+        await pcFrameControls.start(animations.fade.exit);
+        await mobileFrameControls.start(animations.fade.animate);
+        await messageDefaultControls.start(animations.fade.animate);
+        setIsSwitching(false);
+        setProjectState({ selectedProject: null, isMobile: true });
       }
-      setIsSwitching(false);
-      setProjectState({
-        selectedProject : project,
-        isMobile: project.platform === "mobile",
-      });
-      setLastProjectShown('');
     }
 
     const handleIframAnimation = async () => {
@@ -120,8 +129,12 @@ const Projects = () => {
     } else {
       if (projectState.selectedProject) {
         setLastProjectShown(projectState.selectedProject.link);
-      }      
-      setProjectState({ selectedProject: null, isMobile: true });
+      }
+      if (!projectState.isMobile) {
+        setIsSwitching(true);
+      } else {
+        setProjectState({ selectedProject: null, isMobile: true });
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[selectedTitle]);
