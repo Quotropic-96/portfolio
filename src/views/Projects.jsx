@@ -293,7 +293,13 @@ const Projects = () => {
             </div>
           </div>
         </motion.div>
-        <div className="simulator_container">
+        <motion.div className="simulator_container"
+          key='simulator'
+          variants={animations.simulator}
+          initial="hidden"
+          animate="animate"
+          exit="exit"
+        >
           <motion.div
             className={`mobile_frame ${projectState.isMobile ? "visible" : "hidden"}`}
             animate={mobileFrameControls}
@@ -356,7 +362,7 @@ const Projects = () => {
               ></iframe>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
         <motion.div
           key="blob"
           variants={animations.blob}
