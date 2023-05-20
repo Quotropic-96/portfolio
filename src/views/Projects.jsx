@@ -52,6 +52,7 @@ const Projects = () => {
   ), [defaultMessageControls, loadingMobileControls, loadingPcControls, mobileFrameControls, mobileIFrameControls, pcFrameControls, pcIFrameControls]);
 
   const handleProjectState = (project) => {
+    console.log('In HandleProjectState')
     if (
       projectState.selectedProject &&
       project.title === projectState.selectedProject.title
@@ -108,7 +109,9 @@ const Projects = () => {
   
     const animateDevice = async () => {
       const intervalId = setInterval(async () => {
+        console.log(`In interval ${intervalId}`)
         if (!animationController.isAnimating()) {
+          console.log(`Clear interval ${intervalId}`)
           clearInterval(intervalId);
           const loadingFuncName = `unrender${device}Loading`;
           const iFrameFuncName = `render${device}IFrame`;
@@ -119,18 +122,24 @@ const Projects = () => {
     };
   
     if (device === "Mobile") {
+      console.log('Select Mobile')
       if (projectState.isLoading) {
+        console.log('Select Mobile isLoading')
         await animationController.renderMobileLoading();
       } else {
+        console.log('Select Mobile NOT isLoading')
         await animateDevice();
       }
     } else {
+      console.log('Select Pc')
       if (projectState.isLoading) {
+        console.log('Select Pc isLoading')
         await animationController.unrenderMobileFrame();
         setProjectState(prevState => ({ ...prevState, isMobile: !prevState.isMobile }));
         await animationController.renderPcFrame();
         await animationController.renderPcLoading();
       } else {
+        console.log('Select Pc NOT isLoading')
         await animateDevice();
       }
     }
@@ -225,6 +234,7 @@ const Projects = () => {
   }
 
   const handleLoad = () => {
+    console.log('In handle Load')
     setProjectState((prevState) => ({
       ...prevState,
       isLoading: false,
@@ -237,6 +247,8 @@ const Projects = () => {
     }
 
     if (projectState.selectedProject && !projectState.previousProjectLink) {
+      // console.log('In useEffect')
+      // console.log(projectState)
       selectFromEmptyAnimation();
     }
 
@@ -329,7 +341,7 @@ const Projects = () => {
                     : projectState.previousProjectLink
                 }
                 className="mobile_iframe"
-                onLoad={handleLoad}
+                onLoad={projectState.isMobile ? handleLoad : null}
               ></iframe>
             </motion.div>
             <div className="mobile_notch"></div>
@@ -358,7 +370,7 @@ const Projects = () => {
                     : projectState.previousProjectLink
                 }
                 className="pc_iframe"
-                onLoad={handleLoad}
+                onLoad={projectState.isMobile ? null : handleLoad}
               ></iframe>
             </motion.div>
           </motion.div>
