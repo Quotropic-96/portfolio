@@ -153,6 +153,7 @@ div.pc_loading {
 }
 
 .pc_iframe {
+  position: absolute;
   transform: scale(0.5);
   transform-origin: top left;
   width: calc(2 * var(--pc-width));
