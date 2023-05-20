@@ -280,6 +280,7 @@ const Projects = () => {
                     project={project}
                     selectedTitle={selectedTitle}
                     handleProjectState={handleProjectState}
+                    isAnimating={animationController.isAnimating}
                     handleScrollColor={setScrollColor}
                   />
                 );
