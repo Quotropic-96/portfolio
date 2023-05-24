@@ -31,6 +31,7 @@ const initialProjectState = {
 const Projects = () => {
   const [scrollColor, setScrollColor] = useState(null);
   const [projectState, setProjectState] = useState(initialProjectState);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const mobileFrameControls = useAnimation();
   const pcFrameControls = useAnimation();
@@ -226,23 +227,35 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    if (!projectState.selectedProject && !projectState.previousProjectLink) {
-      initialAnimation();
-    }
-
-    if (projectState.selectedProject && !projectState.previousProjectLink) {
-      selectFromEmptyAnimation();
-    }
-
-    if (projectState.isSwitching) {
-      switchProjectsAnimation();
-    }
-
-    if (!projectState.selectedProject && !projectState.selectedProjectBuffer && projectState.previousProjectLink) {
-      returnToEmpty();
+    if (windowWidth > 1000) {
+      if (!projectState.selectedProject && !projectState.previousProjectLink) {
+        initialAnimation();
+      }
+  
+      if (projectState.selectedProject && !projectState.previousProjectLink) {
+        selectFromEmptyAnimation();
+      }
+  
+      if (projectState.isSwitching) {
+        switchProjectsAnimation();
+      }
+  
+      if (!projectState.selectedProject && !projectState.selectedProjectBuffer && projectState.previousProjectLink) {
+        returnToEmpty();
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[projectState]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [windowWidth]);
 
   return (
     <div className="frame">
@@ -365,7 +378,7 @@ const Projects = () => {
           animate="animate"
           exit="exit"
         >
-          <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+          <Canvas className="blob_canvas" style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
             <Blob color={scrollColor || "#ED6A5A"} />
           </Canvas>
         </motion.div>

@@ -190,6 +190,10 @@ div.pc_dot {
   display: none;
 }
 
+.blob_canvas {
+  display: block;
+}
+
 div.projects_cards_container_wrapper::-webkit-scrollbar {
   width: 10px;
 }
@@ -234,4 +238,11 @@ div.projects_cards_container_wrapper::-webkit-scrollbar-track {
     width: calc(5/2 * (var(--pc-width) - var(--pc-frame) - var(--pc-x-off) / 2));
     height: calc(5/2 * (0.64 * var(--pc-width) - var(--pc-frame) - var(--pc-y-off) / 2));
   }
+}
+
+@media (max-width: 1000px) {
+  div.simulator_container {
+    display: none;
+  }
+  
 }
