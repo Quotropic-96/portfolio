@@ -27,22 +27,22 @@ const NavBar = () => {
     >
       <ul>
         <li>
-          <NavLink to={'/'} activeClassName="active">
+          <NavLink to={'/'}>
             {location.pathname === '/' && windowWidth <= 1000 ? '•' : '<Home />'}
           </NavLink>
         </li>
         <li>
-          <NavLink to={'/projects'} activeClassName="active">
+          <NavLink to={'/projects'}>
             {location.pathname === '/projects' && windowWidth <= 1000 ? '•' : '<Projects />'}
           </NavLink>
         </li>
         <li>
-          <NavLink to={'/about-us'} activeClassName="active">
+          <NavLink to={'/about-us'}>
             {location.pathname === '/about-us' && windowWidth <= 1000 ? '•' : '<About Us />'}
           </NavLink>
         </li>
         <li>
-          <NavLink to={'/contact'} activeClassName="active">
+          <NavLink to={'/contact'}>
             {location.pathname === '/contact' && windowWidth <= 1000 ? '•' : '<Contact />'}
           </NavLink>
         </li>
