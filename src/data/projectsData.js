@@ -20,7 +20,7 @@ export const projectsData = [
   {
     title: "Inke-In",
     subtitle: "SOCIAL NETWORK MOBILE APP",
-    about: "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
+    about: "The app is designed for tattoo artists to showcase their work and receive feedback. Also is a social network where users can contact their favorite tattoo artists to schedule appointments or ask questions. Users can also interact with tattoo artists' work by liking and saving images to their favorites.",
     show: "Try it",
     color: "#AB882E",
     link: "https://inkedin.fly.dev",
