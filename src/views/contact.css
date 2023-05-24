@@ -63,3 +63,24 @@ div.icons img {
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
 }
+
+@media (max-width: 1000px) {
+  .contact {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  div.title_text_social_container {
+    width: 100%;
+  }
+  div.title_text_social_container p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  div.social_container {
+    align-items: center;
+  }
+  .contact_form_container {
+    width: 100%;
+  }
+}

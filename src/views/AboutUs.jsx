@@ -58,13 +58,22 @@ const AboutUs = () => {
             <br></br>Build the future with us!
           </p>
         </motion.div>
-        <Canvas
-          style={blobStylesMobile}
-          className="mobile_content"
-          camera={{ position: [0.0, 0.0, 8.0] }}
+        <motion.div
+          key="blob"
+          variants={animations.blob}
+          initial="hidden"
+          animate="animate"
+          exit="exit"
         >
-          <Blob color="#ED6A5A" />
-        </Canvas>
+          <Canvas
+            style={blobStylesMobile}
+            className="mobile_content"
+            camera={{ position: [0.0, 0.0, 8.0] }}
+          >
+            <Blob color="#ED6A5A" />
+          </Canvas>
+        </motion.div>
+
         <motion.figcaption
           className="mobile_content mobile_caption"
           key="caption"

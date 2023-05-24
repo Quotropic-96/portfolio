@@ -27,7 +27,7 @@ export default {
   },
   body: {
     hidden: {
-      x: "-50vw",
+      x: "-100vw",
     },
     animate: {
       x: 0,
@@ -41,7 +41,7 @@ export default {
       },
     },
     exit: {
-      x: "-50vw",
+      x: "-100vw",
       transition: {
         ease: "easeInOut",
         duration: 1.5,
@@ -73,7 +73,7 @@ export default {
   },
   iconLeft: {
     hidden: {
-      x: "-50vw",
+      x: "-100vw",
     },
     animate: {
       x: 0,
@@ -87,7 +87,7 @@ export default {
       },
     },
     exit: {
-      x: "-50vw",
+      x: "-100vw",
       transition: {
         ease: "easeInOut",
         duration: 1.5,
@@ -99,7 +99,7 @@ export default {
   },
   iconMid: {
     hidden: {
-      x: "-50vw",
+      x: "-100vw",
     },
     animate: {
       x: 0,
@@ -113,7 +113,7 @@ export default {
       },
     },
     exit: {
-      x: "-50vw",
+      x: "-100vw",
       transition: {
         ease: "easeInOut",
         duration: 1.5,
@@ -125,7 +125,7 @@ export default {
   },
   iconRight: {
     hidden: {
-      x: "-50vw",
+      x: "-100vw",
     },
     animate: {
       x: 0,
@@ -139,7 +139,7 @@ export default {
       },
     },
     exit: {
-      x: "-50vw",
+      x: "-100vw",
       transition: {
         ease: "easeInOut",
         duration: 1.5,

@@ -24,6 +24,7 @@ const Contact = () => {
   const [emailError, setEmailError] = useState(null);
   const [messageError, setMessageError] = useState(null);
   const [isValid, setIsValid] = useState({ name: true, email: true, message: true });
+  const [textAreaRows, setTextAreaRows] = useState(window.innerHeight < 750 ? 5 : 8);
 
   useEffect(() => {
     if (isValid.name === false) {
@@ -92,7 +93,17 @@ const Contact = () => {
       }, error => {
         console.log('FAILED', error);
       })
-  }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setTextAreaRows(window.innerHeight < 750 ? 5 : 8);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="frame">
@@ -143,7 +154,7 @@ const Contact = () => {
             {nameError && <p>{nameError}</p>}
             <input type="email" name="email" placeholder="EMAIL" value={contactInfo.email} onChange={handleChange} required />
             {emailError && <p>{emailError}</p>}
-            <textarea name="message" placeholder="MESSAGE" rows="8" value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
+            <textarea name="message" placeholder="MESSAGE" rows={textAreaRows} value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
             {messageError && <p>{messageError}</p>}
             <button type="submit">SEND</button>
             {status && <p>Your message has been sent successfully. Thank you!</p>}
