@@ -19,23 +19,6 @@ const Home = () => {
     setActiveLink(null);
   };
 
-  // const renderLink = (to, text) => (
-  //   <Link
-  //     to={to}
-  //     onMouseOver={() => handleMouseOver(text)}
-  //     onMouseOut={handleMouseOut}
-  //   >
-  //     {activeLink === text ? 
-  //     <>
-  //       <span>&lt;{text}</span>
-  //       <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
-  //     </>
-  //     :
-  //     <span>{text}</span>
-  //     }
-  //   </Link>
-  // );
-
   const renderLink = (to, text) => (
     <Link
       to={to}
@@ -108,13 +91,10 @@ const Home = () => {
           exit="exit"
         >
           <h1 className="web_title">QuoDev</h1>
-          <ul className="home_menu">
+          <ul className="home_menu" style={{ zIndex: '15'}}>
             <li>{renderLink('/projects', 'Projects')}</li>
             <li>{renderLink('/about-us', 'About Us')}</li>
             <li>{renderLink('/contact', 'Contact')}</li>
-            {/* <li><Link to={'/projects'}>Projects</Link></li>
-            <li><Link to={'/about-us'}>About Us</Link></li>
-            <li><Link to={'contact'}>Contact</Link></li> */}
           </ul>
         </motion.div>
       </div>
