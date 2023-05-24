@@ -96,13 +96,19 @@ p.blob_text_2 {
     height: 1.5rem;
     flex-direction: row;
     justify-content: space-evenly;
+    z-index: 15;
   }
   .home .home_content .web_title {
     position: absolute;
     top: 2rem;
   }
+  .home .home_content .home_menu li {
+    /* font-size: 1.3rem; */
+    z-index: 15;
+  }
   .home .home_content .home_menu li a {
     font-size: 1.3rem;
+    z-index: 15;
   }
   .blob_div {
     position: absolute;

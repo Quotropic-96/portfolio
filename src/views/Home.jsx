@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './Home.css';
 import Frame from "../components/Frame";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
 import animations from '../animations/homeAnimations';
@@ -19,6 +19,23 @@ const Home = () => {
     setActiveLink(null);
   };
 
+  // const renderLink = (to, text) => (
+  //   <Link
+  //     to={to}
+  //     onMouseOver={() => handleMouseOver(text)}
+  //     onMouseOut={handleMouseOut}
+  //   >
+  //     {activeLink === text ? 
+  //     <>
+  //       <span>&lt;{text}</span>
+  //       <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
+  //     </>
+  //     :
+  //     <span>{text}</span>
+  //     }
+  //   </Link>
+  // );
+
   const renderLink = (to, text) => (
     <Link
       to={to}
@@ -27,11 +44,13 @@ const Home = () => {
     >
       {activeLink === text ? 
       <>
-        <span>&lt;{text}</span>
-        <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
+        <AnimatePresence>
+          <span>&lt;{text}</span>
+          <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
+        </AnimatePresence>
       </>
       :
-      <span>&lt;{ windowWidth > 1000 ? text : `${text} />`}</span>
+      <span>{windowWidth > 1000 ? `<${text}` : `<${text} />`}</span>
       }
     </Link>
   );
@@ -44,7 +63,7 @@ const Home = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [windowWidth]);
+  }, []);
 
   return (
     <div className="frame" style={{ overflow: "hidden" }}>
@@ -93,6 +112,9 @@ const Home = () => {
             <li>{renderLink('/projects', 'Projects')}</li>
             <li>{renderLink('/about-us', 'About Us')}</li>
             <li>{renderLink('/contact', 'Contact')}</li>
+            {/* <li><Link to={'/projects'}>Projects</Link></li>
+            <li><Link to={'/about-us'}>About Us</Link></li>
+            <li><Link to={'contact'}>Contact</Link></li> */}
           </ul>
         </motion.div>
       </div>

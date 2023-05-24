@@ -87,7 +87,7 @@ export default {
       opacity: 0,
       transition: {
         ease: "easeInOut",
-        duration: 5.5,
+        duration: .5,
       },
     },
   },
