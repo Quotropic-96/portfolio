@@ -1,7 +1,7 @@
 export default {
   body: {
     hidden: {
-      x: "50vw",
+      x: "100vw",
     },
     animate: {
       x: 0,
@@ -15,7 +15,7 @@ export default {
       },
     },
     exit: {
-      x: "50vw",
+      x: "100vw",
       transition: {
         ease: "easeInOut",
         duration: 1.5,
@@ -91,6 +91,32 @@ export default {
     exit: {
       y: "50vh",
       rotate: -90,
+      transition: {
+        ease: "easeInOut",
+        duration: 1.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+  },
+  mobileCaption: {
+    hidden: {
+      y: "50vh",
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1.5,
+        delay: 3,
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+    exit: {
+      y: "50vh",
       transition: {
         ease: "easeInOut",
         duration: 1.5,

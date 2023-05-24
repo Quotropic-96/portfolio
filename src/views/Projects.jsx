@@ -378,7 +378,7 @@ const Projects = () => {
           animate="animate"
           exit="exit"
         >
-          <Canvas className="blob_canvas" style={ windowWidth > 1000 ? blobStylesBig : blobStylesSmall} camera={{ position: [0.0, 0.0, 8.0] }}>
+          <Canvas className="blob_canvas" style={ windowWidth > 1000 ? blobStylesDesktop : blobStylesMobile} camera={{ position: [0.0, 0.0, 8.0] }}>
             <Blob color={scrollColor || "#ED6A5A"} />
           </Canvas>
         </motion.div>
@@ -387,14 +387,14 @@ const Projects = () => {
   );
 };
 
-const blobStylesBig = {
+const blobStylesDesktop = {
   height: '130vh',
   position: 'absolute',
   top: '0',
   left: '50%',
   zIndex: '0',
 }
-const blobStylesSmall = {
+const blobStylesMobile = {
   height: '30vh',
   position: 'absolute',
   bottom: '-10%',
