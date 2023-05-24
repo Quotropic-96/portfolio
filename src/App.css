@@ -76,3 +76,30 @@ nav.navbar ul {
   display: flex;
   gap: 1rem;
 }
+
+@media (max-width: 1000px) {
+  nav.navbar {
+    top:calc(var(--frame-padding) + var(--frame-width));
+    height: 8rem;
+    padding: .5rem 0;
+    z-index: 10;
+  }
+  nav.navbar ul {
+    flex-direction: column;
+    gap: .2rem;
+  }
+  nav.navbar ul li {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 1.2rem;
+  }
+  nav.navbar ul li a {
+    font-size: 1.1rem;
+  }
+  .active {
+    font-size: 2rem;
+    height: inherit;
+    padding-right: 2rem;
+  }
+}

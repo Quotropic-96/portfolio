@@ -1,24 +1,43 @@
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import animations from '../animations/navbarAnimations';
+import animations from "../animations/navbarAnimations";
 
 const NavBar = () => {
+  const location = useLocation();
+
   return (
-    <motion.nav className="navbar"
-      key={'navbar'}
+    <motion.nav
+      className="navbar"
+      key={"navbar"}
       variants={animations.navbar}
       initial="hidden"
       animate="animate"
       exit="exit"
     >
       <ul>
-        <li><Link to={'/'}>{'<Home />'}</Link></li>
-        <li><Link to={'/projects'}>{'<Projects />'}</Link></li>
-        <li><Link to={'/about-us'}>{'<About Us />'}</Link></li>
-        <li><Link to={'/contact'}>{'<Contact />'}</Link></li>
+        <li>
+          <NavLink to={"/"}>
+            {location.pathname === "/" ? "•" : "<Home />"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={"/projects"}>
+            {location.pathname === "/projects" ? "•" : "<Projects />"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={"/about-us"}>
+            {location.pathname === "/about-us" ? "•" : "<About Us />"}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={"/contact"}>
+            {location.pathname === "/contact" ? "•" : "<Contact />"}
+          </NavLink>
+        </li>
       </ul>
     </motion.nav>
-  )
-}
+  );
+};
 
 export default NavBar;
