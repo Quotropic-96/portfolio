@@ -49,3 +49,9 @@ div.about_show_div {
 .white {
   color: var(--main-white);
 }
+
+@media (min-width: 1000px) {
+  .show_p {
+    display: none;
+  }
+}

@@ -4,9 +4,10 @@ import leftArrow from '../assets/icons/arrow_left.png';
 import { motion, useAnimation } from "framer-motion";
 import animations from '../animations/projectCardsAnimations';
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, handleScrollColor }) => {
-  const { title, subtitle, about, color } = project;
+  const { title, subtitle, about, color, show, link } = project;
 
   const cardControls = useAnimation();
   const arrowControls = useAnimation();
@@ -53,12 +54,13 @@ const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, 
       <div className="about_show_div">
         <p>{about}</p>
 
-        {/* <p
-          className={color === "#015CA0" ? "show_p white" : "show_p"}
+        <Link
+          to={link}
           style={{ backgroundColor: `${color}` }}
+          className={color === "#015CA0" ? "show_p white" : "show_p"}
         >
           {show}
-        </p> */}
+        </Link>
       </div>
       <div className="projects_cards_container"></div>
     </motion.div>

@@ -4,7 +4,7 @@ export default {
       maxHeight: "6rem",
     },
     animate: {
-      maxHeight: "30rem",
+      maxHeight: "100vh",
       transition: {
         ease: "easeInOut",
         duration: 0.5,
