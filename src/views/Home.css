@@ -1,13 +1,3 @@
-:root {
-  --main-red: #ED6A5A;
-  --main-black: #292F36;
-  --main-white: #F9F7F5;
-  --frame-width: 3vw;
-  --frame-padding: 4vw;
-  --nav-padding: 0.2rem;
-  --link-size: 1.2rem;
-}
-
 .home {
   height: 100%;
   width: 100%;
@@ -91,4 +81,49 @@ p.blob_text_2 {
 
 .home_menu li a:hover::after {
   width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .home {
+    flex-direction: column;
+  }
+  .home .home_content {
+    align-items: center;
+  }
+  .home .home_content .home_menu {
+    position: absolute;
+    top: 0;
+    height: 1.5rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .home .home_content .web_title {
+    position: absolute;
+    top: 2rem;
+  }
+  .home .home_content .home_menu li a {
+    font-size: 1.3rem;
+  }
+  .blob_div {
+    position: absolute;
+    top: 15rem;
+    width: calc(100% - var(--frame-padding) - var(--frame-width));
+    height: calc(100% - 15rem - var(--frame-padding));
+  }
+  p.blob_text_1 {
+    position: absolute;
+    top: 60%;
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  p.blob_text_2 {
+    position: absolute;
+    top: 60%;
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

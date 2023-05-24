@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Home.css';
 import Frame from "../components/Frame";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
 import animations from '../animations/homeAnimations';
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleMouseOver = (text) => {
     setActiveLink(text);
@@ -26,16 +27,24 @@ const Home = () => {
     >
       {activeLink === text ? 
       <>
-        <AnimatePresence>
-          <span>&lt;{text}</span>
-          <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
-        </AnimatePresence>
+        <span>&lt;{text}</span>
+        <motion.span key={'/>'} variants={animations.menuItem} initial="hidden" animate="animate" exit="exit"> /&gt;</motion.span>
       </>
       :
-      <span>&lt;{text}</span>
+      <span>&lt;{ windowWidth > 1000 ? text : `${text} />`}</span>
       }
     </Link>
   );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [windowWidth]);
 
   return (
     <div className="frame" style={{ overflow: "hidden" }}>
@@ -67,7 +76,7 @@ const Home = () => {
             animate="animate"
             exit="exit"
             >
-            <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+            <Canvas style={ windowWidth > 1000 ? blobStylesDesktop : blobStylesMobile} camera={{ position: [0.0, 0.0, 8.0] }}>
               <Blob color='#ED6A5A'/>
             </Canvas>          
           </motion.div>         
@@ -91,11 +100,20 @@ const Home = () => {
   );
  }
 
-const blobStyles = {
+const blobStylesDesktop = {
   height: '100vh',
   position: 'absolute',
   top: '0',
   left: '-40%',
+  zIndex: '0',
+}
+
+const blobStylesMobile = {
+  height: '70vh',
+  width: '100vw',
+  position: 'absolute',
+  top: '50%',
+  left: '-10%',
   zIndex: '0',
 }
 
