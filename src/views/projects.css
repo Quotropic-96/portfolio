@@ -253,9 +253,15 @@ div.projects_cards_container_wrapper::-webkit-scrollbar-track {
   div.projects_cards_container_wrapper {
     height: 100%;
     direction: rtl;
+    max-height: 100%;
+    margin-top: 1.5rem;
   }
   div.projects_cards_container {
     direction: ltr;
     padding-left: 5%;
+  }
+
+  .frameBottomCorner {
+    z-index: 1;
   }
 }

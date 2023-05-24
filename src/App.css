@@ -100,6 +100,8 @@ nav.navbar ul {
   .active {
     font-size: 2rem;
     height: inherit;
-    padding-right: 2rem;
+  }
+  .active-bullet {
+    height: 0.5rem;
   }
 }
