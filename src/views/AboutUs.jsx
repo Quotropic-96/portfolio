@@ -21,7 +21,7 @@ const AboutUs = () => {
             animate="animate"
             exit="exit"
           >
-            <Canvas style={blobStyles} camera={{ position: [0.0, 0.0, 8.0] }}>
+            <Canvas style={blobStylesDesktop} camera={{ position: [0.0, 0.0, 8.0] }}>
               <Blob color="#ED6A5A" />
             </Canvas>
           </motion.div>
@@ -99,11 +99,12 @@ const AboutUs = () => {
   );
 };
 
-const blobStyles = {
+const blobStylesDesktop = {
   height: "130vh",
+  width: '150vw',
   position: "absolute",
   top: "10%",
-  right: "40%",
+  right: "5%",
   zIndex: "0",
 };
 

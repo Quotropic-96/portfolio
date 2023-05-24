@@ -1,6 +1,6 @@
 .about_us {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -34,6 +34,10 @@ div.text_body {
   gap: 2rem;
 }
 
+div.text_body h1 {
+  align-self: flex-end;
+}
+
 div.text_body p {
   text-align: right;
   text-transform: uppercase;
@@ -61,6 +65,9 @@ b {
     width: 100%;
     align-items: center;
   }
+  div.text_body h1 {
+    align-self: center;
+  }
   div.text_body p {
     text-align: center;
   }
@@ -78,7 +85,7 @@ b {
   }
 }
 
-@media (max-height: 750px) {
+@media (max-height: 750px) and (max-width: 1000px) {
   div.text_body h1 {
     align-self: flex-start;
   }
