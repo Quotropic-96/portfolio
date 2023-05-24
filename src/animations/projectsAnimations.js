@@ -1,7 +1,7 @@
 export default {
   body: {
     hidden: {
-      x: "-50vw",
+      x: "-100vw",
     },
     animate: {
       x: 0,
@@ -15,7 +15,7 @@ export default {
       },
     },
     exit: {
-      x: "-50vw",
+      x: "-100vw",
       transition: {
         ease: "easeInOut",
         duration: 1.5,
