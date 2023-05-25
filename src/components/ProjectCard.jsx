@@ -53,6 +53,9 @@ const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, 
       </div>
       <div className="about_show_div">
         <p>{about}</p>
+        {title==='XProof' && 
+          <p>For more info visit <a href="https://xproof.io/" style={{ fontWeight: '700' }}>XProof.io</a></p>
+        }
 
         <Link
           to={link}
