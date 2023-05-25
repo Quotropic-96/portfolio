@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useViewport } from "../hooks/useViewport";
 import './Home.css';
 import Frame from "../components/Frame";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,7 +10,7 @@ import animations from '../animations/homeAnimations';
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { windowWidth } = useViewport();
 
   const handleMouseOver = (text) => {
     setActiveLink(text);
@@ -37,16 +38,6 @@ const Home = () => {
       }
     </Link>
   );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className="frame" style={{ overflow: "hidden" }}>

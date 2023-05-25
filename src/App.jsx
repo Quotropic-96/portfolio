@@ -7,13 +7,13 @@ import Contact from "./views/Contact";
 import AboutUs from "./views/AboutUs";
 import TestColor from "./views/TestColor";
 import { AnimatePresence } from "framer-motion";
-import { useViewportHeight } from "./hooks/useViewPortHeight";
+import { useViewport } from "./hooks/useViewport";
 
 function App() {
   const location = useLocation();
-  const vh = useViewportHeight();
+  const { windowHeight } = useViewport();
 
-  const appHeight = { height: `${vh}px` };
+  const appHeight = { height: `${windowHeight}px` };
 
   return (
     <div className="App" style={appHeight}>

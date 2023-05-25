@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { useViewport } from "../hooks/useViewport";
 import { Canvas } from "@react-three/fiber";
 import { motion, useAnimation } from "framer-motion";
 import Frame from "../components/Frame";
@@ -31,7 +32,7 @@ const initialProjectState = {
 const Projects = () => {
   const [scrollColor, setScrollColor] = useState(null);
   const [projectState, setProjectState] = useState(initialProjectState);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { windowWidth } = useViewport();
 
   const mobileFrameControls = useAnimation();
   const pcFrameControls = useAnimation();
@@ -246,16 +247,6 @@ const Projects = () => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[projectState]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [windowWidth]);
 
   return (
     <div className="frame">
