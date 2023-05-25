@@ -58,6 +58,7 @@ div.icons img {
 .contact_form_container form button {
   border-radius: 10px;
   border: 1px solid var(--main-black);
+  color: var(--main-black);
   padding: 1rem;
   background-color: var(--main-white);
   font-family: 'Work Sans', sans-serif;
@@ -82,5 +83,13 @@ div.icons img {
   }
   .contact_form_container {
     width: 100%;
+  }
+  .contact_form_container form input,textarea {
+    border-radius: 5px;
+    padding: .75rem;
+  }
+  .contact_form_container form button {
+    border-radius: 5px;
+    padding: .75rem;
   }
 }

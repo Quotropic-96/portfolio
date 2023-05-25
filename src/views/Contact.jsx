@@ -98,7 +98,7 @@ const Contact = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setTextAreaRows(window.innerHeight < 750 ? 5 : 8);
+      setTextAreaRows(window.innerHeight < 750 ? 4 : 8);
     };
     window.addEventListener('resize', handleResize);
     return () => {

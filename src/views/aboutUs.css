@@ -89,4 +89,7 @@ b {
   div.text_body h1 {
     align-self: flex-start;
   }
+  div.text_body p {
+    font-size: .8rem;
+  }
 }
