@@ -1,4 +1,3 @@
-// import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
@@ -106,6 +105,10 @@ const Contact = () => {
     };
   }, []);
 
+const handleClick = ()=>{
+  window.open('mailto: paulabertolin@xproof.io', '_blank')
+}
+
   return (
     <div className="frame">
       <Frame />
@@ -126,8 +129,8 @@ const Contact = () => {
           <div className="social_container">
             <p>You can also contact us through:</p>
             <div className="icons">
-              <motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" />
-              <motion.img key={'iconM'} variants={animations.iconMid} src={email} alt="email-icon" />
+              <motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" onClick={handleClick} />
+              <a href="mailto: paulabertolin@xproof.io" target="_blanck"><motion.img key={'iconM'} variants={animations.iconMid} src={email} alt="email-icon" /></a>
               <motion.img key={'iconR'} variants={animations.iconRight} src={linkedIn} alt="linkedin-icon" />
             </div>
           </div>
