@@ -105,9 +105,9 @@ const Contact = () => {
     };
   }, []);
 
-const handleClick = ()=>{
-  window.open('mailto: paulabertolin@xproof.io', '_blank')
-}
+// const handleClick = ()=>{
+//   window.open('mailto: paulabertolin@xproof.io', '_blank')
+// }
 
   return (
     <div className="frame">
@@ -129,9 +129,9 @@ const handleClick = ()=>{
           <div className="social_container">
             <p>You can also contact us through:</p>
             <div className="icons">
-              <motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" onClick={handleClick} />
-              <a href="mailto: paulabertolin@xproof.io" target="_blanck"><motion.img key={'iconM'} variants={animations.iconMid} src={email} alt="email-icon" /></a>
-              <motion.img key={'iconR'} variants={animations.iconRight} src={linkedIn} alt="linkedin-icon" />
+              <a href="https://www.malt.es/profile/gerardsolaneshernandez" target="_blanck"><motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" /></a>
+              <a href="mailto: contact@quodevelopment.com" target="_blanck"><motion.img key={'iconM'} variants={animations.iconMid} src={email} alt="email-icon" /></a>
+              <a href="https://www.linkedin.com/in/gerard-solanes-hernandez/" target="_blanck"><motion.img key={'iconR'} variants={animations.iconRight} src={linkedIn} alt="linkedin-icon" /></a>
             </div>
           </div>
         </motion.div>
