@@ -31,7 +31,7 @@ const AboutUs = () => {
           </motion.div>
           <motion.img
             src={profile}
-            alt="Profile Gerard & Pau"
+            alt="Profile Gerard"
             key="photo"
             variants={animations.photo}
             initial="hidden"
@@ -90,7 +90,7 @@ const AboutUs = () => {
           animate="animate"
           exit="exit"
         >
-          Paula Bertolin & Gerard Solanes
+          Gerard Solanes
         </motion.figcaption>
       </div>
       <motion.figcaption
@@ -101,7 +101,7 @@ const AboutUs = () => {
         animate="animate"
         exit="exit"
       >
-        Paula Bertolin & Gerard Solanes
+        Gerard Solanes
       </motion.figcaption>
     </div>
   );

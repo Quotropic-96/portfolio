@@ -11,9 +11,9 @@
 
 .photo_caption img {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 45%;
+  bottom: -10%;
+  left: 5%;
+  width: 35%;
 }
 
 .caption {
