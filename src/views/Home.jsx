@@ -44,48 +44,59 @@ const Home = () => {
       <Frame />
       <div className="home">
         <div className="blob_div">
-          <motion.p className="blob_text_1"
-            key={'text1'}
+          <motion.p
+            className="blob_text_1"
+            key={"text1"}
             variants={animations.text}
             initial="hidden"
             animate="animate"
             exit="exit"
           >
-            We are the full-stack developers who deliver impactful web solutions that resonate in the digital world
+            We are the full-stack developers who deliver impactful web solutions
+            that resonate in the digital world
           </motion.p>
-          <motion.p className="blob_text_2"
-            key={'text2'}
+          <motion.p
+            className="blob_text_2"
+            key={"text2"}
             variants={animations.text}
             initial="hidden"
             animate="animate"
             exit="exit"
           >
-            We are the full-stack developers who deliver impactful web solutions that resonate in the digital world
+            We are the full-stack developers who deliver impactful web solutions
+            that resonate in the digital world
           </motion.p>
           <motion.div
-            key='blob'
+            key="blob"
             variants={animations.blob}
             initial="hidden"
             animate="animate"
             exit="exit"
+          >
+            <Canvas
+              style={windowWidth > 1000 ? blobStylesDesktop : blobStylesMobile}
+              camera={{ position: [0.0, 0.0, 8.0] }}
             >
-            <Canvas style={ windowWidth > 1000 ? blobStylesDesktop : blobStylesMobile} camera={{ position: [0.0, 0.0, 8.0] }}>
-              <Blob color='#ED6A5A'/>
-            </Canvas>          
-          </motion.div>         
+              <Blob color="#ED6A5A" />
+            </Canvas>
+          </motion.div>
         </div>
-        <motion.div className="home_content"
-          key='body'
+        <motion.div
+          className="home_content"
+          key="body"
           variants={animations.body}
           initial="hidden"
           animate="animate"
           exit="exit"
         >
-          <h1 className="web_title">QuoDev</h1>
-          <ul className="home_menu" style={{ zIndex: '15'}}>
-            <li>{renderLink('/projects', 'Projects')}</li>
-            <li>{renderLink('/about-us', 'About Us')}</li>
-            <li>{renderLink('/contact', 'Contact')}</li>
+          <div className="web_title_container">
+            <h1 className="web_title">QuoDev</h1>
+            <h4 className="web_subtitle">by Gerard Solanes</h4>
+          </div>
+          <ul className="home_menu" style={{ zIndex: "15" }}>
+            <li>{renderLink("/projects", "Projects")}</li>
+            <li>{renderLink("/about-us", "About Us")}</li>
+            <li>{renderLink("/contact", "Contact")}</li>
           </ul>
         </motion.div>
       </div>

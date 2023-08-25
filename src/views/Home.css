@@ -46,6 +46,13 @@ p.blob_text_2 {
   font-size: 12rem;
 }
 
+.web_subtitle {
+  font-weight: 300;
+  position: relative;
+  top: -30px;
+  text-align: right;
+}
+
 .home_menu {
   width: 100%;
   display: flex;
@@ -97,7 +104,7 @@ p.blob_text_2 {
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .home .home_content .web_title {
+  .home .home_content .web_title_container {
     position: absolute;
     top: 2rem;
   }

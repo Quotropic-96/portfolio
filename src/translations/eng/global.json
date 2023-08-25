@@ -1,0 +1,41 @@
+{
+  "home": {
+    "title": "QuoDev",
+    "subtitle": "by Gerard Solanes Hernández",
+    "text": "We are the full-stack developers who deliver impactful web solutions that resonate in the digital world"
+  },
+  "navbar" : {
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "about": "ABOUT ME",
+    "contact": "CONTACT"
+  },
+  "projects" : {
+    "xproof": "A user-friendly React PWA that captures math equation photos, expertly detects errors, pinpoints mistake locations, and offers targeted feedback, empowering users to learn and enhance problem-solving skills efficiently.",
+    "soundtribe": "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
+    "console": "A Javascript-based game with canvas, HTML, and CSS, featuring immersive animations, parallax effects, and an original soundtrack, keeping players engaged with a competitive scoreboard system for endless entertainment. Graphic content from Firewatch and pixel.io",
+    "select": "< select a project to be shown here />",
+    "loading": "< loading />"
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "text" : "I am a physicist, a teacher and a full-stack developer with a unique
+    blend of <b>programming</b>, <b>data analysis</b>, and <b>design</b>{" "}
+    expertise. Specialising in the MERN stack (MongoDB, Express, React,
+    and Node.js) and WORDPRESS, I bring my passion for innovation and
+    problem-solving to every project.<br></br>
+    <br></br>
+    Driven by my eagerness for coding and excellence, I deliver engaging, visually striking, and functional web
+    experiences that resonate with users and elevate the clients&apos;
+    brand presence. <br></br>
+    <br></br>Build the future here!"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "text": "Tell us about your project, arrange a meeting with us and let&apos;s start creating together.",
+    "contact" : "You can also contact us through:",
+    "formName": "NAME",
+    "formMessage": "MESSAGE",
+    "formSend": "SEND"
+  }
+}

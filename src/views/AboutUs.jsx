@@ -45,17 +45,16 @@ const AboutUs = () => {
         >
           <h1>ABOUT US</h1>
           <p>
-            We are a team of two dedicated full-stack developers with a unique
+            I am a physicist, a teacher and a full-stack developer with a unique
             blend of <b>programming</b>, <b>data analysis</b>, and <b>design</b>{" "}
             expertise. Specialising in the MERN stack (MongoDB, Express, React,
-            and Node.js) and WORDPRESS, we bring our passion for innovation and
+            and Node.js) and WORDPRESS, I bring my passion for innovation and
             problem-solving to every project.<br></br>
             <br></br>
-            Driven by our passion for coding and excellence, we pride ourselves
-            on delivering engaging, visually striking, and functional web
-            experiences that resonate with users and elevate our clients&apos;
+            Driven by my eagerness for coding and excellence, I deliver engaging, visually striking, and functional web
+            experiences that resonate with users and elevate the clients&apos;
             brand presence. <br></br>
-            <br></br>Build the future with us!
+            <br></br>Build the future here!
           </p>
         </motion.div>
         <motion.div
