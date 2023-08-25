@@ -74,7 +74,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={"/about-us"}>
+          <NavLink to={"/about-me"}>
             {location.pathname === "/about-me" && windowWidth <= 1000 ? (
               <img
                 className="active-bullet"
