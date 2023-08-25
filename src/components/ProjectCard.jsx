@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, handleScrollColor, t }) => {
-  const { title, color, show, link } = project;
+  const { title, color, link } = project;
   let subtitle;
   let about;
 
@@ -96,6 +96,7 @@ ProjectCard.propTypes = {
   handleProjectState: PropTypes.func.isRequired,
   isAnimating: PropTypes.func.isRequired,
   handleScrollColor: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 }
 
 export default ProjectCard;

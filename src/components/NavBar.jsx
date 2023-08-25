@@ -31,7 +31,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink to={'/about-us'}>
-            {location.pathname === '/about-us' && windowWidth <= 1000 ? <img className="active-bullet" src={activeBullet} alt="active bullet" /> : t('navbar.about')}
+            {location.pathname === '/about-me' && windowWidth <= 1000 ? <img className="active-bullet" src={activeBullet} alt="active bullet" /> : t('navbar.about')}
           </NavLink>
         </li>
         <li>

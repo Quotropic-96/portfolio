@@ -1,3 +1,58 @@
 {
-  "home": "home"
+  "home": {
+    "title": "QuoDev",
+    "subtitle": "Gerard Solanes",
+    "text": "Som els desenvolupadors full-stack que creen solucions web impactants que ressonen en el món digital.",
+    "menu": {
+      "projects": "PROJECTES",
+      "about": "SOBRE MI",
+      "contact": "CONTACTE"
+    }
+  },
+  "navbar": {
+    "home": "<Inici />",
+    "projects": "<Projectes />",
+    "about": "<Sobre Mi />",
+    "contact": "<Contacte />"
+  },
+  "projects": {
+    "title": "PROJECTES",
+    "xproof": {
+      "subtitle": "EDTECH REACT PWA",
+      "about": "Una PWA React fàcil d'usar que captura fotos d'equacions matemàtiques, detecta errors expertament, senyala ubicacions d'errors i ofereix comentaris específics, donant als usuaris l'empoderament per aprendre i millorar les seves habilitats de resolució de problemes eficaçment."
+    },
+    "soundTribe": {
+      "subtitle": "APLICACIÓ MÒBIL DE XARXA SOCIAL",
+      "about": "Una plataforma social impulsada per Node, Express i MongoDB que uneix músics i fans, creant 'tribus', compartint música, dates de concerts i interactuant amb publicacions en un entorn únicament temàtic de tribus, celebrant connexions artístiques."
+    },
+    "consoleFly": {
+      "subtitle": "VIDEOJOC",
+      "about": "Un joc basat en Javascript amb canvas, HTML i CSS, amb animacions immersives, efectes de paral·laxi i una banda sonora original, que manté els jugadors compromesos amb un sistema de puntuació competitiu per a un entreteniment sense fi. Contingut gràfic de Firewatch i pixel.io."
+    },
+    "try": "Prova-ho",
+    "select": "< selecciona un projecte per mostrar aquí />",
+    "loading": "< carregant />"
+  },
+  "about": {
+    "title": "SOBRE MI",
+    "text1": "Sóc físic, professor i desenvolupador full-stack amb una combinació única d'habilitats en ",
+    "programming": "programació",
+    "text2": ", ",
+    "data": "anàlisi de dades",
+    "communication": "comunicació",
+    "text3": " i ",
+    "design": "disseny",
+    "text4": ". Especialitzat en el stack MERN de JavaScript (MongoDB, Express, React i Node.js) i WORDPRESS, porto la meva passió per la innovació i la resolució de problemes a cada projecte.",
+    "text5": "Motivat pel meu entusiasme per la programació i l'excel·lència, entrego experiències web atractives, visualment impactants i funcionals que ressonen amb els usuaris i eleven la presència de la marca dels clients.",
+    "text6": "Construeix el futur aquí!"
+  },
+  "contact": {
+    "title": "CONTACTE",
+    "text": "Parla'ns del teu projecte, programa una reunió amb nosaltres i comencem a crear junts.",
+    "contact": "També pots contactar amb nosaltres a través de:",
+    "formName": "NOM",
+    "formMessage": "MISSATGE",
+    "formSend": "ENVIAR",
+    "formSending": "ENVIANT..."
+  }
 }

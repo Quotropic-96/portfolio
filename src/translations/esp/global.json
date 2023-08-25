@@ -1,3 +1,58 @@
 {
-  "home": "home"
+  "home": {
+    "title": "QuoDev",
+    "subtitle": "Gerard Solanes",
+    "text": "Somos desarrolladores full-stack que entregan soluciones web impactantes que resuenan en el mundo digital.",
+    "menu": {
+      "projects": "PROYECTOS",
+      "about": "SOBRE MÍ",
+      "contact": "CONTACTO"
+    }
+  },
+  "navbar": {
+    "home": "<Inicio />",
+    "projects": "<Proyectos />",
+    "about": "<Sobre Mí />",
+    "contact": "<Contacto />"
+  },
+  "projects": {
+    "title": "PROYECTOS",
+    "xproof": {
+      "subtitle": "EDTECH REACT PWA",
+      "about": "Una PWA React fácil de usar que captura fotos de ecuaciones matemáticas, detecta errores expertamente, señala ubicaciones de errores y ofrece comentarios específicos, empoderando a los usuarios para aprender y mejorar sus habilidades de resolución de problemas de manera eficiente."
+    },
+    "soundTribe": {
+      "subtitle": "APLICACIÓN MÓVIL DE RED SOCIAL",
+      "about": "Una plataforma social impulsada por Node, Express y MongoDB que une a músicos y fanáticos, creando 'tribus', compartiendo música, fechas de conciertos y participando en publicaciones en un entorno temático único de tribus, celebrando conexiones artísticas."
+    },
+    "consoleFly": {
+      "subtitle": "VIDEOJUEGO",
+      "about": "Un juego basado en Javascript con canvas, HTML y CSS, con animaciones inmersivas, efectos de paralaje y una banda sonora original, manteniendo a los jugadores comprometidos con un sistema de marcador competitivo para entretenimiento interminable. Contenido gráfico de Firewatch y pixel.io."
+    },
+    "try": "Pruébalo",
+    "select": "< selecciona un proyecto para mostrar aquí />",
+    "loading": "< cargando />"
+  },
+  "about": {
+    "title": "SOBRE MÍ",
+    "text1": "Soy físico, profesor y desarrollador full-stack con una combinación única de habilidades de ",
+    "programming": "programación",
+    "text2": ", ",
+    "data": "análisis de datos",
+    "communication": "comunicación",
+    "text3": " y ",
+    "design": "diseño",
+    "text4": ". Especializado en el stack MERN de JavaScript (MongoDB, Express, React y Node.js) y WORDPRESS, llevo mi pasión por la innovación y la resolución de problemas a cada proyecto.",
+    "text5": "Impulsado por mi entusiasmo por la programación y la excelencia, entrego experiencias web atractivas, visualmente impactantes y funcionales que resuenan con los usuarios y elevan la presencia de la marca de los clientes.",
+    "text6": "¡Construye el futuro aquí!"
+  },
+  "contact": {
+    "title": "CONTACTO",
+    "text": "Cuéntanos sobre tu proyecto, programa una reunión con nosotros y empecemos a crear juntos.",
+    "contact": "También puedes contactarnos a través de:",
+    "formName": "NOMBRE",
+    "formMessage": "MENSAJE",
+    "formSend": "ENVIAR",
+    "formSending": "ENVIANDO..."
+  }
 }
