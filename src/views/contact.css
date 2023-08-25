@@ -69,7 +69,11 @@ div.icons img {
 
 .contact_form_container form .sendingButton {
   opacity: .6;
-  
+}
+
+.sentMessage {
+  position: fixed;
+  bottom: -10%;
 }
 
 @media (max-width: 1000px) {

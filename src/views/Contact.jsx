@@ -156,8 +156,8 @@ const Contact = () => {
             <textarea name="message" placeholder="MESSAGE" rows={textAreaRows} value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
             {messageError && <p>{messageError}</p>}
             <button type="submit" className={status === 'SENDING' && 'sendingButton'} disabled={status === 'SENDING'}>{status === 'SENDING' ? 'SENDING...' : 'SEND'}</button>
-            {status === 'SUCCESS' && <p>Your message has been sent successfully. Thank you!</p>}
           </form>
+          {status === 'SUCCESS' && <p className="sentMessage">Your message has been sent successfully. Thank you!</p>}
         </motion.div>
       </div>
     </div>
