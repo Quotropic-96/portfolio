@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 const NavBar = () => {
   const { windowWidth } = useViewport();
   const location = useLocation();
+  // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation('global');
 
   return (

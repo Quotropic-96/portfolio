@@ -90,6 +90,45 @@ p.blob_text_2 {
   width: 100%;
 }
 
+.language_selector {
+  margin-top: 10%;
+  display: flex;
+  gap: 10px;
+}
+.language_selector p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.language_selector button {
+  border: none;
+  background-color: var(--main-white);
+  font-weight: 100;
+  color: var(--main-black); /* Default text color */
+  position: relative;
+}
+
+.language_selector button.selected {
+  color: var(--main-red); /* Red text color for selected language */
+}
+
+.language_selector button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--main-red); /* Red underline color */
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom;
+  transform: scaleX(0); /* Initially, set the width to 0 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.language_selector button.selected::after {
+  transform: scaleX(1); /* Full-width underline for selected language */
+}
+
+
 @media (max-width: 1000px) {
   .home {
     flex-direction: column;

@@ -41,6 +41,7 @@ const Projects = () => {
   const mobileIFrameControls = useAnimation();
   const pcIFrameControls = useAnimation();
 
+  // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation('global');
 
   const animationController = useMemo(() => new AnimationController(

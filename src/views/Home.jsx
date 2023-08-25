@@ -15,6 +15,10 @@ const Home = () => {
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation('global');
 
+  const handleChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  }
+
   const handleMouseOver = (text) => {
     setActiveLink(text);
   };
@@ -95,9 +99,16 @@ const Home = () => {
             <h4 className="web_subtitle">{t("home.subtitle")}</h4>
           </div>
           <ul className="home_menu" style={{ zIndex: "15" }}>
-          <li>{renderLink("/projects", t("home.menu.projects"))}</li>
+            <li>{renderLink("/projects", t("home.menu.projects"))}</li>
             <li>{renderLink("/about-me", t("home.menu.about"))}</li>
             <li>{renderLink("/contact", t("home.menu.contact"))}</li>
+            <li className="language_selector">
+              <button className={i18n.language === 'cat' ? 'selected' : ''} onClick={() => handleChangeLanguage('cat')}>CAT</button>
+              <p>|</p>
+              <button className={i18n.language === 'esp' ? 'selected' : ''} onClick={() => handleChangeLanguage('esp')}>ESP</button>
+              <p>|</p>
+              <button className={i18n.language === 'eng' ? 'selected' : ''} onClick={() => handleChangeLanguage('eng')}>ENG</button>
+            </li>
           </ul>
         </motion.div>
       </div>
