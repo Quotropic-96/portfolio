@@ -40,10 +40,10 @@ const Contact = () => {
   }, [isValid]);
 
   useEffect(() => {
-    if (status === 'SUCCES') {
+    if (status === 'SUCCESS') {
       setTimeout(() => {
         setStatus('');
-      }, 3000)
+      }, 3000);
     }
   }, [status]);
 
@@ -81,6 +81,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus('SENDING');
     emailjs.send("service_bl20gpo", "template_0sszpno", contactInfo, "wr-KKmtjr5EHUUy73")
       .then(() => {
         setContactInfo({
@@ -88,7 +89,7 @@ const Contact = () => {
           email: '',
           message: ''
         });
-        setStatus('SUCCES');
+        setStatus('SUCCESS');
       }, error => {
         console.log('FAILED', error);
       })
@@ -103,10 +104,6 @@ const Contact = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-// const handleClick = ()=>{
-//   window.open('mailto: paulabertolin@xproof.io', '_blank')
-// }
 
   return (
     <div className="frame">
@@ -129,7 +126,6 @@ const Contact = () => {
             <p>You can also contact us through:</p>
             <div className="icons">
               <a href="https://www.malt.es/profile/gerardsolaneshernandez" target="_blanck"><motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" /></a>
-              <a href="mailto: contact@quodevelopment.com" target="_blanck"><motion.img key={'iconM'} variants={animations.iconMid} src={email} alt="email-icon" /></a>
               <a href="https://www.linkedin.com/in/gerard-solanes-hernandez/" target="_blanck"><motion.img key={'iconR'} variants={animations.iconRight} src={linkedIn} alt="linkedin-icon" /></a>
             </div>
           </div>
@@ -159,8 +155,8 @@ const Contact = () => {
             {emailError && <p>{emailError}</p>}
             <textarea name="message" placeholder="MESSAGE" rows={textAreaRows} value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
             {messageError && <p>{messageError}</p>}
-            <button type="submit">SEND</button>
-            {status && <p>Your message has been sent successfully. Thank you!</p>}
+            <button type="submit" className={status === 'SENDING' && 'sendingButton'} disabled={status === 'SENDING'}>{status === 'SENDING' ? 'SENDING...' : 'SEND'}</button>
+            {status === 'SUCCESS' && <p>Your message has been sent successfully. Thank you!</p>}
           </form>
         </motion.div>
       </div>

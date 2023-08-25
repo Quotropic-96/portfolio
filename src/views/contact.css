@@ -67,6 +67,11 @@ div.icons img {
   font-weight: 500;
 }
 
+.contact_form_container form .sendingButton {
+  opacity: .6;
+  
+}
+
 @media (max-width: 1000px) {
   .contact {
     flex-direction: column;
