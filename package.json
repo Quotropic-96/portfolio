@@ -15,9 +15,11 @@
     "@react-three/fiber": "^8.13.0",
     "@types/three": "^0.152.0",
     "framer-motion": "^10.12.11",
+    "i18next": "^23.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-i18next": "^13.2.0",
     "react-router-dom": "^6.11.1",
     "three": "^0.152.2"
   },
