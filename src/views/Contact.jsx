@@ -81,8 +81,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // emailjs.send("service_p480rce", "template_dfi8l95", contactInfo, "4iGMCZ24PZXokCkrN")
-    emailjs.send("service_xjs44z7", "template_pphltda", contactInfo, "4iGMCZ24PZXokCkrN")
+    emailjs.send("service_bl20gpo", "template_0sszpno", contactInfo, "wr-KKmtjr5EHUUy73")
       .then(() => {
         setContactInfo({
           name: '',
