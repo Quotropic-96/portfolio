@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import validations from "../utils/validations";
 import linkedIn from "../assets/images/linkedin_logo.png";
-import email from "../assets/images/email.png";
 import malt from "../assets/images/malt_logo.png";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
