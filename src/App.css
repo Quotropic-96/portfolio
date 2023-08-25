@@ -67,9 +67,16 @@ a {
 
 nav.navbar {
   position: absolute;
+  width: calc(100vw - 2 * var(--frame-width) - var(--frame-padding));
   height: 1rem;
   top: calc(var(--frame-width) - var(--link-size) - var(--nav-padding));
   right: calc(var(--frame-padding) + var(--frame-width));
+  display: flex;
+  justify-content: space-between;
+}
+nav.navbar div.language_selector_nav {
+  margin-top: 0;
+  align-items: center;
 }
 
 nav.navbar ul {
