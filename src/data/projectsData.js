@@ -1,47 +1,20 @@
 export const projectsData = [
   {
-    title: "XProof",
-    subtitle: "EDTECH REACT PWA",
-    about: "A user-friendly React PWA that captures math equation photos, expertly detects errors, pinpoints mistake locations, and offers targeted feedback, empowering users to learn and enhance problem-solving skills efficiently.",
-    show: "Try it", 
+    title: "XProof", 
     color: "#F7CF5C",
     link: "https://xproof-prototype.netlify.app/",
     platform: "mobile",
   },
   {
     title: "SoundTribe",
-    subtitle: "SOCIAL NETWORK MOBILE APP",
-    about: "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
-    show: "Try it",
     color: "#7FB685",
     link: "https://soundtribe.fly.dev/home",
     platform: "mobile",
   },
   {
-    title: "Inke-In",
-    subtitle: "SOCIAL NETWORK MOBILE APP",
-    about: "The app is designed for tattoo artists to showcase their work and receive feedback. Also is a social network where users can contact their favorite tattoo artists to schedule appointments or ask questions. Users can also interact with tattoo artists' work by liking and saving images to their favorites.",
-    show: "Try it",
-    color: "#AB882E",
-    link: "https://inkedin.fly.dev",
-    platform: "mobile",
-  },
-  {
     title: "Console.fly( )",
-    subtitle: "VIDEO GAME",
-    about: "A Javascript-based game with canvas, HTML, and CSS, featuring immersive animations, parallax effects, and an original soundtrack, keeping players engaged with a competitive scoreboard system for endless entertainment. Graphic content from Firewatch and pixel.io",
-    show: "Try it",
     color: "#ED7236",
     link: "https://quotropic-96.github.io/console.fly/",
     platform: "pc",
   },
-  {
-    title: "Mondrian's Dream",
-    subtitle: "GAME",
-    about: "This game was created with the objective of bringing the world of art closer to children, and what better way to do so than through their favorite language? PLAY! Mondrian's Dream is conceived as a first step to help the little ones have a first contact with one of the mythical works of the Dutch artist, Piet Mondrian. Through play, children will not only learn about his art but will also develop their memory and concentration skills.",
-    show: "Try it",
-    color: "#015CA0",
-    link: "https://paubertolinros.github.io/mondrians-dream/",
-    platform: "pc",
-  }
 ];

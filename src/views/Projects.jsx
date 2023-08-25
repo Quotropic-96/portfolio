@@ -10,13 +10,12 @@ import { projectsData } from "../data/projectsData.js";
 import "./projects.css";
 import animations from '../animations/projectsAnimations';
 import { AnimationController } from '../utils/projectsAnimationController';
+import { useTranslation } from "react-i18next";
 
 const colorMap = {
   "#F7CF5C": "xproof",
   "#7FB685": "soundTribe",
-  "#AB882E": "inkedIn",
   "#ED7236": "consoleFly",
-  "#015CA0": "mondriansDream",
 };
 
 const initialProjectState = {
@@ -41,6 +40,8 @@ const Projects = () => {
   const loadingPcControls = useAnimation();
   const mobileIFrameControls = useAnimation();
   const pcIFrameControls = useAnimation();
+
+  const [t, i18n] = useTranslation('global');
 
   const animationController = useMemo(() => new AnimationController(
     mobileFrameControls,
@@ -261,7 +262,7 @@ const Projects = () => {
           animate="animate"
           exit="exit"
         >
-          <h1>PROJECTS</h1>
+          <h1>{t('projects.title')}</h1>
           <div
             className={`projects_cards_container_wrapper ${
               colorMap[scrollColor] || "original"
@@ -286,6 +287,7 @@ const Projects = () => {
                     handleProjectState={handleProjectState}
                     isAnimating={animationController.isAnimating}
                     handleScrollColor={setScrollColor}
+                    t={t}
                   />
                 );
               })}
@@ -310,7 +312,7 @@ const Projects = () => {
               initial={{ opacity: 0 }}
             >
               <p className="simulator_message">
-                {"< select a project to be shown here />"}
+                {t('projects.select')}
               </p>
             </motion.div>
             <motion.div
@@ -318,7 +320,7 @@ const Projects = () => {
               animate={loadingMobileControls}
               initial={{ opacity: 0 }}
             >
-              <p className="simulator_message">{"< loading />"}</p>
+              <p className="simulator_message">{t('projects.loading')}</p>
             </motion.div>
             <motion.div animate={mobileIFrameControls} initial={{ opacity: 0 }}>
               <iframe
@@ -347,7 +349,7 @@ const Projects = () => {
               <div className="pc_dot" />
             </div>
             <motion.div className="pc_loading" animate={loadingPcControls} initial={{ opacity: 0 }}>
-              <p className="simulator_message">{"< loading />"}</p>
+              <p className="simulator_message">{t('projects.loading')}</p>
             </motion.div>
             <motion.div animate={pcIFrameControls} initial={{ opacity: 0 }}>
               <iframe

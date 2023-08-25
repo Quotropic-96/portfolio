@@ -6,8 +6,29 @@ import animations from '../animations/projectCardsAnimations';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, handleScrollColor }) => {
-  const { title, subtitle, about, color, show, link } = project;
+const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, handleScrollColor, t }) => {
+  const { title, color, show, link } = project;
+  let subtitle;
+  let about;
+
+  switch (title) {
+    case 'XProof':
+      subtitle = t('projects.xproof.subtitle');
+      about = t('projects.xproof.about');
+      break;
+    case 'SoundTribe':
+      subtitle = t('projects.soundTribe.subtitle');
+      about = t('projects.soundTribe.about');
+      break;
+    case 'Console.fly( )':
+      subtitle = t('projects.consoleFly.subtitle');
+      about = t('projects.consoleFly.about');
+      break;
+    default:
+      subtitle = '';
+      about = '';
+      break;
+  }
 
   const cardControls = useAnimation();
   const arrowControls = useAnimation();
@@ -56,13 +77,12 @@ const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, 
         {title==='XProof' && 
           <p>For more info visit <a href="https://xproof.io/" style={{ fontWeight: '700' }}>XProof.io</a></p>
         }
-
         <Link
           to={link}
           style={{ backgroundColor: `${color}` }}
-          className={color === "#015CA0" ? "show_p white" : "show_p"}
+          className={"show_p"}
         >
-          {show}
+          Try it
         </Link>
       </div>
       <div className="projects_cards_container"></div>

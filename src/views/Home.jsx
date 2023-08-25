@@ -95,9 +95,9 @@ const Home = () => {
             <h4 className="web_subtitle">{t("home.subtitle")}</h4>
           </div>
           <ul className="home_menu" style={{ zIndex: "15" }}>
-          <li>{renderLink("/projects", t("navbar.projects"))}</li>
-            <li>{renderLink("/about-me", t("navbar.about"))}</li>
-            <li>{renderLink("/contact", t("navbar.contact"))}</li>
+          <li>{renderLink("/projects", t("home.menu.projects"))}</li>
+            <li>{renderLink("/about-me", t("home.menu.about"))}</li>
+            <li>{renderLink("/contact", t("home.menu.contact"))}</li>
           </ul>
         </motion.div>
       </div>

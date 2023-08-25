@@ -10,6 +10,8 @@ import Frame from "../components/Frame";
 import Blob from '../components/animatedBlob/Blob';
 import './contact.css';
 import animations from '../animations/contactAnimations';
+import { useTranslation } from "react-i18next";
+
 
 const Contact = () => {
   const [contactInfo, setContactInfo] = useState({
@@ -23,6 +25,8 @@ const Contact = () => {
   const [messageError, setMessageError] = useState(null);
   const [isValid, setIsValid] = useState({ name: true, email: true, message: true });
   const [textAreaRows, setTextAreaRows] = useState(window.innerHeight < 750 ? 5 : 8);
+  // eslint-disable-next-line no-unused-vars
+  const [t, i18n] = useTranslation('global');
 
   useEffect(() => {
     if (isValid.name === false) {
@@ -116,13 +120,12 @@ const Contact = () => {
           animate="animate"
           exit="exit"
         >
-          <h1>CONTACT</h1>
+          <h1>{t('contact.title')}</h1>
           <p>
-            Tell us about your project, arrange a meeting with us and let&apos;s start
-            creating together.
+          {t('contact.text')}
           </p>
           <div className="social_container">
-            <p>You can also contact us through:</p>
+            <p>{t('contact.contact')}</p>
             <div className="icons">
               <a href="https://www.malt.es/profile/gerardsolaneshernandez" target="_blanck"><motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" /></a>
               <a href="https://www.linkedin.com/in/gerard-solanes-hernandez/" target="_blanck"><motion.img key={'iconR'} variants={animations.iconRight} src={linkedIn} alt="linkedin-icon" /></a>
@@ -148,13 +151,13 @@ const Contact = () => {
           exit="exit"
         >
           <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="NAME" value={contactInfo.name} onChange={handleChange} required />
+            <input type="text" name="name" placeholder={t('contact.formName')} value={contactInfo.name} onChange={handleChange} required />
             {nameError && <p>{nameError}</p>}
             <input type="email" name="email" placeholder="EMAIL" value={contactInfo.email} onChange={handleChange} required />
             {emailError && <p>{emailError}</p>}
-            <textarea name="message" placeholder="MESSAGE" rows={textAreaRows} value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
+            <textarea name="message" placeholder={t('contact.formMessage')} rows={textAreaRows} value={contactInfo.message} onChange={handleChange} maxLength="1600" required />
             {messageError && <p>{messageError}</p>}
-            <button type="submit" className={status === 'SENDING' ? 'sendingButton' : ''} disabled={status === 'SENDING'}>{status === 'SENDING' ? 'SENDING...' : 'SEND'}</button>
+            <button type="submit" className={status === 'SENDING' ? 'sendingButton' : ''} disabled={status === 'SENDING'}>{status === 'SENDING' ? t('contact.formSending') : t('contact.formSend')}</button>
           </form>
           {status === 'SUCCESS' && <p className="sentMessage">Your message has been sent successfully. Thank you!</p>}
         </motion.div>

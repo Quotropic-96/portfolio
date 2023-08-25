@@ -46,10 +46,6 @@ div.about_show_div {
   border-radius: 5px;
 }
 
-.white {
-  color: var(--main-white);
-}
-
 @media (min-width: 1000px) {
   .show_p {
     display: none;

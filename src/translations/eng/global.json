@@ -2,24 +2,40 @@
   "home": {
     "title": "QuoDev",
     "subtitle": "by Gerard Solanes",
-    "text": "We are the full-stack developers who deliver impactful web solutions that resonate in the digital world"
+    "text": "We are the full-stack developers who deliver impactful web solutions that resonate in the digital world",
+    "menu": {
+      "projects": "PROJECTS",
+      "about": "ABOUT ME",
+      "contact": "CONTACT"
+    }
   },
-  "navbar" : {
-    "home": "HOME",
-    "projects": "PROJECTS",
-    "about": "ABOUT ME",
-    "contact": "CONTACT"
+  "navbar": {
+    "home": "<Home />",
+    "projects": "<Projects />",
+    "about": "<About Me />",
+    "contact": "<Contact />"
   },
-  "projects" : {
-    "xproof": "A user-friendly React PWA that captures math equation photos, expertly detects errors, pinpoints mistake locations, and offers targeted feedback, empowering users to learn and enhance problem-solving skills efficiently.",
-    "soundtribe": "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections.",
-    "console": "A Javascript-based game with canvas, HTML, and CSS, featuring immersive animations, parallax effects, and an original soundtrack, keeping players engaged with a competitive scoreboard system for endless entertainment. Graphic content from Firewatch and pixel.io",
+  "projects": {
+    "title": "PROJECTS",
+    "xproof": {
+      "subtitle": "EDTECH REACT PWA",
+      "about": "A user-friendly React PWA that captures math equation photos, expertly detects errors, pinpoints mistake locations, and offers targeted feedback, empowering users to learn and enhance problem-solving skills efficiently."
+    },
+    "soundTribe": {
+      "subtitle": "SOCIAL NETWORK MOBILE APP",
+      "about": "A Node, Express, and MongoDB-powered social platform that unites musicians and fans, creating 'tribes', sharing music, concert dates, and engaging with posts in a uniquely tribal-themed environment, celebrating artistic connections."
+    },
+    "consoleFly": {
+      "subtitle": "VIDEO GAME",
+      "about": "A Javascript-based game with canvas, HTML, and CSS, featuring immersive animations, parallax effects, and an original soundtrack, keeping players engaged with a competitive scoreboard system for endless entertainment. Graphic content from Firewatch and pixel.io"
+    },
+    "try": "Try it",
     "select": "< select a project to be shown here />",
     "loading": "< loading />"
   },
   "about": {
     "title": "ABOUT ME",
-    "text1" : "I am a physicist, a teacher and a full-stack developer with a unique blend of ",
+    "text1": "I am a physicist, a teacher and a full-stack developer with a unique blend of ",
     "programming": "programming",
     "text2": ", ",
     "data": "data analysis",
@@ -33,9 +49,10 @@
   "contact": {
     "title": "CONTACT",
     "text": "Tell us about your project, arrange a meeting with us and let&apos;s start creating together.",
-    "contact" : "You can also contact us through:",
+    "contact": "You can also contact us through:",
     "formName": "NAME",
     "formMessage": "MESSAGE",
-    "formSend": "SEND"
+    "formSend": "SEND",
+    "formSending": "SENDING..."
   }
 }
