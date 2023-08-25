@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
   const { windowWidth } = useViewport();
+  // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation('global');
 
   const handleMouseOver = (text) => {
@@ -95,7 +96,7 @@ const Home = () => {
           </div>
           <ul className="home_menu" style={{ zIndex: "15" }}>
           <li>{renderLink("/projects", t("navbar.projects"))}</li>
-            <li>{renderLink("/about-us", t("navbar.about"))}</li>
+            <li>{renderLink("/about-me", t("navbar.about"))}</li>
             <li>{renderLink("/contact", t("navbar.contact"))}</li>
           </ul>
         </motion.div>

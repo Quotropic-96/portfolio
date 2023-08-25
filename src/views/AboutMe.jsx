@@ -4,10 +4,14 @@ import profile from "../assets/images/profile.png";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
 import Blob from "../components/animatedBlob/Blob";
-import "./aboutUs.css";
+import "./aboutMe.css";
 import animations from "../animations/aboutUsAnimations";
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [t, i18n] = useTranslation('global');
+
   return (
     <div className="frame">
       <Frame />
@@ -43,18 +47,23 @@ const AboutUs = () => {
           animate="animate"
           exit="exit"
         >
-          <h1>ABOUT US</h1>
+          <h1>{t('about.title')}</h1>
           <p>
-            I am a physicist, a teacher and a full-stack developer with a unique
-            blend of <b>programming</b>, <b>data analysis</b>, and <b>design</b>{" "}
-            expertise. Specialising in the MERN stack (MongoDB, Express, React,
-            and Node.js) and WORDPRESS, I bring my passion for innovation and
-            problem-solving to every project.<br></br>
+            {t('about.text1')}
+            <b>{t('about.programming')}</b>
+            {t('about.text2')}
+            <b>{t('about.data')}</b>
+            {t('about.text2')}
+            <b>{t('about.communication')}</b>
+            {t('about.text3')}
+            <b>{t('about.design')}</b>
+            {t('about.text4')}
             <br></br>
-            Driven by my eagerness for coding and excellence, I deliver engaging, visually striking, and functional web
-            experiences that resonate with users and elevate the clients&apos;
-            brand presence. <br></br>
-            <br></br>Build the future here!
+            <br></br>
+            {t('about.text5')}
+            <br></br>
+            <br></br>
+            {t('about.text6')}
           </p>
         </motion.div>
         <motion.div
