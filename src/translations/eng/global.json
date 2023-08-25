@@ -1,7 +1,7 @@
 {
   "home": {
     "title": "QuoDev",
-    "subtitle": "by Gerard Solanes Hernández",
+    "subtitle": "by Gerard Solanes",
     "text": "We are the full-stack developers who deliver impactful web solutions that resonate in the digital world"
   },
   "navbar" : {
@@ -19,16 +19,7 @@
   },
   "about": {
     "title": "ABOUT ME",
-    "text" : "I am a physicist, a teacher and a full-stack developer with a unique
-    blend of <b>programming</b>, <b>data analysis</b>, and <b>design</b>{" "}
-    expertise. Specialising in the MERN stack (MongoDB, Express, React,
-    and Node.js) and WORDPRESS, I bring my passion for innovation and
-    problem-solving to every project.<br></br>
-    <br></br>
-    Driven by my eagerness for coding and excellence, I deliver engaging, visually striking, and functional web
-    experiences that resonate with users and elevate the clients&apos;
-    brand presence. <br></br>
-    <br></br>Build the future here!"
+    "text" : "I am a physicist, a teacher and a full-stack developer with a unique blend of <b>programming</b>, <b>data analysis</b>, and <b>design</b> expertise. Specialising in the MERN stack (MongoDB, Express, React, and Node.js) and WORDPRESS, I bring my passion for innovation and problem-solving to every project.<br></br><br></br>Driven by my eagerness for coding and excellence, I deliver engaging, visually striking, and functional web experiences that resonate with users and elevate the clients&apos; brand presence. <br></br><br></br>Build the future here!"
   },
   "contact": {
     "title": "CONTACT",

@@ -7,10 +7,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Blob from '../components/animatedBlob/Blob';
 import { Canvas } from "@react-three/fiber";
 import animations from '../animations/homeAnimations';
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const [activeLink, setActiveLink] = useState(null);
   const { windowWidth } = useViewport();
+  const [t, i18n] = useTranslation('global');
 
   const handleMouseOver = (text) => {
     setActiveLink(text);
@@ -52,8 +54,7 @@ const Home = () => {
             animate="animate"
             exit="exit"
           >
-            We are the full-stack developers who deliver impactful web solutions
-            that resonate in the digital world
+            {t("home.text")}
           </motion.p>
           <motion.p
             className="blob_text_2"
@@ -63,8 +64,7 @@ const Home = () => {
             animate="animate"
             exit="exit"
           >
-            We are the full-stack developers who deliver impactful web solutions
-            that resonate in the digital world
+            {t("home.text")}
           </motion.p>
           <motion.div
             key="blob"
@@ -90,13 +90,13 @@ const Home = () => {
           exit="exit"
         >
           <div className="web_title_container">
-            <h1 className="web_title">QuoDev</h1>
-            <h4 className="web_subtitle">by Gerard Solanes</h4>
+            <h1 className="web_title">{t("home.title")}</h1>
+            <h4 className="web_subtitle">{t("home.subtitle")}</h4>
           </div>
           <ul className="home_menu" style={{ zIndex: "15" }}>
-            <li>{renderLink("/projects", "Projects")}</li>
-            <li>{renderLink("/about-us", "About Us")}</li>
-            <li>{renderLink("/contact", "Contact")}</li>
+          <li>{renderLink("/projects", t("navbar.projects"))}</li>
+            <li>{renderLink("/about-us", t("navbar.about"))}</li>
+            <li>{renderLink("/contact", t("navbar.contact"))}</li>
           </ul>
         </motion.div>
       </div>
