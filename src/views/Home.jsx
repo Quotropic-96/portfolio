@@ -112,7 +112,7 @@ const Home = () => {
             <li>{renderLink("/about-me", t("home.menu.about"))}</li>
             <li>{renderLink("/contact", t("home.menu.contact"))}</li>
           </ul>
-          <li className="language_selector">
+          <div className="language_selector">
             <button
               className={i18n.language === "cat" ? "selected" : ""}
               onClick={() => handleChangeLanguage("cat")}
@@ -133,7 +133,7 @@ const Home = () => {
             >
               ENG
             </button>
-          </li>
+          </div>
         </motion.div>
       </div>
     </div>

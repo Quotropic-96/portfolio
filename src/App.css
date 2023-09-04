@@ -67,10 +67,10 @@ a {
 
 nav.navbar {
   position: absolute;
-  width: calc(100vw - 2 * var(--frame-width) - var(--frame-padding));
+  width: calc(100vw - 2 * var(--frame-width));
   height: 1rem;
   top: calc(var(--frame-width) - var(--link-size) - var(--nav-padding));
-  right: calc(var(--frame-padding) + var(--frame-width));
+  right: var(--frame-width);
   display: flex;
   justify-content: space-between;
 }
@@ -82,6 +82,8 @@ nav.navbar div.language_selector_nav {
 nav.navbar ul {
   display: flex;
   gap: 1rem;
+  width: 700px;
+  justify-content: flex-end;
 }
 
 @media (max-width: 1000px) {
@@ -91,6 +93,7 @@ nav.navbar ul {
     height: 8rem;
     padding: .5rem 0;
     z-index: 10;
+    width: auto;
   }
   nav.navbar div.language_selector_nav {
     justify-content: flex-end;
