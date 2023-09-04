@@ -94,6 +94,7 @@ p.blob_text_2 {
   margin-top: 10%;
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 .language_selector p {
   font-size: 1rem;
@@ -101,7 +102,7 @@ p.blob_text_2 {
 }
 .language_selector button {
   border: none;
-  background-color: var(--main-white);
+  background-color: transparent;
   font-weight: 100;
   color: var(--main-black); /* Default text color */
   position: relative;
@@ -145,10 +146,13 @@ p.blob_text_2 {
   }
   .home .home_content .web_title_container {
     position: absolute;
-    top: 2rem;
+    top: 3rem;
   }
   .home .home_content .home_menu li a {
     font-size: 1.3rem;
+  }
+  .language_selector {
+    justify-content: center;
   }
   .blob_div {
     position: absolute;

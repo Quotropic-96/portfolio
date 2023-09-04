@@ -86,10 +86,15 @@ nav.navbar ul {
 
 @media (max-width: 1000px) {
   nav.navbar {
+    flex-direction: column-reverse;
     top:calc(var(--frame-padding) + var(--frame-width));
     height: 8rem;
     padding: .5rem 0;
     z-index: 10;
+  }
+  nav.navbar div.language_selector_nav {
+    justify-content: flex-end;
+    gap: 0;
   }
   nav.navbar ul {
     flex-direction: column;
