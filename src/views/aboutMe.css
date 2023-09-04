@@ -13,7 +13,7 @@
   position: absolute;
   bottom: -10%;
   left: 5%;
-  width: 35%;
+  height: calc(100dvh - 2* var(--frame-padding));
 }
 
 .caption {
