@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import validations from "../utils/validations";
 import linkedIn from "../assets/images/linkedin_logo.png";
+import gitHub from "../assets/images/github.png";
 import malt from "../assets/images/malt_logo.png";
 import NavBar from "../components/NavBar";
 import Frame from "../components/Frame";
@@ -128,6 +129,7 @@ const Contact = () => {
             <p>{t('contact.contact')}</p>
             <div className="icons">
               <a href="https://www.malt.es/profile/gerardsolaneshernandez" target="_blanck"><motion.img key={'iconL'} variants={animations.iconLeft} src={malt} alt="malt-icon" /></a>
+              <a href="https://github.com/Quotropic-96" target="_blanck"><motion.img key={'iconM'} variants={animations.iconMid} src={gitHub} alt="github-icon" /></a>
               <a href="https://www.linkedin.com/in/gerard-solanes-hernandez/" target="_blanck"><motion.img key={'iconR'} variants={animations.iconRight} src={linkedIn} alt="linkedin-icon" /></a>
             </div>
           </div>
