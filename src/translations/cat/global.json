@@ -2,7 +2,7 @@
   "home": {
     "title": "QuoDev",
     "subtitle": "Gerard Solanes",
-    "text": "Som els desenvolupadors full-stack que creen solucions web impactants que ressonen en el món digital.",
+    "text": "Sóc desenvolupador full-stack que crea solucions web impactants que ressonen en el món digital.",
     "menu": {
       "projects": "PROJECTES",
       "about": "SOBRE MI",
@@ -30,6 +30,7 @@
       "about": "Un joc basat en Javascript amb canvas, HTML i CSS, amb animacions immersives, efectes de paral·laxi i una banda sonora original, que manté els jugadors compromesos amb un sistema de puntuació competitiu per a un entreteniment sense fi. Contingut gràfic de Firewatch i pixel.io."
     },
     "try": "Prova-ho",
+    "moreInfo": "Per a més informació visita",
     "select": "< selecciona un projecte per mostrar aquí />",
     "loading": "< carregant />"
   },
@@ -48,8 +49,8 @@
   },
   "contact": {
     "title": "CONTACTE",
-    "text": "Parla'ns del teu projecte, programa una reunió amb nosaltres i comencem a crear junts.",
-    "contact": "També pots contactar amb nosaltres a través de:",
+    "text": "Parla'm del teu projecte, programa una reunió i comencem a crear junts.",
+    "contact": "També pots contactar a través de:",
     "formName": "NOM",
     "formMessage": "MISSATGE",
     "formSend": "ENVIAR",

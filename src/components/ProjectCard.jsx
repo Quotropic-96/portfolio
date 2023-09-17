@@ -75,14 +75,14 @@ const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, 
       <div className="about_show_div">
         <p>{about}</p>
         {title==='XProof' && 
-          <p>For more info visit <a href="https://xproof.io/" style={{ fontWeight: '700' }}>XProof.io</a></p>
+          <p>{t("projects.moreInfo")} <a href="https://xproof.io/" style={{ fontWeight: '700' }}>XProof.io</a></p>
         }
         <Link
           to={link}
           style={{ backgroundColor: `${color}` }}
           className={"show_p"}
         >
-          Try it
+          {t("projects.try")}
         </Link>
       </div>
       <div className="projects_cards_container"></div>

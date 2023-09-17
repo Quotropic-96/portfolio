@@ -2,7 +2,7 @@
   "home": {
     "title": "QuoDev",
     "subtitle": "by Gerard Solanes",
-    "text": "We are the full-stack developers who deliver impactful web solutions that resonate in the digital world",
+    "text": "I am the full-stack developer who delivers impactful web solutions that resonate in the digital world",
     "menu": {
       "projects": "PROJECTS",
       "about": "ABOUT ME",
@@ -30,6 +30,7 @@
       "about": "A Javascript-based game with canvas, HTML, and CSS, featuring immersive animations, parallax effects, and an original soundtrack, keeping players engaged with a competitive scoreboard system for endless entertainment. Graphic content from Firewatch and pixel.io"
     },
     "try": "Try it",
+    "moreInfo": "For more info visit",
     "select": "< select a project to be shown here />",
     "loading": "< loading />"
   },
@@ -48,8 +49,8 @@
   },
   "contact": {
     "title": "CONTACT",
-    "text": "Tell us about your project, arrange a meeting with us and let&apos;s start creating together.",
-    "contact": "You can also contact us through:",
+    "text": "Tell me about your project, arrange a meeting and let's start creating together.",
+    "contact": "You can also contact through:",
     "formName": "NAME",
     "formMessage": "MESSAGE",
     "formSend": "SEND",
