@@ -21,6 +21,10 @@
       "subtitle": "EDTECH REACT PWA",
       "about": "Una PWA React fácil de usar que utilizando un modelo de Inteligéncia Artificial propio captura fotos de ecuaciones matemáticas, detecta errores expertamente, señala ubicaciones de errores y ofrece comentarios específicos, empoderando a los usuarios para aprender y mejorar sus habilidades de resolución de problemas de manera eficiente."
     },
+    "psicotip": {
+      "subtitle": "BLOG DE PSICOLOGÍA",
+      "about": "Psicotip.es es un blog de psicología integral, que ofrece una gran cantidad de consejos e ideas sobre una amplia gama de temas psicológicos. Diseñado para informar e iluminar, proporciona consejos expertos y accesibles para ayudar a los lectores a navegar por las complejidades de la salud mental y el desarrollo personal."
+    },
     "soundTribe": {
       "subtitle": "APLICACIÓN MÓVIL DE RED SOCIAL",
       "about": "Una plataforma social impulsada por Node, Express y MongoDB que une a músicos y fanáticos, creando 'tribus', compartiendo música, fechas de conciertos y participando en publicaciones en un entorno temático único de tribus, celebrando conexiones artísticas."

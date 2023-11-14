@@ -16,6 +16,10 @@ const ProjectCard = ({ project, selectedTitle, handleProjectState, isAnimating, 
       subtitle = t('projects.xproof.subtitle');
       about = t('projects.xproof.about');
       break;
+    case 'PsicoTip':
+      subtitle = t('projects.psicotip.subtitle');
+      about = t('projects.psicotip.about');
+      break;
     case 'SoundTribe':
       subtitle = t('projects.soundTribe.subtitle');
       about = t('projects.soundTribe.about');

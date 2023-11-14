@@ -6,6 +6,12 @@ export const projectsData = [
     platform: "mobile",
   },
   {
+    title: "PsicoTip", 
+    color: "#DFC5D4",
+    link: "https://psicotip.es//",
+    platform: "pc",
+  },
+  {
     title: "SoundTribe",
     color: "#7FB685",
     link: "https://soundtribe.fly.dev/home",
